@@ -1,9 +1,33 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  @include montserrat(300);
+  color: $black;
+  font-size: 1.4rem;
+  @media (min-width: $screen-lg) {
+    font-size: 1.6rem;
+  }
+}
+
+button {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
 .no-select {
-	-webkit-user-select: none;
-	/* Chrome all / Safari all */
-	-moz-user-select: none;
-	/* Firefox all */
-	-ms-user-select: none;
-	/* IE 10+ */
-	user-select: none;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
 }

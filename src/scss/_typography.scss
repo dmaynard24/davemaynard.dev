@@ -1,0 +1,11 @@
+.label {
+  margin-bottom: 0;
+
+  &--upper {
+    @include montserrat(400);
+    color: $gray;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+}

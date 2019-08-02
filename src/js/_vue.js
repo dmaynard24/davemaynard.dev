@@ -1,12 +1,13 @@
 // set up routes
 const routes = [
-  { 
-    path: '/', component: appView,
+  {
+    path: '/',
+    component: appView,
     children: [
-      { 
+      {
         path: '/',
-        name: 'intro',
-        component: intro,
+        name: 'home',
+        component: home,
         meta: {
           pathIndex: 0
         }
