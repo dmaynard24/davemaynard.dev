@@ -1,4 +1,5 @@
-$nav-height-mobile: 104px;
+$nav-height-mobile: 80px;
+$nav-height-tablet: 104px;
 $nav-height-desktop: 136px;
 
 nav {
@@ -14,22 +15,54 @@ nav {
       align-items: center;
       justify-content: space-between;
       height: auto;
-      background: $white;
-      min-height: $nav-height-mobile;
+      background: $black;
+      height: $nav-height-mobile;
+      @media (min-width: $screen-md) {
+        height: $nav-height-tablet;
+      }
       @media (min-width: $screen-lg) {
         background: transparent;
-        min-height: $nav-height-desktop;
+        height: 0;
       }
 
       &-content {
         padding: 0 20px;
         @media (min-width: $screen-lg) {
           display: none;
+          position: fixed;
+          top: 61px;
+          padding: 0px 40px;
+        }
+        @media (min-width: $screen-xl) {
+          padding: 0px 56px;
+        }
+
+        &-logo {
+          color: $gray;
+          text-decoration: none;
+        }
+      }
+
+      &-menu,
+      &-arrows {
+        &-inner {
+          button {
+            display: block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+            svg {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
         }
       }
 
       &-menu {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         align-self: stretch;
@@ -39,25 +72,60 @@ nav {
         background: $black;
         width: $nav-height-mobile;
         height: $nav-height-mobile;
+        @media (min-width: $screen-md) {
+          width: $nav-height-tablet;
+          height: $nav-height-tablet;
+        }
         @media (min-width: $screen-lg) {
           width: $nav-height-desktop;
           height: $nav-height-desktop;
         }
 
         &-inner {
-          width: 24px;
-          height: 24px;
+          width: 40px;
+          height: 40px;
 
           button {
-            display: block;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
+            svg {
+              width: 24px;
+              height: 24px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+
+      &-arrows {
+        display: none;
+        @media (min-width: $screen-lg) {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: $nav-height-desktop;
+          height: $nav-height-desktop;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &-inner {
+          width: 70px;
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          button {
+            width: 30px;
+
+            &.arrow-next {
+              transform: scaleX(-1);
+            }
 
             svg {
-              display: block;
-              width: 100%;
-              height: 100%;
+              width: 10px;
+              height: 14px;
+              margin: 0 auto;
             }
           }
         }

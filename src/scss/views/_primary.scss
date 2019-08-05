@@ -37,7 +37,7 @@
     @media (min-width: $screen-lg) {
       width: 33.333%;
       max-width: 480px;
-      min-height: 100vh;
+      height: 100vh;
       background: $white;
       padding: 61px 40px;
       display: flex;
@@ -81,19 +81,21 @@
     }
 
     &-inner {
-      min-height: 25vh;
       @media (min-width: $screen-md) {
         max-width: 60%;
       }
       @media (min-width: $screen-lg) {
-        min-height: 0;
         max-width: 100%;
       }
 
-      &:first-of-type {
-        display: none;
+      .label--upper {
+        margin: 0 0 16px;
+      }
+
+      &:last-of-type {
+        min-height: 25vh;
         @media (min-width: $screen-lg) {
-          display: block;
+          min-height: 0;
         }
       }
 
@@ -119,9 +121,9 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 21%;
+      width: 25%;
       max-width: 300px;
-      min-height: 100vh;
+      height: 100vh;
       background: $black;
       color: $white;
       mix-blend-mode: multiply;
