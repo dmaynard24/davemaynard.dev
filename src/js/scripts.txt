@@ -1,4 +1,5 @@
 'src/js/_global.js'
+'src/js/_mixins.js'
 
 'src/js/components/_intro.js'
 

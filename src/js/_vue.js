@@ -22,6 +22,6 @@ const router = new VueRouter({
 });
 
 // instantiate VueJS
-var app = new Vue({
+let app = new Vue({
   router
 }).$mount('#main-container');

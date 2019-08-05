@@ -1,8 +1,19 @@
-.primary-view {
+.primary-views {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.primary-view {
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    z-index: 1;
+  }
 
   &--case-study {
     .primary-view__aside {
