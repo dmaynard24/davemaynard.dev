@@ -1,8 +1,18 @@
-.home-view {
+.primary-view {
   position: relative;
   top: 0;
   left: 0;
   height: 100vh;
+
+  &--case-study {
+    .primary-view__aside {
+      .h1 {
+        @media (min-width: $screen-lg) {
+          margin-top: 96px;
+        }
+      }
+    }
+  }
 
   &__bg {
     @extend %bg-center-cover;
@@ -29,14 +39,14 @@
       max-width: 480px;
       min-height: 100vh;
       background: $white;
-      padding: 60px 40px;
+      padding: 61px 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: visible;
     }
     @media (min-width: $screen-xl) {
-      padding: 60px 56px;
+      padding: 61px 56px;
     }
 
     &:after {
