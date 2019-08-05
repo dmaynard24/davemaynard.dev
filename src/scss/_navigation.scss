@@ -1,0 +1,67 @@
+$nav-height-mobile: 104px;
+$nav-height-desktop: 136px;
+
+nav {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zindex-fixed;
+
+    &__upper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: auto;
+      background: $white;
+      min-height: $nav-height-mobile;
+      @media (min-width: $screen-lg) {
+        background: transparent;
+        min-height: $nav-height-desktop;
+      }
+
+      &-content {
+        padding: 0 20px;
+        @media (min-width: $screen-lg) {
+          display: none;
+        }
+      }
+
+      &-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $black;
+        width: $nav-height-mobile;
+        height: $nav-height-mobile;
+        @media (min-width: $screen-lg) {
+          width: $nav-height-desktop;
+          height: $nav-height-desktop;
+        }
+
+        &-inner {
+          width: 24px;
+          height: 24px;
+
+          button {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+            svg {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

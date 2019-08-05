@@ -24,27 +24,11 @@ let caughtError = false;
 
 /* --------------------------- development process for building ---------------------------------  */
 gulp.task('default', function(callback) {
-  runSequence('clean:dist', [
-    'html',
-    'sass',
-    'js',
-    'images',
-    'move:fonts',
-    'move:lib',
-    'init:browserSync',
-    'watch'
-  ]);
+  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'move:fonts', 'move:lib', 'init:browserSync', 'watch']);
 });
 
 gulp.task('release', function(callback) {
-  runSequence('clean:dist', [
-    'html',
-    'sass',
-    'js',
-    'images',
-    'move:fonts',
-    'move:lib'
-  ]);
+  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'move:fonts', 'move:lib']);
 });
 
 /* browser sync auto reloads the browser */
@@ -93,7 +77,7 @@ gulp.task('sass', function() {
 /* minifies scripts.js and moves it */
 gulp.task('js', function() {
   caughtError = false;
-  let partials = fs.readFileSync(`src/js/${options.jsFilename}.js`, 'utf-8');
+  let partials = fs.readFileSync(`src/js/${options.jsFilename}.txt`, 'utf-8');
   arrPartials = partials.replace(/["']/g, '').split(/\r?\n/);
   // remove empty lines
   for (let i = 0; i < arrPartials.length; i++) {
@@ -133,12 +117,9 @@ gulp.task('watch', function() {
   gulp.watch('src/*.html', function() {
     runSequence('html', ['browserSync']);
   });
-  gulp.watch(
-    ['src/js/**/*.js', `src/js/${options.jsFilename}.js`],
-    function() {
-      runSequence('js', ['browserSync']);
-    }
-  );
+  gulp.watch(['src/js/**/*.js', `src/js/${options.jsFilename}.js`], function() {
+    runSequence('js', ['browserSync']);
+  });
 });
 
 /* cleans out folder */
@@ -164,9 +145,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('move:fonts', function() {
-  return gulp
-    .src('src/assets/fonts/**/**.*')
-    .pipe(gulp.dest('dist/assets/fonts/'));
+  return gulp.src('src/assets/fonts/**/**.*').pipe(gulp.dest('dist/assets/fonts/'));
 });
 
 gulp.task('move:lib', function() {
