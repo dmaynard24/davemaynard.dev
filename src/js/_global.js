@@ -53,10 +53,3 @@ function isElementVisible(element, entirely) {
         elementBounds.left < windowBounds.right) ||
         element.style.position === 'fixed';
 }
-
-// let pageIndex = 0;
-// function setActivePrimaryView() {
-//   let primaryViews = document.querySelector('.primary-views'),
-//     transformString = `translateX(${pageIndex * -100}vw)`;
-//   primaryViews.style.transform = transformString;
-// }
