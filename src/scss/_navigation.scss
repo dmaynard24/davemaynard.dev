@@ -3,6 +3,12 @@ $nav-height-desktop: 136px;
 
 nav {
   .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zindex-fixed;
+
     &__upper {
       display: flex;
       align-items: center;
@@ -11,15 +17,19 @@ nav {
       background: $white;
       min-height: $nav-height-mobile;
       @media (min-width: $screen-lg) {
-        height: $nav-height-desktop;
+        background: transparent;
+        min-height: $nav-height-desktop;
       }
 
       &-content {
         padding: 0 20px;
+        @media (min-width: $screen-lg) {
+          display: none;
+        }
       }
 
       &-menu {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         align-self: stretch;

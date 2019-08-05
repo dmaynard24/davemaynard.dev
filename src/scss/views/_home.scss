@@ -1,0 +1,130 @@
+.home-view {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  &__bg {
+    @extend %bg-center-cover;
+    position: relative;
+    z-index: -2;
+    height: 70vh;
+    @media (min-width: $screen-lg) {
+      height: 100vh;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 164px 20px 20px;
+    @media (min-width: $screen-md) {
+      padding: 196px 20px 32px;
+    }
+    @media (min-width: $screen-lg) {
+      width: 33.333%;
+      max-width: 480px;
+      min-height: 100vh;
+      background: $white;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: visible;
+    }
+    @media (min-width: $screen-xl) {
+      padding: 60px 56px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 132px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      z-index: -1;
+      @media (min-width: $screen-md) {
+        top: 164px;
+      }
+      @media (min-width: $screen-lg) {
+        display: none;
+      }
+    }
+
+    .h1 {
+      position: absolute;
+      top: 0px;
+      left: 40%;
+      color: $white;
+      white-space: nowrap;
+      @media (min-width: $screen-md) {
+        left: 60%;
+      }
+      @media (min-width: $screen-lg) {
+        display: none;
+      }
+    }
+
+    &-inner {
+      min-height: 25vh;
+      @media (min-width: $screen-md) {
+        max-width: 60%;
+      }
+      @media (min-width: $screen-lg) {
+        min-height: 0;
+        max-width: 100%;
+      }
+
+      &:first-of-type {
+        display: none;
+        @media (min-width: $screen-lg) {
+          display: block;
+        }
+      }
+
+      h1 {
+        @media (min-width: $screen-lg) {
+          width: calc(116.667% + 80px);
+          margin-left: calc(-16.667% - 80px);
+          margin-bottom: 32px;
+        }
+        @media (min-width: $screen-xl) {
+          width: calc(108.333% + 112px);
+          margin-left: calc(-8.333% - 112px);
+          margin-bottom: 48px;
+        }
+      }
+    }
+  }
+
+  &__aside {
+    display: none;
+    @media (min-width: $screen-lg) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 21%;
+      max-width: 300px;
+      min-height: 100vh;
+      background: $black;
+      color: $white;
+      mix-blend-mode: multiply;
+      padding: 128px 0 48px;
+      overflow: hidden;
+    }
+    @media (min-width: $screen-xl) {
+      padding: 128px 0 64px;
+    }
+
+    .h1 {
+      white-space: nowrap;
+      margin-left: -88px;
+    }
+  }
+}
