@@ -2,6 +2,9 @@ $nav-height-mobile: 80px;
 $nav-height-tablet: 104px;
 $nav-height-desktop: 136px;
 
+$nav-padding-mobile: 40px;
+$nav-padding-desktop: 60px;
+
 nav {
   .nav {
     position: fixed;
@@ -36,10 +39,10 @@ nav {
           display: none;
           position: fixed;
           top: 61px;
-          padding: 0px 40px;
+          padding: 0px $nav-padding-mobile;
         }
         @media (min-width: $screen-xl) {
-          padding: 0px 56px;
+          padding: 0px $nav-padding-desktop;
         }
       }
 
@@ -142,9 +145,9 @@ nav {
       background: $black;
       overflow: hidden;
       z-index: $zindex-sticky;
-      padding-left: 40px;
+      padding-left: $nav-padding-mobile;
       @media (min-width: $screen-lg) {
-        padding-left: 60px;
+        padding-left: $nav-padding-desktop;
       }
 
       &-inner {
@@ -165,13 +168,16 @@ nav {
           margin-left: auto;
           max-width: 600px;
           max-height: calc(100vh - 260px);
-          margin-top: 24px;
+          margin-top: 32px;
           @media (min-width: $screen-md) {
             margin-top: 48px;
           }
           @media (min-width: $screen-lg) {
             margin-top: 72px;
             max-width: 720px;
+          }
+          @media (min-width: $screen-xl) {
+            max-width: 800px;
           }
 
           &-bgs {
@@ -196,9 +202,9 @@ nav {
           }
 
           &-items {
-            padding: 32px 40px 32px 0;
+            padding: 32px $nav-padding-mobile 32px 0;
             @media (min-width: $screen-lg) {
-              padding: 40px 60px 40px 0;
+              padding: 40px $nav-padding-desktop 40px 0;
             }
 
             &-item {
@@ -213,6 +219,29 @@ nav {
                   transform: translateX(-56px);
                 }
               }
+            }
+          }
+        }
+
+        &-socials {
+          position: fixed;
+          bottom: $nav-padding-mobile;
+          right: $nav-padding-mobile;
+          width: 88px;
+          @media (min-width: $screen-lg) {
+            bottom: $nav-padding-desktop;
+            right: $nav-padding-desktop;
+          }
+
+          &-link {
+            display: block;
+            margin: 0 0 16px;
+            @media (min-width: $screen-lg) {
+              margin: 0 0 24px;
+            }
+
+            &:last-of-type {
+              margin: 0;
             }
           }
         }
