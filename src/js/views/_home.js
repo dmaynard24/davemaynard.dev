@@ -1,7 +1,7 @@
 const home = Vue.component('home', {
   template: `
   <div class="primary-views">
-    <div class="primary-view class="active">
+    <div class="primary-view active">
       <div class="primary-view__bg" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
       <div class="primary-view__content">
         <p class="h1 h1--large" aria-hidden="true" v-html="title"></p>
@@ -31,14 +31,13 @@ const home = Vue.component('home', {
     };
   },
   mounted: () => {
-    document.querySelector('.arrow-next').addEventListener('click', function() {
-      shared.pageIndex++;
-      shared.setActivePrimaryView();
-    });
-
-    document.querySelector('.arrow-prev').addEventListener('click', function() {
-      shared.pageIndex--;
-      shared.setActivePrimaryView();
-    });
+    // document.querySelector('.arrow-next').addEventListener('click', function() {
+    //   shared.pageIndex++;
+    //   shared.setActivePrimaryView();
+    // });
+    // document.querySelector('.arrow-prev').addEventListener('click', function() {
+    //   shared.pageIndex--;
+    //   shared.setActivePrimaryView();
+    // });
   }
 });
