@@ -16,6 +16,13 @@ nav {
     a {
       color: $gray;
       text-decoration: none;
+      transition: color 0.25s $ease-in-quad;
+
+      &:hover,
+      &:active {
+        color: $white;
+        transition: color 0.25s $ease-out-quad;
+      }
     }
 
     &__upper {
@@ -187,10 +194,26 @@ nav {
             width: calc(100% - 48px);
             height: 100%;
             background: $gray;
-            z-index: -1;
+            z-index: 2;
             @media (min-width: $screen-lg) {
               left: 128px;
               width: calc(100% - 128px);
+            }
+
+            #canvas {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+              }
             }
 
             img {
@@ -227,7 +250,6 @@ nav {
           position: fixed;
           bottom: $nav-padding-mobile;
           right: $nav-padding-mobile;
-          width: 88px;
           @media (min-width: $screen-lg) {
             bottom: $nav-padding-desktop;
             right: $nav-padding-desktop;
