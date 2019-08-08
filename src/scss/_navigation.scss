@@ -152,14 +152,17 @@ nav {
       background: $black;
       overflow: hidden;
       z-index: $zindex-sticky;
-      padding-left: $nav-padding-mobile;
-      @media (min-width: $screen-lg) {
-        padding-left: $nav-padding-desktop;
-      }
 
       &-inner {
+        padding-left: $nav-padding-mobile;
+        @media (min-width: $screen-lg) {
+          padding-left: $nav-padding-desktop;
+        }
+
         &-logo {
           display: inline-block;
+          position: relative;
+          z-index: 4;
           margin-top: $nav-height-mobile / 2 - 7px;
           @media (min-width: $screen-md) {
             margin-top: $nav-height-tablet / 2 - 7px;
@@ -169,85 +172,9 @@ nav {
           }
         }
 
-        &-selector {
-          position: relative;
-          margin-right: auto;
-          margin-left: auto;
-          max-width: 600px;
-          max-height: calc(100vh - 260px);
-          margin-top: 32px;
-          @media (min-width: $screen-md) {
-            margin-top: 48px;
-          }
-          @media (min-width: $screen-lg) {
-            margin-top: 72px;
-            max-width: 720px;
-          }
-          @media (min-width: $screen-xl) {
-            max-width: 800px;
-          }
-
-          &-bgs {
-            position: absolute;
-            top: 0;
-            left: 48px;
-            width: calc(100% - 48px);
-            height: 100%;
-            background: $gray;
-            z-index: -1;
-            @media (min-width: $screen-lg) {
-              left: 128px;
-              width: calc(100% - 128px);
-            }
-
-            #canvas {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-
-              &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.3);
-              }
-            }
-
-            img {
-              display: none;
-              min-width: 100%;
-              min-height: 100%;
-              object-fit: cover;
-            }
-          }
-
-          &-items {
-            padding: 32px $nav-padding-mobile 32px 0;
-            @media (min-width: $screen-lg) {
-              padding: 40px $nav-padding-desktop 40px 0;
-            }
-
-            &-item {
-              color: rgba(255, 255, 255, 0.32);
-              @media (min-width: 375px) and (max-width: $screen-md - 1) {
-                font-size: 3.2rem;
-              }
-
-              &.active {
-                color: rgba(255, 255, 255, 1);
-                @media (min-width: $screen-lg) {
-                  transform: translateX(-56px);
-                }
-              }
-            }
-          }
-        }
-
         &-socials {
           position: fixed;
+          z-index: 4;
           bottom: $nav-padding-mobile;
           right: $nav-padding-mobile;
           @media (min-width: $screen-lg) {
@@ -264,6 +191,118 @@ nav {
 
             &:last-of-type {
               margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &__selector {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-left: $nav-padding-mobile;
+      padding-top: $nav-height-mobile;
+      @media (min-width: $screen-md) {
+        padding-right: $nav-padding-mobile;
+        padding-top: $nav-height-tablet;
+      }
+      @media (min-width: $screen-lg) {
+        padding-top: $nav-height-desktop;
+        padding-right: $nav-padding-desktop;
+        padding-left: $nav-padding-desktop;
+      }
+
+      &-inner {
+        position: relative;
+        overflow-x: hidden;
+        display: block;
+
+        &-bgs {
+          position: fixed;
+          top: $nav-height-mobile;
+          left: 48px;
+          width: calc(100% - 48px);
+          height: 336px;
+          background: $gray;
+          z-index: 2;
+          max-width: 600px;
+          @media (min-width: 601px) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          @media (min-width: $screen-md) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: calc(100vh - 260px);
+          }
+          @media (min-width: $screen-lg) {
+            max-width: 720px;
+          }
+          @media (min-width: $screen-xl) {
+            max-width: 800px;
+          }
+
+          #canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.3);
+            }
+          }
+
+          img {
+            display: none;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &-items {
+          position: relative;
+          margin-right: auto;
+          margin-left: auto;
+          display: block;
+          z-index: 3;
+          padding: 32px $nav-padding-mobile 32px 0;
+          @media (min-width: $screen-lg) {
+            padding: 40px $nav-padding-desktop 40px 0;
+          }
+          max-width: 600px;
+          @media (min-width: $screen-lg) {
+            max-width: 720px;
+          }
+          @media (min-width: $screen-xl) {
+            max-width: 800px;
+          }
+
+          &-item {
+            color: rgba(255, 255, 255, 0.32);
+            @media (min-width: 375px) and (max-width: $screen-md - 1) {
+              font-size: 3.2rem;
+            }
+            @media (min-width: $screen-lg) {
+              transform: translateX(56px);
+            }
+
+            &.active {
+              color: rgba(255, 255, 255, 1);
+              @media (min-width: $screen-lg) {
+                transform: translateX(0px);
+              }
             }
           }
         }

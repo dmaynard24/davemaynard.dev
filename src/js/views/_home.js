@@ -45,7 +45,7 @@ const home = Vue.component('home', {
       var webGLCurtain = new Curtains('canvas');
 
       // get our plane element
-      var planeElements = document.getElementsByClassName('nav__content-inner-selector-bgs');
+      var planeElements = document.getElementsByClassName('nav__selector-inner-bgs');
 
       // here we will handle which texture is visible and the timer to transition between images
       var slideshowState = {
