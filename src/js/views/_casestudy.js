@@ -19,7 +19,7 @@ const caseStudy = Vue.component('case-study', {
   `,
   data: () => {
     return {
-      image: `assets/img/bora-bora-background.jpg`,
+      image: `assets/img/heros/color-speaks-hero.jpg`,
       label: `CASE STUDY`,
       title: `Color Speaks`,
       description: `

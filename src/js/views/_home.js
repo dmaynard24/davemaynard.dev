@@ -22,7 +22,7 @@ const home = Vue.component('home', {
   `,
   data: () => {
     return {
-      image: `assets/img/focus.jpg`,
+      image: `assets/img/heros/home-hero.jpg`,
       label: `HOME`,
       title: `Design &amp; Code`,
       description: `
@@ -148,7 +148,7 @@ const home = Vue.component('home', {
                   activeTex.setSource(multiTexturesPlane.images[slideshowState.activeTextureIndex]);
                   // reset timer
                   slideshowState.transitionTimer = 0;
-                }, 1700); // add a bit of margin to the timer
+                }, 780); // add a bit of margin to the timer
               }
             });
           })

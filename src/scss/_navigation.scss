@@ -194,7 +194,7 @@ nav {
             width: calc(100% - 48px);
             height: 100%;
             background: $gray;
-            z-index: 2;
+            z-index: -1;
             @media (min-width: $screen-lg) {
               left: 128px;
               width: calc(100% - 128px);
