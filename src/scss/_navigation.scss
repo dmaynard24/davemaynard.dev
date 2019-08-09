@@ -5,6 +5,8 @@ $nav-height-desktop: 136px;
 $nav-padding-mobile: 40px;
 $nav-padding-desktop: 60px;
 
+$selector-items-offset: 176px;
+
 nav {
   .nav {
     position: fixed;
@@ -217,6 +219,10 @@ nav {
         padding-left: $nav-padding-desktop;
       }
 
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($gray, 0);
+      }
+
       &-inner {
         position: relative;
         overflow-x: hidden;
@@ -236,15 +242,22 @@ nav {
             transform: translateX(-50%);
           }
           @media (min-width: $screen-md) {
-            top: 50%;
-            transform: translate(-50%, -50%);
-            height: calc(100vh - 260px);
+            top: $nav-height-tablet;
+            left: calc(50% + #{$selector-items-offset / 2});
+            max-width: 600px - $selector-items-offset;
+            height: 512px;
           }
           @media (min-width: $screen-lg) {
-            max-width: 720px;
+            top: $nav-height-desktop;
+            max-width: 720px - $selector-items-offset;
+            height: calc(100vh - 260px);
+            max-height: 760px;
           }
           @media (min-width: $screen-xl) {
-            max-width: 800px;
+            max-width: 800px - $selector-items-offset;
+          }
+          @media (min-width: $screen-xxl) and (min-height: 900px) {
+            max-width: 960px - $selector-items-offset;
           }
 
           #canvas {
@@ -273,26 +286,29 @@ nav {
 
         &-items {
           position: relative;
+          max-width: 600px;
           margin-right: auto;
           margin-left: auto;
-          display: block;
           z-index: 3;
           padding: 32px $nav-padding-mobile 32px 0;
           @media (min-width: $screen-lg) {
-            padding: 40px $nav-padding-desktop 40px 0;
-          }
-          max-width: 600px;
-          @media (min-width: $screen-lg) {
+            padding: 0px $nav-padding-desktop 40px 0;
             max-width: 720px;
           }
           @media (min-width: $screen-xl) {
             max-width: 800px;
           }
+          @media (min-width: $screen-xxl) and (min-height: 900px) {
+            max-width: 960px;
+          }
 
           &-item {
-            color: rgba(255, 255, 255, 0.32);
+            color: rgba(255, 255, 255, 0.25);
             @media (min-width: 375px) and (max-width: $screen-md - 1) {
               font-size: 3.2rem;
+            }
+            @media (min-width: $screen-md) {
+              margin: 0 0 24px;
             }
             @media (min-width: $screen-lg) {
               transform: translateX(56px);
