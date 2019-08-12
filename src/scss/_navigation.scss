@@ -231,13 +231,13 @@ nav {
         &-bgs {
           position: fixed;
           top: $nav-height-mobile;
-          left: 48px;
-          width: calc(100% - 48px);
+          left: $nav-padding-mobile * 2;
+          width: calc(100% - #{$nav-padding-mobile * 2});
           height: 336px;
           background: $gray;
           z-index: 2;
-          max-width: 600px;
-          @media (min-width: 601px) {
+          max-width: 440px;
+          @media (min-width: $screen-sm) {
             left: 50%;
             transform: translateX(-50%);
           }
