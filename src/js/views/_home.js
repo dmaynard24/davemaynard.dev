@@ -29,5 +29,15 @@ const home = Vue.component('home', {
       <p>I'm an ambitious web developer with several years of experience creating functional, responsive websites and applications. I've worked closely with teams of designers and back-end developers, demonstrating the ability to communicate effectively with others in a fast-paced, agile environment.</p>
       `
     };
+  },
+  mounted: function() {
+    // document.querySelector('.arrow-next').addEventListener('click', function() {
+    //   shared.pageIndex++;
+    //   shared.setActivePrimaryView();
+    // });
+    // document.querySelector('.arrow-prev').addEventListener('click', function() {
+    //   shared.pageIndex--;
+    //   shared.setActivePrimaryView();
+    // });
   }
 });

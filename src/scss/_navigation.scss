@@ -5,7 +5,7 @@ $nav-height-desktop: 136px;
 $nav-padding-mobile: 40px;
 $nav-padding-desktop: 60px;
 
-$selector-items-offset: 176px;
+$selector-items-offset: 88px;
 
 nav {
   .nav {
@@ -305,7 +305,7 @@ nav {
           &-item {
             cursor: pointer;
             color: rgba(255, 255, 255, 0.25);
-            transition: color 0.8s $ease-in-quad;
+            transition: color 0.4s $ease-in-quad;
             @media (min-width: 375px) and (max-width: $screen-md - 1) {
               font-size: 3.2rem;
             }
@@ -315,7 +315,7 @@ nav {
 
             &.active {
               color: rgba(255, 255, 255, 1);
-              transition: color 0.8s $ease-out-quad;
+              transition: color 0.4s $ease-out-quad;
             }
           }
         }
