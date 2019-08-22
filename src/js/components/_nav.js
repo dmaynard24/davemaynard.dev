@@ -1,11 +1,11 @@
 const navigation = Vue.component('navigation', {
   template: `
-  <nav>
+  <nav :class="{ 'active' : isNavActive }">
     <div class="nav">
       <div class="nav__upper">
         <div class="nav__upper-menu">
           <div class="nav__upper-menu-inner">
-            <button class="hamburger" aria-haspopup="true">
+            <button class="hamburger" aria-haspopup="true" @click="toggleNav">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" class="hamburger-svg" role="img">
                 <title>Toggle Menu</title>
                 <rect x="0" y="4" width="24" height="2" class="first-line" fill="#ffffff" />
@@ -122,8 +122,13 @@ const navigation = Vue.component('navigation', {
       ]
     };
   },
+  computed: {
+    isNavActive: function() {
+      return store.state.isNavActive;
+    }
+  },
   methods: {
-    onNavItemHover(navItem) {
+    onNavItemHover: function(navItem) {
       if (!navItem.active) {
         let component = this;
 
@@ -132,6 +137,9 @@ const navigation = Vue.component('navigation', {
         });
         navItem.active = true;
       }
+    },
+    toggleNav: function() {
+      store.commit('setNavActive', !this.isNavActive);
     }
   }
 });
