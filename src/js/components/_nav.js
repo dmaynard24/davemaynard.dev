@@ -35,8 +35,12 @@ const navigation = Vue.component('navigation', {
           <a href="/" class="nav__content-inner-logo label label--upper">Dave Maynard</a>
           <div class="nav__selector">
             <div class="nav__selector-inner">
-              <div class="nav__selector-inner-bgs" data-vs-id="multiple-textures-vs" data-fs-id="multiple-textures-fs">
-                <img v-for="navItem in navItems" :src="navItem.image" />
+              <div class="nav__selector-inner-bgs">
+                <div v-for="navItem in navItems"
+                  class="nav__selector-inner-bgs-bg"
+                  :class="{ 'active': navItem.active }">
+                  <div :style="{ backgroundImage: 'url(' + navItem.image + ')' }"></div>
+                </div>
               </div>
               <div class="nav__selector-inner-items">
                 <div v-for="navItem in navItems"
@@ -45,7 +49,6 @@ const navigation = Vue.component('navigation', {
                   @mouseenter="onNavItemHover(navItem)">{{ navItem.text }}</div>
               </div>
             </div>
-            <div v-for="navItem in navItems">{{ navItem.title }}</div>
           </div>
           <div class="nav__content-inner-socials">
             <a v-for="social in socials" :href="social.href" class="nav__content-inner-socials-link label label--upper" target="_blank">{{ social.text }}</a>
