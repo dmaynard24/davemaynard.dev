@@ -1,56 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Dave Maynard &bull; Portfolio &bull; Design &amp; Code</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dave Maynard &bull; Portfolio &bull; Design &amp; Code</title>
 
-  <body>
-    <nav>
-      <div class="nav">
-        <div class="nav__upper">
-          <div class="nav__upper-content">
-            <p class="label label--upper">Home</p>
-          </div>
-          <div class="nav__upper-menu">
-            <div class="nav__upper-menu-inner">
-              <button class="hamburger" aria-haspopup="true">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 24 24"
-                  class="hamburger-svg"
-                  role="img"
-                >
-                  <title>Toggle Menu</title>
-                  <rect x="0" y="4" width="24" height="2" class="first-line" fill="#ffffff" />
-                  <rect x="0" y="11" width="24" height="2" class="second-line" fill="#ffffff" />
-                  <rect x="0" y="18" width="24" height="2" class="third-line" fill="#ffffff" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div id="main-container">
-      <router-view></router-view>
-    </div>
-    <footer></footer>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:300,400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 
-    <script src="lib/js/jquery.min.js"></script>
-    <script src="lib/js/vue-dev.js" defer></script>
-    <!-- replace vue-dev.js with vue.min.js in prod -->
-    <script src="lib/js/vuex.min.js" defer></script>
-    <script src="lib/js/vue-router.min.js" defer></script>
-    <script src="lib/js/es6-promise.auto.js" defer></script>
+<body>
+  <div id="main-container">
+    <navigation></navigation>
+    <router-view></router-view>
+  </div>
 
-    <script src="js/scripts.js" defer></script>
-  </body>
+  <script src="lib/js/jquery.min.js"></script>
+  <script src="lib/js/anime.min.js"></script>
+  <script src="lib/js/vue-dev.js" defer></script>
+  <!-- replace vue-dev.js with vue.min.js in prod -->
+  <script src="lib/js/vuex.min.js" defer></script>
+  <script src="lib/js/vue-router.min.js" defer></script>
+  <script src="lib/js/es6-promise.auto.js" defer></script>
+
+  <script src="js/scripts.js" defer></script>
+</body>
+
 </html>

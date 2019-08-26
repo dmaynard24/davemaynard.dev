@@ -8,7 +8,9 @@
 @import 'base';
 
 @import 'navigation';
+@import 'scrollbar';
 @import 'typography';
 
 /* views (templates) */
+@import 'views/app';
 @import 'views/primary';

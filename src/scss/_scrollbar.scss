@@ -1,0 +1,18 @@
+/* OVERRIDE WEBKIT SCROLLBAR PROPERTIES */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $black;
+}
+
+::-webkit-scrollbar-track-piece {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: $gray;
+}

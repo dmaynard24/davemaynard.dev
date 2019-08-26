@@ -1,30 +1,43 @@
 const home = Vue.component('home', {
   template: `
-  <div class="primary-view">
-    <div class="primary-view__bg" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
-    <div class="primary-view__content">
-      <p class="h1 h1--large" aria-hidden="true" v-html="title"></p>
-      <div class="primary-view__content-inner">
-        <p class="label label--upper">{{ label }}</p>
+  <div class="primary-views">
+    <div class="primary-view active">
+      <div class="primary-view__bg" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
+      <div class="primary-view__content">
+        <p class="h1 h1--large" aria-hidden="true" v-html="title"></p>
+        <div class="primary-view__content-inner">
+          <p class="label label--upper">{{ label }}</p>
+        </div>
+        <div class="primary-view__content-inner">
+          <h1 v-html="title"></h1>
+          <div v-html="description"></div>
+        </div>
       </div>
-      <div class="primary-view__content-inner">
-        <h1 v-html="title"></h1>
-        <div v-html="description"></div>
-      </div>
+      <aside class="primary-view__aside">
+        <p class="h1 h1--xlarge" aria-hidden="true" v-html="title"></p>
+      </aside>
     </div>
-    <aside class="primary-view__aside">
-      <p class="h1 h1--xlarge" aria-hidden="true" v-html="title"></p>
-    </aside>
+    <case-study></case-study>
   </div>
   `,
   data: () => {
     return {
-      image: `assets/img/focus.jpg`,
+      image: `assets/img/heros/home-hero.jpg`,
       label: `HOME`,
       title: `Design &amp; Code`,
       description: `
-      <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar.</p>
+      <p>I'm an ambitious web developer with several years of experience creating functional, responsive websites and applications. I've worked closely with teams of designers and back-end developers, demonstrating the ability to communicate effectively with others in a fast-paced, agile environment.</p>
       `
     };
+  },
+  mounted: function() {
+    // document.querySelector('.arrow-next').addEventListener('click', function() {
+    //   shared.pageIndex++;
+    //   shared.setActivePrimaryView();
+    // });
+    // document.querySelector('.arrow-prev').addEventListener('click', function() {
+    //   shared.pageIndex--;
+    //   shared.setActivePrimaryView();
+    // });
   }
 });
