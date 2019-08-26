@@ -1,9 +1,12 @@
 // defined constants
-let SCREEN_SM = 576,
+const SCREEN_SM = 576,
   SCREEN_MD = 768,
   SCREEN_LG = 992,
   SCREEN_XL = 1200,
   SCREEN_XXL = 1440;
+
+const EASE_IN_QUAD = 'cubicBezier(0.55, 0.085, 0.68, 0.53)',
+  EASE_OUT_QUAD = 'cubicBezier(0.25, 0.46, 0.45, 0.94)';
 
 function onMobile() {
   return !onDesktop();

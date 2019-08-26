@@ -8,9 +8,9 @@ const navigation = Vue.component('navigation', {
             <button class="hamburger" aria-haspopup="true" @click="toggleNav">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" class="hamburger-svg" role="img">
                 <title>Toggle Menu</title>
-                <rect x="0" y="4" width="24" height="2" class="first-line" fill="#ffffff" />
-                <rect x="0" y="11" width="24" height="2" class="second-line" fill="#ffffff" />
-                <rect x="0" y="18" width="24" height="2" class="third-line" fill="#ffffff" />
+                <rect x="0" y="4" width="24" height="2" class="line line--first" fill="#ffffff" />
+                <rect x="0" y="11" width="24" height="2" class="line line--second" fill="#ffffff" />
+                <rect x="0" y="18" width="24" height="2" class="line line--third" fill="#ffffff" />
               </svg>
             </button>
           </div>
@@ -31,16 +31,20 @@ const navigation = Vue.component('navigation', {
         </div>
       </div>
       <div class="nav__content">
+        <div class="nav__content-before"></div>
         <div class="nav__content-inner">
-          <a href="/" class="nav__content-inner-logo label label--upper">Dave Maynard</a>
+          <div class="nav__content-inner-logo">
+            <a href="/" class="label label--upper">Dave Maynard</a>
+          </div>
           <div class="nav__selector">
             <div class="nav__selector-inner">
               <div class="nav__selector-inner-bgs">
                 <div v-for="navItem in navItems"
-                  class="nav__selector-inner-bgs-bg"
-                  :class="{ 'active': navItem.active }">
-                  <div :style="{ backgroundImage: 'url(' + navItem.image + ')' }"></div>
+                class="nav__selector-inner-bgs-bg"
+                :class="{ 'active': navItem.active }">
+                <div :style="{ backgroundImage: 'url(' + navItem.image + ')' }"></div>
                 </div>
+                <div class="nav__selector-inner-bgs-after"></div>
               </div>
               <div class="nav__selector-inner-items">
                 <div v-for="navItem in navItems"
@@ -140,6 +144,195 @@ const navigation = Vue.component('navigation', {
     },
     toggleNav: function() {
       store.commit('setNavActive', !this.isNavActive);
+
+      this.isNavActive ? openBurger() : closeBurger();
+      this.isNavActive ? openFullscreen() : closeFullscreen();
     }
   }
 });
+
+// nav animation timelines
+
+let burger;
+
+function openBurger() {
+  if (burger) {
+    burger.pause();
+  }
+  burger = anime.timeline();
+
+  burger
+    .add(
+      {
+        targets: '.hamburger .line--first, .hamburger .line--third',
+        y: 11,
+        rotate: 0,
+        easing: EASE_OUT_QUAD,
+        duration: 250
+      },
+      0
+    )
+    .add(
+      {
+        targets: '.hamburger .line--second',
+        opacity: 0,
+        duration: 1
+      },
+      250
+    )
+    .add(
+      {
+        targets: '.hamburger .line--first',
+        y: 11,
+        rotate: 45,
+        easing: EASE_OUT_QUAD,
+        duration: 250,
+        transformOrigin: '50% 50% 0'
+      },
+      250
+    )
+    .add(
+      {
+        targets: '.hamburger .line--third',
+        y: 11,
+        rotate: -45,
+        easing: EASE_OUT_QUAD,
+        duration: 250,
+        transformOrigin: '50% 50% 0'
+      },
+      250
+    );
+}
+
+function closeBurger() {
+  if (burger) {
+    burger.pause();
+  }
+  burger = anime.timeline();
+
+  burger
+    .add(
+      {
+        targets: '.hamburger .line--first',
+        y: 11,
+        rotate: 0,
+        easing: EASE_IN_QUAD,
+        duration: 250,
+        transformOrigin: '50% 50% 0'
+      },
+      0
+    )
+    .add(
+      {
+        targets: '.hamburger .line--third',
+        y: 11,
+        rotate: 0,
+        easing: EASE_IN_QUAD,
+        duration: 250,
+        transformOrigin: '50% 50% 0'
+      },
+      0
+    )
+    .add(
+      {
+        targets: '.hamburger .line--second',
+        opacity: 1,
+        duration: 1
+      },
+      250
+    )
+    .add(
+      {
+        targets: '.hamburger .line--first',
+        y: 4,
+        rotate: 0,
+        easing: EASE_IN_QUAD,
+        duration: 250
+      },
+      250
+    )
+    .add(
+      {
+        targets: '.hamburger .line--third',
+        y: 18,
+        rotate: 0,
+        easing: EASE_IN_QUAD,
+        duration: 250
+      },
+      250
+    );
+}
+
+let fullscreen;
+
+function openFullscreen() {
+  if (fullscreen) {
+    fullscreen.pause();
+  }
+  fullscreen = anime.timeline();
+
+  document.querySelector('.nav__content').classList.add('active');
+
+  fullscreen
+    .add(
+      {
+        targets: '.nav__content-before',
+        height: '100%',
+        easing: EASE_OUT_QUAD,
+        duration: 250
+      },
+      0
+    )
+    .add(
+      {
+        duration: 200,
+        complete: function(anim) {
+          document.querySelector('.nav__selector').classList.add('active');
+        }
+      },
+      0
+    )
+    .add(
+      {
+        targets: '.nav__selector-inner-bgs-after',
+        height: '0%',
+        easing: EASE_OUT_QUAD,
+        duration: 250
+      },
+      200
+    );
+}
+
+function closeFullscreen() {
+  if (fullscreen) {
+    fullscreen.pause();
+  }
+  fullscreen = anime.timeline();
+
+  fullscreen
+    .add(
+      {
+        targets: '.nav__selector-inner-bgs-after',
+        height: '100%',
+        easing: EASE_IN_QUAD,
+        duration: 250,
+        complete: function(anim) {
+          document.querySelector('.nav__selector').classList.remove('active');
+        }
+      },
+      0
+    )
+    .add(
+      {
+        targets: '.nav__content-before',
+        height: '0%',
+        easing: EASE_IN_QUAD,
+        duration: 250
+      },
+      250
+    );
+
+  fullscreen.finished.then(() => {
+    document.querySelector('.nav__content').classList.remove('active');
+  });
+}
