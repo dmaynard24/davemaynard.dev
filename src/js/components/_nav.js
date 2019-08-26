@@ -279,7 +279,7 @@ function openFullscreen() {
         targets: '.nav__content-before',
         height: '100%',
         easing: EASE_OUT_QUAD,
-        duration: 250
+        duration: 400
       },
       0
     )
@@ -297,9 +297,9 @@ function openFullscreen() {
         targets: '.nav__selector-inner-bgs-after',
         height: '0%',
         easing: EASE_OUT_QUAD,
-        duration: 250
+        duration: 400
       },
-      200
+      320
     );
 }
 
@@ -315,7 +315,7 @@ function closeFullscreen() {
         targets: '.nav__selector-inner-bgs-after',
         height: '100%',
         easing: EASE_IN_QUAD,
-        duration: 250,
+        duration: 400,
         complete: function(anim) {
           document.querySelector('.nav__selector').classList.remove('active');
         }
@@ -327,9 +327,9 @@ function closeFullscreen() {
         targets: '.nav__content-before',
         height: '0%',
         easing: EASE_IN_QUAD,
-        duration: 250
+        duration: 400
       },
-      250
+      400
     );
 
   fullscreen.finished.then(() => {
