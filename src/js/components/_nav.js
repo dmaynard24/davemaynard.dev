@@ -50,7 +50,9 @@ const navigation = Vue.component('navigation', {
                 <div v-for="navItem in navItems"
                   class="nav__selector-inner-items-item h1"
                   :class="{ 'active': navItem.active }"
-                  @mouseenter="onNavItemHover(navItem)">{{ navItem.text }}</div>
+                  @mouseenter="onNavItemHover(navItem)">
+                  <span>{{ navItem.text }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -167,6 +169,7 @@ function openBurger() {
         targets: '.hamburger .line--first, .hamburger .line--third',
         y: 11,
         rotate: 0,
+        transformOrigin: '50% 50% 0',
         easing: EASE_OUT_QUAD,
         duration: 250
       },
@@ -185,9 +188,9 @@ function openBurger() {
         targets: '.hamburger .line--first',
         y: 11,
         rotate: 45,
+        transformOrigin: '50% 50% 0',
         easing: EASE_OUT_QUAD,
-        duration: 250,
-        transformOrigin: '50% 50% 0'
+        duration: 250
       },
       250
     )
@@ -196,9 +199,9 @@ function openBurger() {
         targets: '.hamburger .line--third',
         y: 11,
         rotate: -45,
+        transformOrigin: '50% 50% 0',
         easing: EASE_OUT_QUAD,
-        duration: 250,
-        transformOrigin: '50% 50% 0'
+        duration: 250
       },
       250
     );
@@ -216,9 +219,9 @@ function closeBurger() {
         targets: '.hamburger .line--first',
         y: 11,
         rotate: 0,
+        transformOrigin: '50% 50% 0',
         easing: EASE_IN_QUAD,
-        duration: 250,
-        transformOrigin: '50% 50% 0'
+        duration: 250
       },
       0
     )
@@ -227,9 +230,9 @@ function closeBurger() {
         targets: '.hamburger .line--third',
         y: 11,
         rotate: 0,
+        transformOrigin: '50% 50% 0',
         easing: EASE_IN_QUAD,
-        duration: 250,
-        transformOrigin: '50% 50% 0'
+        duration: 250
       },
       0
     )
@@ -246,6 +249,7 @@ function closeBurger() {
         targets: '.hamburger .line--first',
         y: 4,
         rotate: 0,
+        transformOrigin: '50% 50% 0',
         easing: EASE_IN_QUAD,
         duration: 250
       },
@@ -256,6 +260,7 @@ function closeBurger() {
         targets: '.hamburger .line--third',
         y: 18,
         rotate: 0,
+        transformOrigin: '50% 50% 0',
         easing: EASE_IN_QUAD,
         duration: 250
       },
@@ -271,7 +276,7 @@ function openFullscreen() {
   }
   fullscreen = anime.timeline();
 
-  document.querySelector('.nav__content').classList.add('active');
+  let navItemSpans = document.querySelectorAll('.nav__selector-inner-items-item span');
 
   fullscreen
     .add(
@@ -285,9 +290,18 @@ function openFullscreen() {
     )
     .add(
       {
-        duration: 200,
+        duration: 320,
+        begin: function(anim) {
+          document.querySelector('.nav__content').classList.add('active');
+          navItemSpans.forEach(node => {
+            node.classList.remove('faded');
+          });
+        },
         complete: function(anim) {
           document.querySelector('.nav__selector').classList.add('active');
+          navItemSpans.forEach(node => {
+            node.classList.add('active');
+          });
         }
       },
       0
@@ -316,6 +330,12 @@ function closeFullscreen() {
         height: '100%',
         easing: EASE_IN_QUAD,
         duration: 400,
+        begin: function(anim) {
+          document.querySelectorAll('.nav__selector-inner-items-item span').forEach(node => {
+            node.classList.remove('active');
+            node.classList.add('faded');
+          });
+        },
         complete: function(anim) {
           document.querySelector('.nav__selector').classList.remove('active');
         }
