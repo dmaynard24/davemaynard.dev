@@ -1,3 +1,4 @@
+'src/js/_foreach.js'
 'src/js/_global.js'
 'src/js/_mixins.js'
 
