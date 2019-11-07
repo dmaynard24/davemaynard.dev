@@ -1,11 +1,8 @@
-.primary-views {
+.primary-view {
   position: relative;
   width: 100vw;
   height: 100vh;
-}
-
-.primary-view {
-  @extend %absolute-cover;
+  overflow: hidden;
 
   &.active {
     z-index: 1;

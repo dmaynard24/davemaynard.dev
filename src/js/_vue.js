@@ -2,17 +2,7 @@
 const routes = [
   {
     path: '/',
-    component: appView,
-    children: [
-      {
-        path: '/',
-        name: 'home',
-        component: home,
-        meta: {
-          pathIndex: 0
-        }
-      }
-    ]
+    component: appView
   }
 ];
 
