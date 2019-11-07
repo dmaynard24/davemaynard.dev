@@ -52,11 +52,17 @@ const home = Vue.component('home', {
     function handleMouseOver(e) {
       if (this.classList.contains('active')) {
         let windowBounds = window.getWindowBounds(),
-          percentX = e.clientX / windowBounds.width,
-          percentY = e.clientY / windowBounds.height;
+          mouseX = e.clientX,
+          mouseY = e.clientY,
+          windowCenter = {
+            x: windowBounds.width / 2,
+            y: windowBounds.height / 2
+          },
+          percentX = (windowCenter.x - mouseX) / windowBounds.width,
+          percentY = (windowCenter.y - mouseY) / windowBounds.height;
 
-        _this.bgTranslateX = (percentX * 2.25).toFixed(2) * -1 + '%';
-        _this.bgTranslateY = (percentY * 2.25).toFixed(2) * -1 + '%';
+        _this.bgTranslateX = (percentX * 2.25).toFixed(2) + '%';
+        _this.bgTranslateY = (percentY * 2.25).toFixed(2) + '%';
       }
     }
 
