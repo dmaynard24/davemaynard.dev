@@ -8,6 +8,8 @@ $nav-padding-desktop: 60px;
 $selector-items-offset: 88px;
 
 nav {
+  position: relative;
+
   &.active {
     .nav {
       &__upper {
@@ -150,6 +152,8 @@ nav {
           display: flex;
           align-items: center;
           justify-content: center;
+          background: $black;
+          z-index: $zindex-sticky;
         }
 
         &-inner {

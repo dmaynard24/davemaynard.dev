@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 
   &.active {
     z-index: 1;
@@ -19,16 +20,12 @@
   }
 
   &__bg {
+    @extend %scaled-bg;
     position: relative;
     z-index: -2;
     height: 70vh;
     @media (min-width: $screen-lg) {
       height: 100vh;
-    }
-
-    &-inner {
-      @extend %absolute-cover;
-      @extend %bg-center-cover;
     }
   }
 
@@ -142,6 +139,27 @@
     .h1 {
       white-space: nowrap;
       margin-left: -88px;
+    }
+  }
+
+  &__screens {
+    @extend %absolute-cover;
+    background: $white;
+
+    .screen {
+      @extend %absolute-cover;
+
+      &__bg {
+        @extend %scaled-bg;
+        @extend %absolute-cover;
+        max-width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        > div {
+          background-position: center top;
+        }
+      }
     }
   }
 }

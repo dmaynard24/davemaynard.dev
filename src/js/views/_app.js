@@ -2,7 +2,7 @@ const appView = Vue.component('app-view', {
   template: `
     <main id="app-view">
       <primary-view :image="home.image" :label="home.label" :title="home.title" :description="home.description"></primary-view>
-      <primary-view v-for="casestudy in casestudies" :image="casestudy.image" :label="casestudy.label" :title="casestudy.title" :description="casestudy.description"></primary-view>
+      <primary-view v-for="casestudy in casestudies" :image="casestudy.image" :label="casestudy.label" :title="casestudy.title" :description="casestudy.description" :screens="casestudy.screens"></primary-view>
     </main>
   `,
   data: () => {
@@ -23,7 +23,8 @@ const appView = Vue.component('app-view', {
           description: `
           <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar. Cras nec pharetra est. Maecenas magna nibh, pulvinar accumsan ipsum eget, fermentum sodales purus. Proin porta lacinia aliquam.</p>
           <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis.</p>
-          `
+          `,
+          screens: [`assets/img/screens/color-speaks-screen-1.jpg`]
         }
       ]
     };

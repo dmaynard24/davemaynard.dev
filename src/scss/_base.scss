@@ -20,10 +20,22 @@ button {
 
 .bg-center-cover,
 %bg-center-cover {
-  background-color: $black;
+  // background-color: $black;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.scaled-bg,
+%scaled-bg {
+  position: relative;
+  overflow: hidden;
+
+  > div {
+    @extend %absolute-cover;
+    @extend %bg-center-cover;
+    transform: scale(1.05);
+  }
 }
 
 .no-select {

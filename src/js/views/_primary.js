@@ -1,6 +1,6 @@
 const primaryView = Vue.component('primary-view', {
   template: `
-  <div class="primary-view active" @mousemove="handleMousemove">
+  <div class="primary-view" @mousemove="handleMousemove">
     <div class="primary-view__bg">
       <div class="primary-view__bg-inner" :style="{ 
         backgroundImage: 'url(' + image + ')', 
@@ -20,9 +20,18 @@ const primaryView = Vue.component('primary-view', {
     <aside class="primary-view__aside">
       <p class="h1 h1--xlarge" aria-hidden="true" v-html="title"></p>
     </aside>
+    <div v-if="screens" class="primary-view__screens">
+      <div v-for="screen in screens" class="screen">
+        <div class="screen__bg">
+          <div class="screen__bg-inner" :style="{ 
+            backgroundImage: 'url(' + screen + ')' 
+          }"></div>
+        </div>
+      </div>
+    </div>
   </div>
   `,
-  props: ['image', 'label', 'title', 'description'],
+  props: ['image', 'label', 'title', 'description', 'screens'],
   data: () => {
     return {
       bgTranslateX: '0%',
