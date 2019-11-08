@@ -7,6 +7,15 @@ const primaryView = Vue.component('primary-view', {
         transform: 'scale(1.05) translate(' + bgTranslateX + ', ' + bgTranslateY + ')' 
       }"></div>
     </div>
+    <div v-if="screens" class="primary-view__screens">
+      <div v-for="screen in screens" class="screen">
+        <div class="screen__bg">
+          <div class="screen__bg-inner" :style="{ 
+            backgroundImage: 'url(' + screen + ')' 
+          }"></div>
+        </div>
+      </div>
+    </div>
     <div class="primary-view__content">
       <p class="h1 h1--large" aria-hidden="true" v-html="title"></p>
       <div class="primary-view__content-inner">
@@ -20,15 +29,6 @@ const primaryView = Vue.component('primary-view', {
     <aside class="primary-view__aside">
       <p class="h1 h1--xlarge" aria-hidden="true" v-html="title"></p>
     </aside>
-    <div v-if="screens" class="primary-view__screens">
-      <div v-for="screen in screens" class="screen">
-        <div class="screen__bg">
-          <div class="screen__bg-inner" :style="{ 
-            backgroundImage: 'url(' + screen + ')' 
-          }"></div>
-        </div>
-      </div>
-    </div>
   </div>
   `,
   props: ['image', 'label', 'title', 'description', 'screens'],
