@@ -1,20 +1,11 @@
-const primaryView = Vue.component('primary-view', {
+const primaryView = Vue.component("primary-view", {
   template: `
   <div class="primary-view" @mousemove="handleMousemove">
     <div class="primary-view__bg">
       <div class="primary-view__bg-inner" :style="{ 
         backgroundImage: 'url(' + image + ')', 
-        transform: 'scale(1.05) translate(' + bgTranslateX + ', ' + bgTranslateY + ')' 
+        transform: 'scale(1.025) translate(' + bgTranslateX + ', ' + bgTranslateY + ')' 
       }"></div>
-    </div>
-    <div v-if="screens" class="primary-view__screens">
-      <div v-for="screen in screens" class="screen">
-        <div class="screen__bg">
-          <div class="screen__bg-inner" :style="{ 
-            backgroundImage: 'url(' + screen + ')' 
-          }"></div>
-        </div>
-      </div>
     </div>
     <div class="primary-view__content">
       <p class="h1 h1--large" aria-hidden="true" v-html="title"></p>
@@ -31,11 +22,11 @@ const primaryView = Vue.component('primary-view', {
     </aside>
   </div>
   `,
-  props: ['image', 'label', 'title', 'description', 'screens'],
+  props: ["image", "label", "title", "description", "screens"],
   data: () => {
     return {
-      bgTranslateX: '0%',
-      bgTranslateY: '0%'
+      bgTranslateX: "0%",
+      bgTranslateY: "0%"
     };
   },
   mounted: function() {
@@ -60,8 +51,8 @@ const primaryView = Vue.component('primary-view', {
         percentX = (windowCenter.x - mouseX) / windowBounds.width,
         percentY = (windowCenter.y - mouseY) / windowBounds.height;
 
-      this.bgTranslateX = (percentX * 2.25).toFixed(2) + '%';
-      this.bgTranslateY = (percentY * 2.25).toFixed(2) + '%';
+      this.bgTranslateX = (percentX * 1.2).toFixed(2) + "%";
+      this.bgTranslateY = (percentY * 1.2).toFixed(2) + "%";
     }
   }
 });

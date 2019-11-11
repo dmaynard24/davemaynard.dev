@@ -1,4 +1,4 @@
-const appView = Vue.component('app-view', {
+const appView = Vue.component("app-view", {
   template: `
     <main id="app-view">
       <primary-view :image="home.image" :label="home.label" :title="home.title" :description="home.description"></primary-view>
@@ -24,7 +24,37 @@ const appView = Vue.component('app-view', {
           <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar. Cras nec pharetra est. Maecenas magna nibh, pulvinar accumsan ipsum eget, fermentum sodales purus. Proin porta lacinia aliquam.</p>
           <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis.</p>
           `,
-          screens: [`assets/img/screens/color-speaks-screen-1.jpg`, `assets/img/screens/color-speaks-screen-2.jpg`]
+          screens: [
+            `assets/img/screens/color-speaks-screen-1.jpg`,
+            `assets/img/screens/color-speaks-screen-2.jpg`
+          ]
+        },
+        {
+          image: `assets/img/heros/shaw-floors-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Shaw Floors`,
+          description: `
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar. Cras nec pharetra est. Maecenas magna nibh, pulvinar accumsan ipsum eget, fermentum sodales purus. Proin porta lacinia aliquam.</p>
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis.</p>
+          `
+        },
+        {
+          image: `assets/img/heros/floorfit-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `FloorFit`,
+          description: `
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar. Cras nec pharetra est. Maecenas magna nibh, pulvinar accumsan ipsum eget, fermentum sodales purus. Proin porta lacinia aliquam.</p>
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis.</p>
+          `
+        },
+        {
+          image: `assets/img/heros/sagepath-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Sagepath`,
+          description: `
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis imperdiet. Nam eu mi ut ante placerat efficitur. Nullam fringilla ante sit amet sem porttitor pulvinar. Cras nec pharetra est. Maecenas magna nibh, pulvinar accumsan ipsum eget, fermentum sodales purus. Proin porta lacinia aliquam.</p>
+          <p>Aenean non orci id libero ornare efficitur id eu ex. Quisque quis ullamcorper nibh. Nam lobortis velit in sagittis.</p>
+          `
         }
       ]
     };
