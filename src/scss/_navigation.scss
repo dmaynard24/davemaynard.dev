@@ -330,7 +330,7 @@ nav {
             pointer-events: none;
 
             &:after {
-              content: "";
+              content: '';
               @extend %absolute-cover;
               opacity: 0;
               @media (min-width: $screen-md) {
@@ -388,8 +388,6 @@ nav {
 
           &-item {
             cursor: pointer;
-            color: rgba(255, 255, 255, 0.25);
-            transition: color 0.4s $ease-in-quad;
             overflow: hidden;
             line-height: 1.25;
             @media (min-width: 375px) and (max-width: $screen-md - 1) {
@@ -403,12 +401,15 @@ nav {
             }
 
             &.active {
-              color: rgba(255, 255, 255, 1);
-              transition: color 0.4s $ease-out-quad;
+              span a {
+                color: rgba(255, 255, 255, 1);
+                transition: color 0.4s $ease-out-quad;
+              }
             }
 
             span {
               display: block;
+              color: inherit;
               opacity: 1;
               transform: translateY(-105%);
               transition: transform 0.4s $ease-in-quad;
@@ -420,8 +421,12 @@ nav {
 
               &.faded {
                 opacity: 0;
-                transition: opacity 0.4s $ease-out-quad,
-                  transform 0.4s $ease-out-quad;
+                transition: opacity 0.4s $ease-out-quad, transform 0.4s $ease-out-quad;
+              }
+
+              a {
+                color: rgba(255, 255, 255, 0.25);
+                transition: color 0.4s $ease-in-quad;
               }
             }
           }

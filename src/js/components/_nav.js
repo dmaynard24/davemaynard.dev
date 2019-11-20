@@ -51,7 +51,9 @@ const navigation = Vue.component('navigation', {
                   class="nav__selector-inner-items-item h1"
                   :class="{ 'active': navItem.active }"
                   @mouseenter="onNavItemHover(navItem)">
-                  <span>{{ navItem.text }}</span>
+                  <span @click="toggleNav">
+                    <router-link :to="navItem.path">{{ navItem.text }}</router-link>
+                  </span>
                 </div>
               </div>
             </div>
@@ -68,36 +70,14 @@ const navigation = Vue.component('navigation', {
     return {
       navItems: [
         {
+          path: '/',
           image: `assets/img/heros/home-hero.jpg`,
           text: `Home`,
           active: true, // TODO: set this from the active route
           index: 1
         },
         {
-          image: `assets/img/heros/color-speaks-hero.jpg`,
-          text: `Color Speaks`,
-          active: false,
-          index: 2
-        },
-        {
-          image: `assets/img/heros/shaw-floors-hero.jpg`,
-          text: `Shaw Floors`,
-          active: false,
-          index: 3
-        },
-        {
-          image: `assets/img/heros/floorfit-hero.jpg`,
-          text: `FloorFit`,
-          active: false,
-          index: 4
-        },
-        {
-          image: `assets/img/heros/sagepath-hero.jpg`,
-          text: `Sagepath`,
-          active: false,
-          index: 5
-        },
-        {
+          path: '/about',
           image: `assets/img/heros/about-hero.jpg`,
           text: `About`,
           active: false,
@@ -127,6 +107,18 @@ const navigation = Vue.component('navigation', {
         }
       ]
     };
+  },
+  mounted: function() {
+    let caseStudyNavItems = store.state.casestudies.map(cs => {
+      return {
+        path: cs.path,
+        image: cs.props.image,
+        text: cs.props.title,
+        active: false
+      };
+    });
+
+    this.navItems.splice(1, 0, ...caseStudyNavItems);
   },
   computed: {
     isNavActive: function() {
