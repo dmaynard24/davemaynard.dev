@@ -1,4 +1,4 @@
-const primaryView = Vue.component("primary-view", {
+const primaryView = Vue.component('primary-view', {
   template: `
   <div class="primary-view" @mousemove="handleMousemove">
     <div class="primary-view__bg">
@@ -22,22 +22,12 @@ const primaryView = Vue.component("primary-view", {
     </aside>
   </div>
   `,
-  props: ["image", "label", "title", "description", "screens"],
+  props: ['image', 'label', 'title', 'description', 'screens'],
   data: () => {
     return {
-      bgTranslateX: "0%",
-      bgTranslateY: "0%"
+      bgTranslateX: '0%',
+      bgTranslateY: '0%'
     };
-  },
-  mounted: function() {
-    // document.querySelector('.arrow-next').addEventListener('click', function() {
-    //   shared.pageIndex++;
-    //   shared.setActivePrimaryView();
-    // });
-    // document.querySelector('.arrow-prev').addEventListener('click', function() {
-    //   shared.pageIndex--;
-    //   shared.setActivePrimaryView();
-    // });
   },
   methods: {
     handleMousemove: function(e) {
@@ -51,8 +41,8 @@ const primaryView = Vue.component("primary-view", {
         percentX = (windowCenter.x - mouseX) / windowBounds.width,
         percentY = (windowCenter.y - mouseY) / windowBounds.height;
 
-      this.bgTranslateX = (percentX * 1.2).toFixed(2) + "%";
-      this.bgTranslateY = (percentY * 1.2).toFixed(2) + "%";
+      this.bgTranslateX = (percentX * 1.2).toFixed(2) + '%';
+      this.bgTranslateY = (percentY * 1.2).toFixed(2) + '%';
     }
   }
 });

@@ -17,12 +17,12 @@ const navigation = Vue.component('navigation', {
         </div>
         <div class="nav__upper-arrows">
           <div class="nav__upper-arrows-inner">
-            <button class="arrow-prev">
+            <button class="arrow-prev" @click="navigatePrev">
               <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.99787 13.0001L1 7.39992M9 1.78871L1.00213 7.38888" stroke="white" stroke-width="2" stroke-linecap="round" />
               </svg>
             </button>
-            <button class="arrow-next">
+            <button class="arrow-next" @click="navigateNext">
               <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.99787 13.0001L1 7.39992M9 1.78871L1.00213 7.38888" stroke="white" stroke-width="2" stroke-linecap="round" />
               </svg>
@@ -71,17 +71,23 @@ const navigation = Vue.component('navigation', {
       navItems: [
         {
           path: '/',
+          name: 'home',
           image: `assets/img/heros/home-hero.jpg`,
           text: `Home`,
-          active: true, // TODO: set this from the active route
-          index: 1
+          meta: {
+            pageIndex: 0
+          },
+          active: true // TODO: set this from the active route
         },
         {
           path: '/about',
+          name: 'about',
           image: `assets/img/heros/about-hero.jpg`,
           text: `About`,
-          active: false,
-          index: 6
+          meta: {
+            pageIndex: 5
+          },
+          active: false
         }
       ],
       socials: [
@@ -114,6 +120,9 @@ const navigation = Vue.component('navigation', {
         path: cs.path,
         image: cs.props.image,
         text: cs.props.title,
+        meta: {
+          pageIndex: cs.meta.pageIndex
+        },
         active: false
       };
     });
@@ -141,6 +150,20 @@ const navigation = Vue.component('navigation', {
 
       this.isNavActive ? openBurger() : closeBurger();
       this.isNavActive ? openFullscreen() : closeFullscreen();
+    },
+    navigatePrev: function() {
+      let prevIndex = store.state.activePageIndex - 1;
+      if (prevIndex >= 0) {
+        let prevPath = this.navItems.find(navItem => navItem.meta.pageIndex == prevIndex).path;
+        this.$router.push({ path: prevPath });
+      }
+    },
+    navigateNext: function() {
+      let nextIndex = store.state.activePageIndex + 1;
+      if (nextIndex < this.navItems.length) {
+        let nextPath = this.navItems.find(navItem => navItem.meta.pageIndex == nextIndex).path;
+        this.$router.push({ path: nextPath });
+      }
     }
   }
 });
