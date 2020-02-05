@@ -25,7 +25,9 @@ function getWindowBounds() {
     top: window.pageYOffset,
     right: window.pageXOffset + window.innerWidth,
     bottom: window.pageYOffset + window.innerHeight,
-    left: window.pageXOffset
+    left: window.pageXOffset,
+    width: window.innerWidth,
+    height: window.innerHeight
   };
 }
 

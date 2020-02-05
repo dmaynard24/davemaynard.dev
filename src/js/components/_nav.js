@@ -17,12 +17,12 @@ const navigation = Vue.component('navigation', {
         </div>
         <div class="nav__upper-arrows">
           <div class="nav__upper-arrows-inner">
-            <button class="arrow-prev">
+            <button class="arrow-prev" @click="navigatePrev">
               <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.99787 13.0001L1 7.39992M9 1.78871L1.00213 7.38888" stroke="white" stroke-width="2" stroke-linecap="round" />
               </svg>
             </button>
-            <button class="arrow-next">
+            <button class="arrow-next" @click="navigateNext">
               <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.99787 13.0001L1 7.39992M9 1.78871L1.00213 7.38888" stroke="white" stroke-width="2" stroke-linecap="round" />
               </svg>
@@ -51,7 +51,9 @@ const navigation = Vue.component('navigation', {
                   class="nav__selector-inner-items-item h1"
                   :class="{ 'active': navItem.active }"
                   @mouseenter="onNavItemHover(navItem)">
-                  <span>{{ navItem.text }}</span>
+                  <span @click="toggleNav">
+                    <router-link :to="navItem.path">{{ navItem.text }}</router-link>
+                  </span>
                 </div>
               </div>
             </div>
@@ -68,40 +70,24 @@ const navigation = Vue.component('navigation', {
     return {
       navItems: [
         {
+          path: '/',
+          name: 'home',
           image: `assets/img/heros/home-hero.jpg`,
           text: `Home`,
-          active: true, // TODO: set this from the active route
-          index: 1
+          meta: {
+            pageIndex: 0
+          },
+          active: true // TODO: set this from the active route
         },
         {
-          image: `assets/img/heros/color-speaks-hero.jpg`,
-          text: `Color Speaks`,
-          active: false,
-          index: 2
-        },
-        {
-          image: `assets/img/heros/shaw-floors-hero.jpg`,
-          text: `Shaw Floors`,
-          active: false,
-          index: 3
-        },
-        {
-          image: `assets/img/heros/floorfit-hero.jpg`,
-          text: `FloorFit`,
-          active: false,
-          index: 4
-        },
-        {
-          image: `assets/img/heros/sagepath-hero.jpg`,
-          text: `Sagepath`,
-          active: false,
-          index: 5
-        },
-        {
+          path: '/about',
+          name: 'about',
           image: `assets/img/heros/about-hero.jpg`,
           text: `About`,
-          active: false,
-          index: 6
+          meta: {
+            pageIndex: 5
+          },
+          active: false
         }
       ],
       socials: [
@@ -128,6 +114,21 @@ const navigation = Vue.component('navigation', {
       ]
     };
   },
+  mounted: function() {
+    let caseStudyNavItems = store.state.casestudies.map(cs => {
+      return {
+        path: cs.path,
+        image: cs.props.image,
+        text: cs.props.title,
+        meta: {
+          pageIndex: cs.meta.pageIndex
+        },
+        active: false
+      };
+    });
+
+    this.navItems.splice(1, 0, ...caseStudyNavItems);
+  },
   computed: {
     isNavActive: function() {
       return store.state.isNavActive;
@@ -149,6 +150,20 @@ const navigation = Vue.component('navigation', {
 
       this.isNavActive ? openBurger() : closeBurger();
       this.isNavActive ? openFullscreen() : closeFullscreen();
+    },
+    navigatePrev: function() {
+      let prevIndex = store.state.activePageIndex - 1;
+      if (prevIndex >= 0) {
+        let prevPath = this.navItems.find(navItem => navItem.meta.pageIndex == prevIndex).path;
+        this.$router.push({ path: prevPath });
+      }
+    },
+    navigateNext: function() {
+      let nextIndex = store.state.activePageIndex + 1;
+      if (nextIndex < this.navItems.length) {
+        let nextPath = this.navItems.find(navItem => navItem.meta.pageIndex == nextIndex).path;
+        this.$router.push({ path: nextPath });
+      }
     }
   }
 });

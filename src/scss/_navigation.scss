@@ -8,6 +8,8 @@ $nav-padding-desktop: 60px;
 $selector-items-offset: 88px;
 
 nav {
+  position: relative;
+
   &.active {
     .nav {
       &__upper {
@@ -150,6 +152,8 @@ nav {
           display: flex;
           align-items: center;
           justify-content: center;
+          background: $black;
+          z-index: $zindex-sticky;
         }
 
         &-inner {
@@ -192,10 +196,7 @@ nav {
       }
 
       &-before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        @extend %absolute-cover;
         height: 0%;
         background: $black;
       }
@@ -317,31 +318,21 @@ nav {
           }
 
           &-after {
-            position: absolute;
+            @extend %absolute-cover;
+            top: auto;
             bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: $black;
           }
 
           &-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            @extend %absolute-cover;
             overflow: hidden;
             pointer-events: none;
 
             &:after {
               content: '';
+              @extend %absolute-cover;
               opacity: 0;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
               @media (min-width: $screen-md) {
                 border-color: $black;
                 border-style: solid;
@@ -360,7 +351,7 @@ nav {
               }
 
               > div {
-                opacity: 0.85;
+                opacity: 1;
                 transform: scale(1, 1);
                 transition: transform 0.8s $ease-out-quad;
               }
@@ -397,8 +388,6 @@ nav {
 
           &-item {
             cursor: pointer;
-            color: rgba(255, 255, 255, 0.25);
-            transition: color 0.4s $ease-in-quad;
             overflow: hidden;
             line-height: 1.25;
             @media (min-width: 375px) and (max-width: $screen-md - 1) {
@@ -412,12 +401,15 @@ nav {
             }
 
             &.active {
-              color: rgba(255, 255, 255, 1);
-              transition: color 0.4s $ease-out-quad;
+              span a {
+                color: rgba(255, 255, 255, 1);
+                transition: color 0.4s $ease-out-quad;
+              }
             }
 
             span {
               display: block;
+              color: inherit;
               opacity: 1;
               transform: translateY(-105%);
               transition: transform 0.4s $ease-in-quad;
@@ -430,6 +422,11 @@ nav {
               &.faded {
                 opacity: 0;
                 transition: opacity 0.4s $ease-out-quad, transform 0.4s $ease-out-quad;
+              }
+
+              a {
+                color: rgba(255, 255, 255, 0.25);
+                transition: color 0.4s $ease-in-quad;
               }
             }
           }
