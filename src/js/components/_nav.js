@@ -24,7 +24,7 @@ const navigation = Vue.component('navigation', {
                   :class="{ 'active': navItem.active }"
                   @mouseenter="onNavItemHover(navItem)">
                   <span>
-                    <router-link :to="navItem.path">{{ navItem.text }}</router-link>
+                    <a :href="navItem.path" target="_blank">{{ navItem.text }}</a>
                   </span>
                 </div>
               </div>
@@ -41,6 +41,56 @@ const navigation = Vue.component('navigation', {
   data: () => {
     return {
       navItems: [],
+      casestudies: [
+        {
+          path: '/color-speaks',
+          name: 'color-speaks',
+          meta: {
+            pageIndex: 1
+          },
+          props: {
+            image: `assets/img/heros/color-speaks-hero.jpg`,
+            label: `CASE STUDY`,
+            title: `Color Speaks`
+          }
+        },
+        {
+          path: '/shaw-floors',
+          name: 'shaw-floors',
+          meta: {
+            pageIndex: 2
+          },
+          props: {
+            image: `assets/img/heros/shaw-floors-hero.jpg`,
+            label: `CASE STUDY`,
+            title: `Shaw Floors`
+          }
+        },
+        {
+          path: '/floorfit',
+          name: 'floorfit',
+          meta: {
+            pageIndex: 3
+          },
+          props: {
+            image: `assets/img/heros/floorfit-hero.jpg`,
+            label: `CASE STUDY`,
+            title: `FloorFit`
+          }
+        },
+        {
+          path: '/sagepath',
+          name: 'sagepath',
+          meta: {
+            pageIndex: 4
+          },
+          props: {
+            image: `assets/img/heros/sagepath-hero.jpg`,
+            label: `CASE STUDY`,
+            title: `Sagepath`
+          }
+        }
+      ],
       socials: [
         {
           href: `https://github.com/dmaynard24`,
@@ -58,11 +108,12 @@ const navigation = Vue.component('navigation', {
           href: `#`,
           text: `Resume`
         }
-      ]
+      ],
+      isNavActive: true
     };
   },
   beforeMount: function() {
-    let caseStudyNavItems = store.state.casestudies.map(cs => {
+    this.navItems = this.casestudies.map(cs => {
       return {
         path: cs.path,
         image: cs.props.image,
@@ -73,18 +124,10 @@ const navigation = Vue.component('navigation', {
         active: false
       };
     });
-
-    this.navItems = caseStudyNavItems;
   },
   mounted: function() {
-    store.commit('setNavActive', true);
     revealFullscreen();
     this.navItems[0].active = true;
-  },
-  computed: {
-    isNavActive: function() {
-      return store.state.isNavActive;
-    }
   },
   methods: {
     onNavItemHover: function(navItem) {
@@ -113,15 +156,6 @@ function revealFullscreen() {
   let navItemSpans = document.querySelectorAll('.nav__selector-inner-items-item span');
 
   fullscreen
-    .add(
-      {
-        targets: '.nav__content-before',
-        height: '100%',
-        easing: EASE_OUT_QUAD,
-        duration: 400
-      },
-      0
-    )
     .add(
       {
         duration: 320,
