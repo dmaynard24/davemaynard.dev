@@ -6,7 +6,7 @@ const navigation = Vue.component('navigation', {
         <div class="nav__content-before"></div>
         <div class="nav__content-inner">
           <div class="nav__content-inner-logo">
-            <a href="/" class="label label--upper">Dave Maynard</a>
+            <a href="#" class="label label--upper">Dave Maynard</a>
           </div>
           <div class="nav__selector">
             <div class="nav__selector-inner">
@@ -24,7 +24,7 @@ const navigation = Vue.component('navigation', {
                   :class="{ 'active': navItem.active }"
                   @mouseenter="onNavItemHover(navItem)">
                   <span>
-                    <a :href="navItem.path" target="_blank">{{ navItem.text }}</a>
+                    <a :href="navItem.href" target="_blank">{{ navItem.text }}</a>
                   </span>
                 </div>
               </div>
@@ -43,70 +43,70 @@ const navigation = Vue.component('navigation', {
       navItems: [],
       casestudies: [
         {
-          path: '/color-speaks',
+          href: 'http://colorspeaks.sagepath.com/#/',
           name: 'color-speaks',
           meta: {
             pageIndex: 1
           },
           props: {
-            image: `assets/img/heros/color-speaks-hero.jpg`,
-            label: `CASE STUDY`,
-            title: `Color Speaks`
+            image: 'assets/img/heros/color-speaks-hero.jpg',
+            label: 'CASE STUDY',
+            title: 'Color Speaks'
           }
         },
         {
-          path: '/shaw-floors',
+          href: '/shaw-floors',
           name: 'shaw-floors',
           meta: {
             pageIndex: 2
           },
           props: {
-            image: `assets/img/heros/shaw-floors-hero.jpg`,
-            label: `CASE STUDY`,
-            title: `Shaw Floors`
+            image: 'assets/img/heros/shaw-floors-hero.jpg',
+            label: 'CASE STUDY',
+            title: 'Shaw Floors'
           }
         },
         {
-          path: '/floorfit',
+          href: '/floorfit',
           name: 'floorfit',
           meta: {
             pageIndex: 3
           },
           props: {
-            image: `assets/img/heros/floorfit-hero.jpg`,
-            label: `CASE STUDY`,
-            title: `FloorFit`
+            image: 'assets/img/heros/floorfit-hero.jpg',
+            label: 'CASE STUDY',
+            title: 'FloorFit'
           }
         },
         {
-          path: '/sagepath',
+          href: 'https://www.sagepath.com/',
           name: 'sagepath',
           meta: {
             pageIndex: 4
           },
           props: {
-            image: `assets/img/heros/sagepath-hero.jpg`,
-            label: `CASE STUDY`,
-            title: `Sagepath`
+            image: 'assets/img/heros/sagepath-hero.jpg',
+            label: 'CASE STUDY',
+            title: 'Sagepath'
           }
         }
       ],
       socials: [
         {
-          href: `https://github.com/dmaynard24`,
-          text: `GitHub`
+          href: 'https://github.com/dmaynard24',
+          text: 'GitHub'
         },
         {
-          href: `https://www.linkedin.com/in/dmaynard24/`,
-          text: `LinkedIn`
+          href: 'https://www.linkedin.com/in/dmaynard24/',
+          text: 'LinkedIn'
         },
         {
-          href: `mailto:davemaynard24@gmail.com`,
-          text: `Email`
+          href: 'mailto:davemaynard24@gmail.com',
+          text: 'Email'
         },
         {
-          href: `#`,
-          text: `Resume`
+          href: '/assets/resume/Dave_Maynard_Resume_2019.pdf',
+          text: 'Resume'
         }
       ],
       isNavActive: true
@@ -115,7 +115,7 @@ const navigation = Vue.component('navigation', {
   beforeMount: function() {
     this.navItems = this.casestudies.map(cs => {
       return {
-        path: cs.path,
+        href: cs.href,
         image: cs.props.image,
         text: cs.props.title,
         meta: {

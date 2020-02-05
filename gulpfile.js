@@ -24,11 +24,11 @@ let caughtError = false;
 
 /* --------------------------- development process for building ---------------------------------  */
 gulp.task('default', function(callback) {
-  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'move:fonts', 'move:lib', 'init:browserSync', 'watch']);
+  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'favicon', 'move:resume', 'move:fonts', 'move:lib', 'move:demos', 'init:browserSync', 'watch']);
 });
 
 gulp.task('release', function(callback) {
-  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'move:fonts', 'move:lib']);
+  runSequence('clean:dist', ['html', 'sass', 'js', 'images', 'favicon', 'move:resume', 'move:fonts', 'move:lib', 'move:demos']);
 });
 
 /* browser sync auto reloads the browser */
@@ -46,6 +46,10 @@ gulp.task('browserSync', function(done) {
     browserSync.reload();
   }
   done();
+});
+
+gulp.task('html', function() {
+  return gulp.src(['src/index.html']).pipe(gulp.dest('dist/'));
 });
 
 /* converts the sass to css, autoprefixes it, and moves to proper location */
@@ -144,6 +148,14 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/assets/img/'));
 });
 
+gulp.task('favicon', function() {
+  return gulp.src('src/assets/favicon/**/*.*').pipe(gulp.dest('dist/assets/favicon/'));
+});
+
+gulp.task('move:resume', function() {
+  return gulp.src('src/assets/resume/**/*.*').pipe(gulp.dest('dist/assets/resume/'));
+});
+
 gulp.task('move:fonts', function() {
   return gulp.src('src/assets/fonts/**/**.*').pipe(gulp.dest('dist/assets/fonts/'));
 });
@@ -152,6 +164,6 @@ gulp.task('move:lib', function() {
   return gulp.src('src/lib/**/*.*').pipe(gulp.dest('dist/lib/'));
 });
 
-gulp.task('html', function() {
-  return gulp.src(['src/**/*.html']).pipe(gulp.dest('dist/'));
+gulp.task('move:demos', function() {
+  return gulp.src('src/demos/**/*.*').pipe(gulp.dest('dist/'));
 });
