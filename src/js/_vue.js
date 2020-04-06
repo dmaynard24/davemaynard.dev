@@ -1,2 +1,2 @@
 // instantiate VueJS
-let app = new Vue().$mount('#main-container');
+const app = new Vue().$mount(`#main-container`);
