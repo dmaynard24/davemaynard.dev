@@ -175,7 +175,7 @@ const navigation = Vue.component(`navigation`, {
       active: false,
     }));
 
-    window.onload = function() {
+    window.onload = function () {
       revealFullscreen();
       this.navItems[0].active = true;
     }.bind(this);
