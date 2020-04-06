@@ -1,4 +1,46 @@
-const navigation = Vue.component('navigation', {
+// nav animation timelines
+
+let fullscreen;
+
+function revealFullscreen() {
+  if (fullscreen) {
+    fullscreen.pause();
+  }
+  fullscreen = anime.timeline();
+
+  const navItemSpans = document.querySelectorAll(`.nav__selector-inner-items-item span`);
+
+  fullscreen
+    .add(
+      {
+        duration: 320,
+        begin(anim) {
+          document.querySelector(`.nav__content`).classList.add(`active`);
+          navItemSpans.forEach((node) => {
+            node.classList.remove(`faded`);
+          });
+        },
+        complete(anim) {
+          document.querySelector(`.nav__selector`).classList.add(`active`);
+          navItemSpans.forEach((node) => {
+            node.classList.add(`active`);
+          });
+        },
+      },
+      0,
+    )
+    .add(
+      {
+        targets: `.nav__selector-inner-bgs-after`,
+        height: `0%`,
+        easing: EASE_OUT_QUAD,
+        duration: 400,
+      },
+      320,
+    );
+}
+
+const navigation = Vue.component(`navigation`, {
   template: `
   <nav :class="{ 'active' : isNavActive }">
     <div class="nav">
@@ -38,149 +80,105 @@ const navigation = Vue.component('navigation', {
     </div>
   </nav>
   `,
-  data: () => {
-    return {
-      navItems: [],
-      casestudies: [
-        {
-          href: 'http://colorspeaks.sagepath.com/#/',
-          name: 'color-speaks',
-          meta: {
-            pageIndex: 1
-          },
-          props: {
-            image: 'assets/img/heros/color-speaks-hero.jpg',
-            label: 'CASE STUDY',
-            title: 'Color Speaks'
-          }
-        },
-        {
-          href: '/shaw-floors',
-          name: 'shaw-floors',
-          meta: {
-            pageIndex: 2
-          },
-          props: {
-            image: 'assets/img/heros/shaw-floors-hero.jpg',
-            label: 'CASE STUDY',
-            title: 'Shaw Floors'
-          }
-        },
-        {
-          href: '/floorfit',
-          name: 'floorfit',
-          meta: {
-            pageIndex: 3
-          },
-          props: {
-            image: 'assets/img/heros/floorfit-hero.jpg',
-            label: 'CASE STUDY',
-            title: 'FloorFit'
-          }
-        },
-        {
-          href: 'https://www.sagepath.com/',
-          name: 'sagepath',
-          meta: {
-            pageIndex: 4
-          },
-          props: {
-            image: 'assets/img/heros/sagepath-hero.jpg',
-            label: 'CASE STUDY',
-            title: 'Sagepath'
-          }
-        }
-      ],
-      socials: [
-        {
-          href: 'https://github.com/dmaynard24',
-          text: 'GitHub'
-        },
-        {
-          href: 'https://www.linkedin.com/in/dmaynard24/',
-          text: 'LinkedIn'
-        },
-        {
-          href: 'mailto:davemaynard24@gmail.com',
-          text: 'Email'
-        },
-        {
-          href: '/assets/resume/Dave_Maynard_Resume_2019.pdf',
-          text: 'Resume'
-        }
-      ],
-      isNavActive: true
-    };
-  },
-  beforeMount: function() {
-    this.navItems = this.casestudies.map(cs => {
-      return {
-        href: cs.href,
-        image: cs.props.image,
-        text: cs.props.title,
+  data: () => ({
+    navItems: [],
+    casestudies: [
+      {
+        href: `http://colorspeaks.sagepath.com/#/`,
+        name: `color-speaks`,
         meta: {
-          pageIndex: cs.meta.pageIndex
+          pageIndex: 1,
         },
-        active: false
-      };
-    });
-  },
-  mounted: function() {
-    revealFullscreen();
-    this.navItems[0].active = true;
-  },
-  methods: {
-    onNavItemHover: function(navItem) {
-      if (!navItem.active) {
-        let component = this;
+        props: {
+          image: `assets/img/heros/color-speaks-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Color Speaks`,
+        },
+      },
+      {
+        href: `/shaw-floors`,
+        name: `shaw-floors`,
+        meta: {
+          pageIndex: 2,
+        },
+        props: {
+          image: `assets/img/heros/shaw-floors-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Shaw Floors`,
+        },
+      },
+      {
+        href: `/floorfit`,
+        name: `floorfit`,
+        meta: {
+          pageIndex: 3,
+        },
+        props: {
+          image: `assets/img/heros/floorfit-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `FloorFit`,
+        },
+      },
+      {
+        href: `https://www.sagepath.com/`,
+        name: `sagepath`,
+        meta: {
+          pageIndex: 4,
+        },
+        props: {
+          image: `assets/img/heros/sagepath-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Sagepath`,
+        },
+      },
+    ],
+    socials: [
+      {
+        href: `https://github.com/dmaynard24`,
+        text: `GitHub`,
+      },
+      {
+        href: `https://www.linkedin.com/in/dmaynard24/`,
+        text: `LinkedIn`,
+      },
+      {
+        href: `mailto:davemaynard24@gmail.com`,
+        text: `Email`,
+      },
+      {
+        href: `/assets/resume/Dave_Maynard_Resume_2020.pdf`,
+        text: `Resume`,
+      },
+    ],
+    isNavActive: true,
+  }),
+  beforeMount() {
+    this.navItems = this.casestudies.map((cs) => ({
+      href: cs.href,
+      image: cs.props.image,
+      text: cs.props.title,
+      meta: {
+        pageIndex: cs.meta.pageIndex,
+      },
+      active: false,
+    }));
 
-        component.navItems.forEach(item => {
+    window.onload = function() {
+      revealFullscreen();
+      this.navItems[0].active = true;
+    }.bind(this);
+  },
+  mounted() {},
+  methods: {
+    onNavItemHover(navItem) {
+      if (!navItem.active) {
+        const component = this;
+
+        component.navItems.forEach((item) => {
           item.active = false;
         });
         navItem.active = true;
       }
-    }
-  }
+    },
+  },
 });
-
-// nav animation timelines
-
-let fullscreen;
-
-function revealFullscreen() {
-  if (fullscreen) {
-    fullscreen.pause();
-  }
-  fullscreen = anime.timeline();
-
-  let navItemSpans = document.querySelectorAll('.nav__selector-inner-items-item span');
-
-  fullscreen
-    .add(
-      {
-        duration: 320,
-        begin: function(anim) {
-          document.querySelector('.nav__content').classList.add('active');
-          navItemSpans.forEach(node => {
-            node.classList.remove('faded');
-          });
-        },
-        complete: function(anim) {
-          document.querySelector('.nav__selector').classList.add('active');
-          navItemSpans.forEach(node => {
-            node.classList.add('active');
-          });
-        }
-      },
-      0
-    )
-    .add(
-      {
-        targets: '.nav__selector-inner-bgs-after',
-        height: '0%',
-        easing: EASE_OUT_QUAD,
-        duration: 400
-      },
-      320
-    );
-}
