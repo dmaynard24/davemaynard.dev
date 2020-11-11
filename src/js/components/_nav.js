@@ -84,10 +84,22 @@ const navigation = Vue.component(`navigation`, {
     navItems: [],
     casestudies: [
       {
+        href: `https://floorigami.com/`,
+        name: `floorigami`,
+        meta: {
+          pageIndex: 1,
+        },
+        props: {
+          image: `assets/img/heros/floorigami-hero.jpg`,
+          label: `CASE STUDY`,
+          title: `Floorigami`,
+        },
+      },
+      {
         href: `http://colorspeaks.sagepath.com/#/`,
         name: `color-speaks`,
         meta: {
-          pageIndex: 1,
+          pageIndex: 2,
         },
         props: {
           image: `assets/img/heros/color-speaks-hero.jpg`,
@@ -99,7 +111,7 @@ const navigation = Vue.component(`navigation`, {
         href: `/shaw-floors`,
         name: `shaw-floors`,
         meta: {
-          pageIndex: 2,
+          pageIndex: 3,
         },
         props: {
           image: `assets/img/heros/shaw-floors-hero.jpg`,
@@ -111,7 +123,7 @@ const navigation = Vue.component(`navigation`, {
         href: `/floorfit`,
         name: `floorfit`,
         meta: {
-          pageIndex: 3,
+          pageIndex: 4,
         },
         props: {
           image: `assets/img/heros/floorfit-hero.jpg`,
@@ -123,7 +135,7 @@ const navigation = Vue.component(`navigation`, {
         href: `https://www.sagepath.com/`,
         name: `sagepath`,
         meta: {
-          pageIndex: 4,
+          pageIndex: 5,
         },
         props: {
           image: `assets/img/heros/sagepath-hero.jpg`,
