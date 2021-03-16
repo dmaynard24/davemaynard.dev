@@ -29,7 +29,7 @@ gulp.task(`default`, (callback) => {
 });
 
 gulp.task(`release`, (callback) => {
-  runSequence(`clean:dist`, [`move:techtalk`, `init:browserSync`, `watch`]);
+  runSequence(`clean:dist`, [`move:techtalk`]);
 });
 
 /* browser sync auto reloads the browser */
