@@ -129,7 +129,7 @@ gulp.task(`watch`, () => {
 gulp.task(`clean:dist`, () => del.sync(`dist`, { force: true }));
 
 /* grab all images and move them */
-gulp.task(`images`, () =>
+gulp.task(`images`, () => {
   gulp
     .src(`src/assets/img/**/*.+(png|jpg|gif|svg)`)
     .pipe(
@@ -142,8 +142,8 @@ gulp.task(`images`, () =>
         }),
       ]),
     )
-    .pipe(gulp.dest(`dist/assets/img/`)),
-);
+    .pipe(gulp.dest(`dist/assets/img/`));
+});
 
 gulp.task(`favicon`, () => gulp.src(`src/assets/favicon/**/*.*`).pipe(gulp.dest(`dist/assets/favicon/`)));
 
