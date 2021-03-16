@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.c89c47ad.chunk.css",
-    "main.js": "/static/js/main.20540c9d.chunk.js",
-    "main.js.map": "/static/js/main.20540c9d.chunk.js.map",
+    "main.css": "/static/css/main.adb5fab9.chunk.css",
+    "main.js": "/static/js/main.117a4db2.chunk.js",
+    "main.js.map": "/static/js/main.117a4db2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.de34fb5f.js",
     "runtime-main.js.map": "/static/js/runtime-main.de34fb5f.js.map",
     "static/js/2.bdcd651a.chunk.js": "/static/js/2.bdcd651a.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.bac3464b.chunk.js": "/static/js/3.bac3464b.chunk.js",
     "static/js/3.bac3464b.chunk.js.map": "/static/js/3.bac3464b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.c89c47ad.chunk.css.map": "/static/css/main.c89c47ad.chunk.css.map",
+    "static/css/main.adb5fab9.chunk.css.map": "/static/css/main.adb5fab9.chunk.css.map",
     "static/js/2.bdcd651a.chunk.js.LICENSE.txt": "/static/js/2.bdcd651a.chunk.js.LICENSE.txt",
     "static/media/adam.cc1d19a4.jpeg": "/static/media/adam.cc1d19a4.jpeg",
     "static/media/book-cover-sm.0033fbcc.png": "/static/media/book-cover-sm.0033fbcc.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.de34fb5f.js",
     "static/js/2.bdcd651a.chunk.js",
-    "static/css/main.c89c47ad.chunk.css",
-    "static/js/main.20540c9d.chunk.js"
+    "static/css/main.adb5fab9.chunk.css",
+    "static/js/main.117a4db2.chunk.js"
   ]
 }
