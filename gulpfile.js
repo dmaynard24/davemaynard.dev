@@ -25,11 +25,11 @@ let caughtError = false;
 
 /* --------------------------- development process for building ---------------------------------  */
 gulp.task(`default`, (callback) => {
-  runSequence(`clean:dist`, [`move:techtalk`, `init:browserSync`, `watch`]);
+  runSequence(`clean:dist`, [`html`, `sass`, `js`, `images`, `favicon`, `move:resume`, `move:fonts`, `move:lib`, `move:demos`, `init:browserSync`, `watch`]);
 });
 
 gulp.task(`release`, (callback) => {
-  runSequence(`clean:dist`, [`move:techtalk`]);
+  runSequence(`clean:dist`, [`html`, `sass`, `js`, `images`, `favicon`, `move:resume`, `move:fonts`, `move:lib`, `move:demos`]);
 });
 
 /* browser sync auto reloads the browser */
@@ -84,7 +84,7 @@ gulp.task(`js`, () => {
   arrPartials = partials.replace(/["']/g, ``).split(/\r?\n/);
   // remove empty lines
   for (let i = 0; i < arrPartials.length; i++) {
-    if (arrPartials[i] == `` || arrPartials[i] == undefined) {
+    if (arrPartials[i] === `` || arrPartials[i] === undefined) {
       arrPartials.splice(i, 1);
       i--;
     }
@@ -154,5 +154,3 @@ gulp.task(`move:fonts`, () => gulp.src(`src/assets/fonts/**/**.*`).pipe(gulp.des
 gulp.task(`move:lib`, () => gulp.src(`src/lib/**/*.*`).pipe(gulp.dest(`dist/lib/`)));
 
 gulp.task(`move:demos`, () => gulp.src(`src/demos/**/*.*`).pipe(gulp.dest(`dist/`)));
-
-gulp.task(`move:techtalk`, () => gulp.src(`src/demos/tailwindcss-techtalk/**/*.*`).pipe(gulp.dest(`dist/`)));
