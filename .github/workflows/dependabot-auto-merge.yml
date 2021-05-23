@@ -1,2 +1,6 @@
 - name: Dependabot Auto Merge
+  # You may pin to the exact commit or the version.
   uses: ahmadnassri/action-dependabot-auto-merge@v2.3.1
+  with:
+    # The GitHub token used to merge the pull-request
+    github-token: ${{ secrets.mytoken }}
