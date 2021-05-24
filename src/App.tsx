@@ -1,10 +1,9 @@
-import React from 'react';
-import './App.scss';
+import * as React from 'react';
 import Profile from './components/Profile/Profile';
 import Feed from './components/Feed/Feed';
 import Nav from './components/Nav/Nav';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="app px-4 max-w-screen-xxl mx-auto">
       <div className="flex flex-row -mx-4">
@@ -21,5 +20,6 @@ function App() {
     </div>
   );
 }
+App.displayName = 'App';
 
 export default App;
