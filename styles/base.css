@@ -1,5 +1,5 @@
 body {
-  @apply text-gray-500 font-medium text-lg sm:text-2xl;
+  @apply text-gray-500 font-medium text-sm sm:text-xl leading-6 sm:leading-8;
   font-family: 'Inter',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,10 +26,6 @@ h2, h3 {
 
 h3 {
   @apply text-3xl sm:text-4xl lg:text-5xl;
-}
-
-p, ul {
-  @apply sm:leading-10;
 }
 
 a {

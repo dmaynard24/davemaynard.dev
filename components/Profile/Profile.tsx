@@ -3,7 +3,7 @@ import styles from './Profile.module.css';
 
 const Profile: React.FC = () => {
   return (
-    <div className={styles.profile}>
+    <div className={`${styles.profile} py-8 lg:py-12`}>
       <h1>
         Dave Maynard
         <br />
