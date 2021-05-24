@@ -1,8 +1,9 @@
 import * as React from 'react';
+import styles from './Profile.module.css';
 
 const Profile: React.FC = () => {
   return (
-    <div className="profile">
+    <div className={styles.profile}>
       <h1>
         Dave Maynard
         <br />
