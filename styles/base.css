@@ -1,65 +1,20 @@
+<<<<<<<< HEAD:styles/base.css
+========
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+>>>>>>>> 399fed6 (switched from create-react-app to create-next-app for PostCSS 8 support, postcss-nested):src/index.css
 body {
-  @apply text-gray-700 text-sm sm:text-base leading-6 sm:leading-8;
-  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  @apply text-gray-900 leading-none font-extrabold tracking-tight;
-}
-
-h1,
-h2 {
-  @apply text-4xl sm:text-5xl lg:text-6xl;
-}
-
-h2,
-h3 {
-  @apply mb-4 sm:mb-6;
-}
-
-h3 {
-  @apply text-3xl sm:text-4xl lg:text-5xl;
-}
-
-p {
-  @apply mb-4 sm:mb-6 last:mb-0;
-
-  code {
-    @apply bg-gray-100 px-1 rounded-sm;
-  }
-}
-
-a,
-.link {
-  @apply cursor-pointer text-cyan-600 hover:text-cyan-800;
-}
-
-.social-logo {
-  &:hover {
-    path {
-      @apply transition-all duration-200 ease-out;
-      fill: theme(colors.gray.900);
-      transition: fill 0.3s ease-out;
-    }
-  }
-
-  path {
-    @apply transition-all duration-200 ease-in;
-    fill: theme(colors.gray.500);
-  }
-}
-
-.tag {
-  @apply mr-2 last:mr-0;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
