@@ -1,0 +1,19 @@
+.nav-item {
+  @apply relative mb-4 uppercase tracking-widest text-base;
+
+  &:last-of-type {
+    @apply mb-0;
+  }
+
+  &:before {
+    @apply absolute block top-0 -left-8 w-0 h-full bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;
+    content: '';
+  }
+
+  &.active {
+    &:before {
+      @apply absolute block top-0 -left-8 w-1 h-full bg-cyan-400 transform scale-x-100 transition-transform ease-out duration-300;
+      content: '';
+    }
+  }
+}

@@ -4,7 +4,7 @@ import styles from './Feed.module.css';
 
 const Feed: React.FC = () => {
   return (
-    <div className={`${styles.feed} py-8 lg:py-12`}>
+    <div className={styles.feed}>
       <FeedItem
         header="Headline Text"
         timestamp="May 24, 2021"

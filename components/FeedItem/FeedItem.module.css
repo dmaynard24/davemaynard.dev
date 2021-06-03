@@ -1,0 +1,7 @@
+.feed-item {
+  @apply mb-10 sm:mb-12;
+  
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
