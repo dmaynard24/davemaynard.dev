@@ -13,7 +13,7 @@ const FeedItem: React.FC<{
   return (
     <div className={`${styles['feed-item']}`}>
       <h2>{header}</h2>
-      <div className="text-gray-400 mb-6 sm:mb-8">{timestamp}</div>
+      <div className="text-gray-400 mb-4 sm:mb-6">{timestamp}</div>
       <div>{body}</div>
     </div>
   )

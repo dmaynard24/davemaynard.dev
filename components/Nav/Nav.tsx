@@ -32,9 +32,9 @@ const Nav: React.FC = () => {
 
   return (
     <nav className={`${styles.nav} py-8 lg:py-12`}>
-      {navItems.map((navItem) => {
+      {navItems.map((navItem, i) => {
         return (
-          <NavItem {...navItem} />
+          <NavItem key={i} {...navItem} />
         );
       })}
     </nav>
