@@ -2,6 +2,8 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import NavItem, { NavItemProps } from "../NavItem/NavItem";
 import styles from "./Nav.module.css";
+import Head from "next/head";
+import Social from "../Social/Social";
 
 const Nav: React.FC = () => {
   const router = useRouter();
@@ -25,19 +27,20 @@ const Nav: React.FC = () => {
     },
     {
       text: "Talks",
-      href: "talks",
+      href: "/talks",
       isActive: currentRoute === "talks"
     },
   ];
 
   return (
-    <nav className={`${styles.nav} py-8 lg:py-12`}>
-      {navItems.map((navItem, i) => {
-        return (
-          <NavItem key={i} {...navItem} />
-        );
-      })}
-    </nav>
+    <React.Fragment>
+      <Head>
+        <title>{navItems.find(navItem => navItem.isActive).text} | Dave Maynard</title>
+      </Head>
+      <nav className={styles.nav}>
+        {navItems.map((navItem, i) => <NavItem key={i} {...navItem} />)}
+      </nav>
+    </React.Fragment>
   );
 };
 Nav.displayName = "Nav";

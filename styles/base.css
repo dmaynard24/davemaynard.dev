@@ -31,3 +31,18 @@ h3 {
 a {
   @apply text-cyan-600 hover:text-cyan-800;
 }
+
+.social-logo {
+  &:hover {
+    path {
+      @apply transition-all duration-200 ease-out;
+      fill: theme(colors.gray['900']);
+      transition: fill 0.3s ease-out;
+    }
+  }
+
+  path {
+    @apply transition-all duration-200 ease-in;
+    fill: theme(colors.gray['400']);
+  }
+}

@@ -11,7 +11,7 @@ const FeedItem: React.FC<{
   body
 }) => {
   return (
-    <div className={`${styles['feed-item']}`}>
+    <div className={styles['feed-item']}>
       <h2>{header}</h2>
       <div className="text-gray-400 mb-4 sm:mb-6">{timestamp}</div>
       <div>{body}</div>

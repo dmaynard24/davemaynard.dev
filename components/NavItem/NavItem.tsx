@@ -13,7 +13,7 @@ const NavItem: React.FC<NavItemProps> = ({
   href,
   isActive
 }) => {
-  const [className, setClassName] = React.useState(`${styles['nav-item']}`);
+  const [className, setClassName] = React.useState(styles['nav-item']);
 
   React.useEffect(() => {
     if (isActive) {
