@@ -1,7 +1,0 @@
-.profile {
-  word-wrap: break-word; 
-
-  h1 {
-    @apply mb-0 text-sm sm:text-base;
-  }
-}

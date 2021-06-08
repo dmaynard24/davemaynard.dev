@@ -1,20 +1,21 @@
 import * as React from 'react';
 import styles from './FeedItem.module.css';
 
-const FeedItem: React.FC<{
+export type FeedItemProps = React.PropsWithChildren<{
   header: string,
   timestamp: string,
-  body: React.ReactNode
-}> = ({
+}>;
+
+const FeedItem: React.FC<FeedItemProps> = ({
   header,
   timestamp,
-  body
+  children
 }) => {
   return (
     <div className={styles['feed-item']}>
       <h2>{header}</h2>
-      <div className="text-gray-400 mb-4 sm:mb-6">{timestamp}</div>
-      <div>{body}</div>
+      <div className="text-gray-400 font-bold mb-4 sm:mb-6">{timestamp}</div>
+      <div>{children}</div>
     </div>
   )
 }

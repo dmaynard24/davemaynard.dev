@@ -1,5 +1,5 @@
 .nav-item {
-  @apply relative mb-4 uppercase tracking-widest text-base;
+  @apply relative mb-4 sm:mb-6 uppercase tracking-widest text-base;
 
   &:last-of-type {
     @apply mb-0;

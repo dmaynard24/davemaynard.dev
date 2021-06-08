@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-export type SocialItemProps = {
+export type SocialItemProps = React.PropsWithChildren<{
   href: string,
-  children: React.ReactNode
-}
+}>;
 
 const SocialItem: React.FC<SocialItemProps> = ({
   href,
