@@ -1,14 +1,9 @@
 import * as React from 'react';
-import Feed from '../components/Feed/Feed';
-import PageTemplate from '../components/PageTemplate/PageTemplate';
+import Projects from './projects';
 
 const Home: React.FC = () => {
-  return (
-    <PageTemplate>
-      <Feed />
-    </PageTemplate>
-  );
-}
+  return <Projects />;
+};
 Home.displayName = 'Home';
 
 export default Home;

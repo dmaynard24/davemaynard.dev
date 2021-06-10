@@ -8,7 +8,7 @@ const Blog: React.FC = () => {
       <Feed />
     </PageTemplate>
   );
-}
+};
 Blog.displayName = 'Blog';
 
 export default Blog;

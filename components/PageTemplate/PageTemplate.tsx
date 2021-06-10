@@ -20,9 +20,7 @@ const PageTemplate: React.FC = ({ children }) => {
           </div>
         </div>
         <div className="w-2/3 px-8 max-h-full overflow-y-auto">
-          <div className="pt-8 lg:pt-12">
-            {children}
-          </div>
+          <div className="pt-8 lg:pt-12">{children}</div>
         </div>
         <div className="w-1/6 px-8">
           <div className="pt-8 lg:pt-12">
@@ -31,8 +29,8 @@ const PageTemplate: React.FC = ({ children }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 PageTemplate.displayName = 'PageTemplate';
 
 export default PageTemplate;

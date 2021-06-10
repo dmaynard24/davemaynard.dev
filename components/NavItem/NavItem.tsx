@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styles from './NavItem.module.css';
 
 export type NavItemProps = {
-  text: string,
-  href: string,
-  isActive?: boolean
+  text: string;
+  href: string;
+  isActive?: boolean;
 };
 
 const NavItem: React.FC<NavItemProps> = ({

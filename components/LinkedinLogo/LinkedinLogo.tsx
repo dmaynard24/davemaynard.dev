@@ -1,13 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 const LinkedinLogo: React.FC = () => {
   return (
-    <svg
-      viewBox="0 0 512 512"
-      width="100%"
-      height="100%"
-      className="social-logo"
-    >
+    <svg viewBox="0 0 512 512" width="100%" height="100%" className="social-logo">
       <title>LinkedIn Logo</title>
       <g>
         <path
@@ -23,6 +18,6 @@ const LinkedinLogo: React.FC = () => {
     </svg>
   );
 };
-LinkedinLogo.displayName = "LinkedinLogo";
+LinkedinLogo.displayName = 'LinkedinLogo';
 
 export default LinkedinLogo;

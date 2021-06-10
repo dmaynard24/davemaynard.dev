@@ -7,7 +7,7 @@ const SideProjects: React.FC = () => {
       <h1>Side Projects</h1>
     </PageTemplate>
   );
-}
+};
 SideProjects.displayName = 'SideProjects';
 
 export default SideProjects;

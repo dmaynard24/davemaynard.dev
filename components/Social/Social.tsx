@@ -8,29 +8,31 @@ import TwitterLogo from '../TwitterLogo/TwitterLogo';
 const socialItems: SocialItemProps[] = [
   {
     href: 'https://github.com/dmaynard24',
-    children: <GithubLogo />
+    children: <GithubLogo />,
   },
   {
     href: 'https://www.linkedin.com/in/dmaynard24/',
-    children: <LinkedinLogo />
+    children: <LinkedinLogo />,
   },
   {
     href: 'https://twitter.com/d_mayn_',
-    children: <TwitterLogo />
+    children: <TwitterLogo />,
   },
   {
     href: 'https://dribbble.com/dave_maynard',
-    children: <DribbbleLogo />
+    children: <DribbbleLogo />,
   },
-]
+];
 
 const Social: React.FC = () => {
   return (
     <div className="flex items-center justify-between">
-      {socialItems.map((socialItem, i) => <SocialItem key={i} {...socialItem} />)}
+      {socialItems.map((socialItem, i) => (
+        <SocialItem key={i} {...socialItem} />
+      ))}
     </div>
-  )
-}
+  );
+};
 Social.displayName = 'Social';
 
 export default Social;

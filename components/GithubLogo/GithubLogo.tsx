@@ -1,16 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 const GithubLogo: React.FC = () => {
   return (
-    <svg
-      version="1.1"
-      x="0px"
-      y="0px"
-      viewBox="0 0 512 512"
-      width="100%"
-      height="100%"
-      className="social-logo"
-    >
+    <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%" className="social-logo">
       <title>Github Logo</title>
       <g>
         <g>
@@ -30,6 +22,6 @@ const GithubLogo: React.FC = () => {
     </svg>
   );
 };
-GithubLogo.displayName = "GithubLogo";
+GithubLogo.displayName = 'GithubLogo';
 
 export default GithubLogo;

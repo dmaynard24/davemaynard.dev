@@ -1,14 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 const TwitterLogo: React.FC = () => {
   return (
-    <svg
-      version="1.1"
-      viewBox="0 0 512 512"
-      width="100%"
-      height="100%"
-      className="social-logo"
-    >
+    <svg version="1.1" viewBox="0 0 512 512" width="100%" height="100%" className="social-logo">
       <title>Twitter Logo</title>
       <g>
         <g>
@@ -27,6 +21,6 @@ const TwitterLogo: React.FC = () => {
     </svg>
   );
 };
-TwitterLogo.displayName = "TwitterLogo";
+TwitterLogo.displayName = 'TwitterLogo';
 
 export default TwitterLogo;

@@ -12,11 +12,13 @@ const Profile: React.FC = () => {
       <p>
         <a href="mailto:davemaynard24@gmail.com">Send Email</a>
         <br />
-        <a href="#" download>View Resume</a>
+        <a href="#" download>
+          View Resume
+        </a>
       </p>
     </div>
-  )
-}
+  );
+};
 Profile.displayName = 'Profile';
 
 export default Profile;

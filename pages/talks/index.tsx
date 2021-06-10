@@ -7,7 +7,7 @@ const Talks: React.FC = () => {
       <h1>Talks</h1>
     </PageTemplate>
   );
-}
+};
 Talks.displayName = 'Talks';
 
 export default Talks;
