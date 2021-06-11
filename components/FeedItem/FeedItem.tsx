@@ -7,15 +7,13 @@ export type FeedItemProps = React.PropsWithChildren<{
   timestamp: string;
 }>;
 
-const FeedItem: React.FC<FeedItemProps> = ({ header, timestamp, children }) => {
-  return (
-    <div className={styles['feed-item']}>
-      <h2>{header}</h2>
-      <Timestamp text={timestamp} />
-      <div>{children}</div>
-    </div>
-  );
-};
+const FeedItem: React.FC<FeedItemProps> = ({ header, timestamp, children }) => (
+  <div className={styles['feed-item']}>
+    <h2>{header}</h2>
+    <Timestamp text={timestamp} />
+    <div>{children}</div>
+  </div>
+);
 FeedItem.displayName = 'FeedItem';
 
 export default FeedItem;

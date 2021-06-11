@@ -24,15 +24,13 @@ const socialItems: SocialItemProps[] = [
   },
 ];
 
-const Social: React.FC = () => {
-  return (
-    <div className="flex items-center justify-between">
-      {socialItems.map((socialItem, i) => (
-        <SocialItem key={i} {...socialItem} />
-      ))}
-    </div>
-  );
-};
+const Social: React.FC = () => (
+  <div className="flex items-center justify-between">
+    {socialItems.map((socialItem, i) => (
+      <SocialItem key={i} {...socialItem} />
+    ))}
+  </div>
+);
 Social.displayName = 'Social';
 
 export default Social;

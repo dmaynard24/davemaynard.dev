@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import NavItem, { NavItemProps } from '../NavItem/NavItem';
 import styles from './Nav.module.css';
-import Head from 'next/head';
 
 const Nav: React.FC = () => {
   const router = useRouter();
@@ -32,9 +32,13 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <React.Fragment>
+    <>
       <Head>
-        <title>{navItems.find((navItem) => navItem.isActive).text} | Dave Maynard</title>
+        <title>
+          {navItems.find((navItem) => navItem.isActive).text}
+          {' '}
+          | Dave Maynard
+        </title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
       </Head>
@@ -43,7 +47,7 @@ const Nav: React.FC = () => {
           <NavItem key={i} {...navItem} />
         ))}
       </nav>
-    </React.Fragment>
+    </>
   );
 };
 Nav.displayName = 'Nav';
