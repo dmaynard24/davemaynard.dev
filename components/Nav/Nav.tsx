@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 import Head from 'next/head';
-import NavItem, { NavItemProps } from '../NavItem/NavItem';
+import NavItem, {NavItemProps} from '../NavItem/NavItem';
 import styles from './Nav.module.css';
 
 const Nav: React.FC = () => {

@@ -1,9 +1,5 @@
 .nav-item {
-  @apply relative mb-4 sm:mb-6 uppercase tracking-widest text-base;
-
-  &:last-of-type {
-    @apply mb-0;
-  }
+  @apply relative mb-4 sm:mb-6 last:mb-0 uppercase tracking-widest text-base;
 
   &:before {
     @apply absolute block top-0 -left-8 w-0 h-full bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;

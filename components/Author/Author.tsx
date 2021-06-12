@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Author: React.FC<{
   src?: string;
-}> = ({ src = '/assets/dave-maynard.jpg' }) => (
+}> = ({src = '/assets/dave-maynard.jpg'}) => (
   <div className="rounded-full overflow-hidden">
     <Image src={src} width="100%" height="auto" layout="responsive" quality="100" priority />
   </div>

@@ -19,13 +19,14 @@ module.exports = {
     },
   },
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [1, {extensions: ['.ts', '.tsx']}],
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
+    '@typescript-eslint/no-use-before-define': ['error', {functions: false, classes: false, variables: true}],
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'array-bracket-spacing': [2, 'never'],
   },
 };

@@ -8,14 +8,14 @@ export type NavItemProps = {
   isActive?: boolean;
 };
 
-const NavItem: React.FC<NavItemProps> = ({ text, href, isActive }) => {
+const NavItem: React.FC<NavItemProps> = ({text, href, isActive}) => {
   const [className, setClassName] = React.useState(styles['nav-item']);
 
   React.useEffect(() => {
     if (isActive) {
       setClassName(`${className} ${styles.active}`);
     }
-  }, [isActive, className]);
+  }, [isActive]);
 
   return (
     <div className={className}>

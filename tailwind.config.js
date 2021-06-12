@@ -11,30 +11,17 @@ module.exports = {
       blue: colors.blue,
     },
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1440px',
-    },
-    extend: {
-      colors: {
-        'tailwind-blue': '#3cb6d4'
-      },
-      outline: {
-        cyan: `1px solid ${colors.cyan['300']}`
-      }
     },
   },
   variants: {
     extend: {
-      opacity: ['disabled'],
-      pointerEvents: ['disabled'],
-      borderWidth: ['focus'],
-      outline: ['focus'],
+      margin: ['last'],
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio')
-  ],
-}
+  plugins: [require('@tailwindcss/aspect-ratio')],
+};

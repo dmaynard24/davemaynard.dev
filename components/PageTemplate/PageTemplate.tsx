@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav';
 import Profile from '../Profile/Profile';
 import Social from '../Social/Social';
 
-const PageTemplate: React.FC = ({ children }) => (
+const PageTemplate: React.FC = ({children}) => (
   <div className="home px-4 max-w-screen-xl mx-auto">
     <div className="flex flex-row -mx-8 max-h-screen">
       <div className="w-1/6 px-8">
