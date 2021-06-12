@@ -3,6 +3,7 @@ import Timestamp from '../Timestamp/Timestamp';
 import styles from './FeedItem.module.css';
 
 export type FeedItemProps = React.PropsWithChildren<{
+  id: string;
   header: string;
   timestamp: string;
 }>;
