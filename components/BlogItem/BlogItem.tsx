@@ -8,7 +8,7 @@ export type BlogItemProps = React.PropsWithChildren<{
 }>;
 
 const BlogItem: React.FC<BlogItemProps> = ({header, timestamp, children}) => (
-  <div className="mb-10 sm:mb-12 last:mb-0">
+  <div className="mb-12 sm:mb-14 last:mb-0">
     <h2>{header}</h2>
     <Timestamp text={timestamp} />
     <div>{children}</div>

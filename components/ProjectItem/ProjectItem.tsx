@@ -12,7 +12,7 @@ export type ProjectItemProps = React.PropsWithChildren<{
 
 const ProjectItem: React.FC<ProjectItemProps> = ({name, cardImageUrl, timestamp, tags, children}) => {
   return (
-    <div className="mb-10 sm:mb-12 last:mb-0">
+    <div className="mb-12 sm:mb-14 last:mb-0">
       <div
         className="relative mb-4 sm:mb-6 rounded-t-lg overflow-hidden bg-cover"
         style={{
