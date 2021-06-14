@@ -7,9 +7,10 @@ const feedItems: ProjectItemProps[] = [
   {
     id: 'career-choice',
     name: 'Career Choice',
-    cardImageUrl: '/assets/projects/collaboration.jpg',
+    backgroundImageUrl: '/assets/projects/collaboration.jpg',
     timestamp: 'June 2020',
     tags: ['HTML', 'JavaScript', 'Sass', 'Salesforce', 'Apex', 'Visualforce', 'Web', 'Responsive'],
+    backgroundPosition: 'bottom center',
     children: (
       <>
         <p>
@@ -30,9 +31,10 @@ const feedItems: ProjectItemProps[] = [
   {
     id: 'floorigami',
     name: 'Floorigami',
-    cardImageUrl: '/assets/projects/floorigami-hero.jpg',
+    backgroundImageUrl: '/assets/projects/floorigami-hero.jpg',
     timestamp: 'February 2020',
     tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Web', 'Responsive'],
+    backgroundPosition: 'bottom center',
     children: (
       <>
         <p>

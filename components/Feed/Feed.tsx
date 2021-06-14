@@ -8,7 +8,7 @@ type Props = {
 
 const Feed: React.FC<Props> = ({feedItems}) => {
   const isProjectItem = (item: BlogItemProps | ProjectItemProps): item is ProjectItemProps => {
-    return (item as ProjectItemProps).cardImageUrl !== undefined;
+    return (item as ProjectItemProps).backgroundImageUrl !== undefined;
   };
 
   return (
