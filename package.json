@@ -8,13 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "next": "latest",
+    "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tailwindcss": "^2.1.1"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@types/ramda": "^0.27.40",
     "@types/react": "^17.0.6",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",

@@ -40,8 +40,9 @@ p {
   }
 }
 
-a {
-  @apply text-cyan-600 hover:text-cyan-800;
+a,
+.link {
+  @apply cursor-pointer text-cyan-600 hover:text-cyan-800;
 }
 
 .social-logo {

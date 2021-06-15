@@ -2,11 +2,9 @@ import * as React from 'react';
 import BlogItem, {BlogItemProps} from '../BlogItem/BlogItem';
 import ProjectItem, {ProjectItemProps} from '../ProjectItem/ProjectItem';
 
-type Props = {
+const Feed: React.FC<{
   feedItems: BlogItemProps[] | ProjectItemProps[];
-};
-
-const Feed: React.FC<Props> = ({feedItems}) => {
+}> = ({feedItems}) => {
   const isProjectItem = (item: BlogItemProps | ProjectItemProps): item is ProjectItemProps => {
     return (item as ProjectItemProps).backgroundImageUrl !== undefined;
   };

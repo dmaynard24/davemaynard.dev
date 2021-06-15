@@ -1,9 +1,9 @@
 import * as React from 'react';
-import DribbbleLogo from '../DribbbleLogo/DribbbleLogo';
-import GithubLogo from '../GithubLogo/GithubLogo';
-import LinkedinLogo from '../LinkedinLogo/LinkedinLogo';
+import DribbbleLogo from '../icons/DribbbleLogo/DribbbleLogo';
+import GithubLogo from '../icons/GithubLogo/GithubLogo';
+import LinkedinLogo from '../icons/LinkedinLogo/LinkedinLogo';
 import SocialItem, {SocialItemProps} from '../SocialItem/SocialItem';
-import TwitterLogo from '../TwitterLogo/TwitterLogo';
+import TwitterLogo from '../icons/TwitterLogo/TwitterLogo';
 
 const socialItems: SocialItemProps[] = [
   {

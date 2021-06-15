@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const aspectRatio = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -21,7 +22,8 @@ module.exports = {
   variants: {
     extend: {
       margin: ['last'],
+      translate: ['group-hover'],
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [aspectRatio],
 };

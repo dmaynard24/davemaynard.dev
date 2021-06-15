@@ -6,7 +6,7 @@ const Profile: React.FC = () => (
     <h1 className="text-sm sm:text-base mb-4 sm:mb-6">
       Dave Maynard
       <br />
-      Front-End Engineer @ Amazon
+      Front-End Engineer at Amazon
     </h1>
     <p>
       <a href="mailto:davemaynard24@gmail.com">Send Email</a>

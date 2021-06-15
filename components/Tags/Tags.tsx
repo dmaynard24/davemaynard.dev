@@ -1,11 +1,9 @@
 import * as React from 'react';
 import Tag from '../Tag/Tag';
 
-type Props = {
+const Tags: React.FC<{
   tags: string[];
-};
-
-const Tags: React.FC<Props> = ({tags}) => (
+}> = ({tags}) => (
   <div className="flex flex-wrap mb-4 sm:mb-6">
     {tags.map((tag) => (
       <Tag key={tag} text={tag} />

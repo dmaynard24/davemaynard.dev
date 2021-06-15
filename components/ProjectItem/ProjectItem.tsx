@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ArrowLink from '../ArrowLink/ArrowLink';
 import Tags from '../Tags/Tags';
 import Timestamp from '../Timestamp/Timestamp';
 
@@ -12,6 +13,7 @@ export type ProjectItemProps = React.PropsWithChildren<{
 }>;
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
+  id,
   name,
   backgroundImageUrl,
   timestamp,
@@ -38,6 +40,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       <div className="px-4 sm:px-6">
         <Tags tags={tags} />
         {children}
+        <ArrowLink href={`projects/${id}`} text="Read More" />
       </div>
     </div>
   );

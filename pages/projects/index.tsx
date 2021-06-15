@@ -1,9 +1,10 @@
 import * as React from 'react';
+import * as R from 'ramda';
 import Feed from '../../components/Feed/Feed';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import {ProjectItemProps} from '../../components/ProjectItem/ProjectItem';
 
-const feedItems: ProjectItemProps[] = [
+const projectItems: ProjectItemProps[] = [
   {
     id: 'career-choice',
     name: 'Career Choice',
@@ -55,10 +56,12 @@ const feedItems: ProjectItemProps[] = [
   },
 ];
 
+export const projectItemsById = R.indexBy(R.prop('id'), projectItems);
+
 const Projects: React.FC = () => {
   return (
     <PageTemplate>
-      <Feed feedItems={feedItems} />
+      <Feed feedItems={projectItems} />
     </PageTemplate>
   );
 };

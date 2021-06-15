@@ -3,7 +3,7 @@ import Feed from '../../components/Feed/Feed';
 import {BlogItemProps} from '../../components/BlogItem/BlogItem';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 
-const feedItems: BlogItemProps[] = [
+const blogItems: BlogItemProps[] = [
   {
     id: 'ramda-and-tacit-programming',
     header: 'Ramda and Tacit Programming',
@@ -52,7 +52,7 @@ const feedItems: BlogItemProps[] = [
 const Blog: React.FC = () => {
   return (
     <PageTemplate>
-      <Feed feedItems={feedItems} />
+      <Feed feedItems={blogItems} />
     </PageTemplate>
   );
 };
