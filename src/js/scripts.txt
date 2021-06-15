@@ -1,9 +1,0 @@
-'src/js/_foreach.js'
-'src/js/_global.js'
-'src/js/_mixins.js'
-
-'src/js/components/_nav.js'
-
-'src/js/views/_app.js'
-
-'src/js/_vue.js'

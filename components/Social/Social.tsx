@@ -1,9 +1,9 @@
 import * as React from 'react';
-import DribbbleLogo from '../DribbbleLogo/DribbbleLogo';
-import GithubLogo from '../GithubLogo/GithubLogo';
-import LinkedinLogo from '../LinkedinLogo/LinkedinLogo';
-import SocialItem, { SocialItemProps } from '../SocialItem/SocialItem';
-import TwitterLogo from '../TwitterLogo/TwitterLogo';
+import DribbbleLogo from '../icons/DribbbleLogo/DribbbleLogo';
+import GithubLogo from '../icons/GithubLogo/GithubLogo';
+import LinkedinLogo from '../icons/LinkedinLogo/LinkedinLogo';
+import SocialItem, {SocialItemProps} from '../SocialItem/SocialItem';
+import TwitterLogo from '../icons/TwitterLogo/TwitterLogo';
 
 const socialItems: SocialItemProps[] = [
   {
@@ -24,15 +24,13 @@ const socialItems: SocialItemProps[] = [
   },
 ];
 
-const Social: React.FC = () => {
-  return (
-    <div className="flex items-center justify-between">
-      {socialItems.map((socialItem, i) => (
-        <SocialItem key={i} {...socialItem} />
-      ))}
-    </div>
-  );
-};
+const Social: React.FC = () => (
+  <div className="flex items-center justify-between">
+    {socialItems.map((socialItem) => (
+      <SocialItem key={socialItem.href} {...socialItem} />
+    ))}
+  </div>
+);
 Social.displayName = 'Social';
 
 export default Social;
