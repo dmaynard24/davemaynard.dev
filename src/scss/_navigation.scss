@@ -197,7 +197,6 @@ nav {
 
       &-before {
         @extend %absolute-cover;
-        height: 0%;
         background: $black;
       }
 
@@ -352,7 +351,7 @@ nav {
 
               > div {
                 opacity: 1;
-                transform: scale(1, 1);
+                transform: scale3d(1, 1, 1);
                 transition: transform 0.8s $ease-out-quad;
               }
             }
@@ -361,7 +360,7 @@ nav {
               @extend %bg-center-cover;
               height: 100%;
               opacity: 0;
-              transform: scale(1.1, 1.1);
+              transform: scale3d(1.1, 1.1, 1);
               transition: transform 0s $ease-in-quad;
               will-change: transform;
             }
@@ -411,11 +410,11 @@ nav {
               display: block;
               color: inherit;
               opacity: 1;
-              transform: translateY(-105%);
+              transform: translate3d(0%, -105%, 0);
               transition: transform 0.4s $ease-in-quad;
 
               &.active {
-                transform: translateY(0%);
+                transform: translate3d(0%, 0%, 0);
                 transition: transform 0.4s $ease-out-quad;
               }
 
