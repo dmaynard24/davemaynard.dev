@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "static/css/main.0f632e8e.chunk.css",
+    "main.js": "static/js/main.d2768461.chunk.js",
+    "main.js.map": "static/js/main.d2768461.chunk.js.map",
+    "runtime-main.js": "static/js/runtime-main.de34fb5f.js",
+    "runtime-main.js.map": "static/js/runtime-main.de34fb5f.js.map",
+    "static/js/2.bdcd651a.chunk.js": "static/js/2.bdcd651a.chunk.js",
+    "static/js/2.bdcd651a.chunk.js.map": "static/js/2.bdcd651a.chunk.js.map",
+    "static/js/3.bac3464b.chunk.js": "static/js/3.bac3464b.chunk.js",
+    "static/js/3.bac3464b.chunk.js.map": "static/js/3.bac3464b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0f632e8e.chunk.css.map": "static/css/main.0f632e8e.chunk.css.map",
+    "static/js/2.bdcd651a.chunk.js.LICENSE.txt": "static/js/2.bdcd651a.chunk.js.LICENSE.txt",
+    "static/media/adam.cc1d19a4.jpeg": "static/media/adam.cc1d19a4.jpeg",
+    "static/media/book-cover-sm.0033fbcc.png": "static/media/book-cover-sm.0033fbcc.png",
+    "static/media/dave.16a6eebf.jpg": "static/media/dave.16a6eebf.jpg",
+    "static/media/david.629a3f07.jpeg": "static/media/david.629a3f07.jpeg",
+    "static/media/garden.eb43daa6.jpeg": "static/media/garden.eb43daa6.jpeg",
+    "static/media/jon.c6b4b146.jpg": "static/media/jon.c6b4b146.jpg",
+    "static/media/steve.3717b593.jpg": "static/media/steve.3717b593.jpg",
+    "static/media/tailwind-logo-type.128b6e12.svg": "static/media/tailwind-logo-type.128b6e12.svg",
+    "static/media/tailwind-mark.3b6a0dca.svg": "static/media/tailwind-mark.3b6a0dca.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de34fb5f.js",
+    "static/js/2.bdcd651a.chunk.js",
+    "static/css/main.0f632e8e.chunk.css",
+    "static/js/main.d2768461.chunk.js"
+  ]
+}
