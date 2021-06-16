@@ -1,0 +1,15 @@
+.text-hero {
+  @apply relative mb-12 sm:mb-14 pb-7 sm:pb-9;
+
+  &:after {
+    @apply absolute bottom-0 left-0 w-6 h-1 bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;
+    content: '';
+  }
+
+  &.active {
+    &:after {
+      @apply absolute bottom-0 left-0 w-6 h-1 bg-cyan-400 transform scale-x-100 transition-transform ease-out duration-300 delay-100;
+      content: '';
+    }
+  }
+}

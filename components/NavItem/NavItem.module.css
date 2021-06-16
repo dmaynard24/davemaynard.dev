@@ -2,13 +2,13 @@
   @apply relative mb-4 sm:mb-6 last:mb-0 uppercase tracking-widest text-base;
 
   &:before {
-    @apply absolute block top-0 -left-8 w-0 h-full bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;
+    @apply absolute top-0 -left-8 w-0 h-full bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;
     content: '';
   }
 
   &.active {
     &:before {
-      @apply absolute block top-0 -left-8 w-1 h-full bg-cyan-400 transform scale-x-100 transition-transform ease-out duration-300;
+      @apply absolute top-0 -left-8 w-1 h-full bg-cyan-400 transform scale-x-100 transition-transform ease-out duration-300 delay-100;
       content: '';
     }
   }

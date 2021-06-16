@@ -2,6 +2,7 @@ import * as React from 'react';
 import Feed from '../../components/Feed/Feed';
 import {BlogItemProps} from '../../components/BlogItem/BlogItem';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
+import TextHero from '../../components/TextHero/TextHero';
 
 const blogItems: BlogItemProps[] = [
   {
@@ -52,6 +53,14 @@ const blogItems: BlogItemProps[] = [
 const Blog: React.FC = () => {
   return (
     <PageTemplate>
+      <TextHero headline="What's Been on my Mind Lately?">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
+          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
+          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
+          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+        </p>
+      </TextHero>
       <Feed feedItems={blogItems} />
     </PageTemplate>
   );

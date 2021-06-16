@@ -24,7 +24,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   return (
     <div className="mb-12 sm:mb-14 last:mb-0">
       <div
-        className="relative mb-4 sm:mb-6 rounded-t-lg overflow-hidden bg-cover"
+        className="relative -mx-4 sm:-mx-6 mb-4 sm:mb-6 rounded-t-lg overflow-hidden bg-cover"
         style={{
           backgroundImage: `url(${backgroundImageUrl})`,
           backgroundPosition,
@@ -37,11 +37,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
           <h2 className="text-white">{name}</h2>
         </div>
       </div>
-      <div className="px-4 sm:px-6">
-        <Tags tags={tags} />
-        {children}
-        <ArrowLink href={`projects/${id}`} text="Read More" />
-      </div>
+      <Tags tags={tags} />
+      {children}
+      <ArrowLink href={`projects/${id}`} text="Read More" />
     </div>
   );
 };

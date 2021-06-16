@@ -2,7 +2,6 @@ import * as React from 'react';
 import {useRouter} from 'next/router';
 import Head from 'next/head';
 import NavItem, {NavItemProps} from '../NavItem/NavItem';
-import styles from './Nav.module.css';
 
 const Nav: React.FC = () => {
   const router = useRouter();
@@ -41,7 +40,7 @@ const Nav: React.FC = () => {
           rel="stylesheet"
         />
       </Head>
-      <nav className={styles.nav}>
+      <nav>
         {navItems.map((navItem) => (
           <NavItem key={navItem.href} {...navItem} />
         ))}

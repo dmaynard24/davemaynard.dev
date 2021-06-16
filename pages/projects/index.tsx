@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import Feed from '../../components/Feed/Feed';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import {ProjectItemProps} from '../../components/ProjectItem/ProjectItem';
+import TextHero from '../../components/TextHero/TextHero';
 
 const projectItems: ProjectItemProps[] = [
   {
@@ -54,6 +55,81 @@ const projectItems: ProjectItemProps[] = [
       </>
     ),
   },
+  {
+    id: 'color-speaks',
+    name: 'Color Speaks',
+    backgroundImageUrl: '/assets/projects/color-speaks-hero.jpg',
+    timestamp: 'August 2019',
+    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Web', 'Responsive'],
+    backgroundPosition: 'center center',
+    children: (
+      <>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
+          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
+          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
+          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+        </p>
+        <p>
+          Praesent non orci id lorem bibendum imperdiet. Nulla convallis elit in erat dapibus dignissim. Nam iaculis,
+          ante dapibus blandit tristique, libero mi aliquam ante, vitae pharetra tellus dolor in ipsum. Phasellus sit
+          amet tortor auctor, gravida eros vitae, placerat neque. Cras vitae varius mauris, id suscipit lacus.
+          Pellentesque nunc massa, varius sit amet vehicula a, pulvinar eu sem. Aliquam fringilla malesuada dui eget
+          suscipit. Nullam pretium tristique fermentum. Aliquam vel iaculis nisl.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'shaw-floors',
+    name: 'Shaw Floors',
+    backgroundImageUrl: '/assets/projects/shaw-floors-hero.jpg',
+    timestamp: 'January 2019',
+    tags: ['HTML', 'JavaScript', 'jQuery', 'WebGL', 'Three.js', 'Less', 'Web', 'Responsive'],
+    backgroundPosition: 'center center',
+    children: (
+      <>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
+          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
+          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
+          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+        </p>
+        <p>
+          Praesent non orci id lorem bibendum imperdiet. Nulla convallis elit in erat dapibus dignissim. Nam iaculis,
+          ante dapibus blandit tristique, libero mi aliquam ante, vitae pharetra tellus dolor in ipsum. Phasellus sit
+          amet tortor auctor, gravida eros vitae, placerat neque. Cras vitae varius mauris, id suscipit lacus.
+          Pellentesque nunc massa, varius sit amet vehicula a, pulvinar eu sem. Aliquam fringilla malesuada dui eget
+          suscipit. Nullam pretium tristique fermentum. Aliquam vel iaculis nisl.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'sagepath',
+    name: 'Sagepath',
+    backgroundImageUrl: '/assets/projects/sagepath-hero.jpg',
+    timestamp: '2018',
+    tags: ['HTML', 'JavaScript', 'jQuery', 'Sass', 'Web', 'Responsive'],
+    backgroundPosition: 'center center',
+    children: (
+      <>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
+          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
+          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
+          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+        </p>
+        <p>
+          Praesent non orci id lorem bibendum imperdiet. Nulla convallis elit in erat dapibus dignissim. Nam iaculis,
+          ante dapibus blandit tristique, libero mi aliquam ante, vitae pharetra tellus dolor in ipsum. Phasellus sit
+          amet tortor auctor, gravida eros vitae, placerat neque. Cras vitae varius mauris, id suscipit lacus.
+          Pellentesque nunc massa, varius sit amet vehicula a, pulvinar eu sem. Aliquam fringilla malesuada dui eget
+          suscipit. Nullam pretium tristique fermentum. Aliquam vel iaculis nisl.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export const projectItemsById = R.indexBy(R.prop('id'), projectItems);
@@ -61,6 +137,14 @@ export const projectItemsById = R.indexBy(R.prop('id'), projectItems);
 const Projects: React.FC = () => {
   return (
     <PageTemplate>
+      <TextHero headline="A Few of My Projects">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
+          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
+          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
+          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+        </p>
+      </TextHero>
       <Feed feedItems={projectItems} />
     </PageTemplate>
   );

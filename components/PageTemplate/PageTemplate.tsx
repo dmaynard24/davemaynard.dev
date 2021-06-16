@@ -7,7 +7,7 @@ import Social from '../Social/Social';
 const PageTemplate: React.FC = ({children}) => (
   <div className="home px-4 max-w-screen-xl mx-auto">
     <div className="flex flex-row -mx-8">
-      <div className="w-1/6 px-8 sticky max-h-screen top-0">
+      <aside className="w-1/6 px-8 sticky max-h-screen top-0">
         <div className="pt-8 lg:pt-12">
           <Author />
         </div>
@@ -17,15 +17,15 @@ const PageTemplate: React.FC = ({children}) => (
         <div className="pt-6 lg:pt-8">
           <Social />
         </div>
-      </div>
-      <div className="w-2/3 px-8">
+      </aside>
+      <main className="w-2/3 px-14">
         <div className="py-8 lg:py-12">{children}</div>
-      </div>
-      <div className="w-1/6 px-8 sticky max-h-screen top-0">
+      </main>
+      <aside className="w-1/6 px-8 sticky max-h-screen top-0">
         <div className="pt-8 lg:pt-12">
           <Nav />
         </div>
-      </div>
+      </aside>
     </div>
   </div>
 );
