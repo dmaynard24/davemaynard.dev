@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/line-clamp": "^0.2.1",
     "next": "latest",
     "ramda": "^0.27.1",
     "react": "^17.0.1",

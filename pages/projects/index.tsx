@@ -4,6 +4,7 @@ import Feed from '../../components/Feed/Feed';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import {ProjectItemProps} from '../../components/ProjectItem/ProjectItem';
 import TextHero from '../../components/TextHero/TextHero';
+import ItemGrid from '../../components/ItemGrid/ItemGrid';
 
 const projectItems: ProjectItemProps[] = [
   {
@@ -35,7 +36,7 @@ const projectItems: ProjectItemProps[] = [
     name: 'Floorigami',
     backgroundImageUrl: '/assets/projects/floorigami-hero.jpg',
     timestamp: 'February 2020',
-    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Web', 'Responsive'],
+    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Kentico', 'C#', 'Web', 'Responsive'],
     backgroundPosition: 'bottom center',
     children: (
       <>
@@ -145,7 +146,7 @@ const Projects: React.FC = () => {
           sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
         </p>
       </TextHero>
-      <Feed feedItems={projectItems} />
+      <ItemGrid items={projectItems} />
     </PageTemplate>
   );
 };

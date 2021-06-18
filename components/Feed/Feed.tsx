@@ -1,17 +1,14 @@
 import * as React from 'react';
+import isProjectItem from '../../util/isProjectItem';
 import BlogItem, {BlogItemProps} from '../BlogItem/BlogItem';
 import ProjectItem, {ProjectItemProps} from '../ProjectItem/ProjectItem';
 
 const Feed: React.FC<{
-  feedItems: BlogItemProps[] | ProjectItemProps[];
-}> = ({feedItems}) => {
-  const isProjectItem = (item: BlogItemProps | ProjectItemProps): item is ProjectItemProps => {
-    return (item as ProjectItemProps).backgroundImageUrl !== undefined;
-  };
-
+  items: BlogItemProps[] | ProjectItemProps[];
+}> = ({items}) => {
   return (
     <>
-      {feedItems.map((feedItem) => {
+      {items.map((feedItem) => {
         if (isProjectItem(feedItem)) {
           return <ProjectItem key={feedItem.id} {...feedItem} />;
         }

@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 const aspectRatio = require('@tailwindcss/aspect-ratio');
+const lineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -25,5 +26,5 @@ module.exports = {
       translate: ['group-hover'],
     },
   },
-  plugins: [aspectRatio],
+  plugins: [aspectRatio, lineClamp],
 };

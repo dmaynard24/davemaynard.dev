@@ -61,7 +61,7 @@ const Blog: React.FC = () => {
           sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
         </p>
       </TextHero>
-      <Feed feedItems={blogItems} />
+      <Feed items={blogItems} />
     </PageTemplate>
   );
 };
