@@ -15,7 +15,7 @@ const ItemGrid: React.FC<{
         if (isProjectItem(item)) {
           if (i === 0) {
             return (
-              <Link href={`projects/${item.id}`}>
+              <Link key={item.id} href={`projects/${item.id}`}>
                 <div className="cursor-pointer min-w-full mb-6 sm:mb-8">
                   <ItemCard
                     id={item.id}
@@ -30,12 +30,12 @@ const ItemGrid: React.FC<{
             );
           }
           return (
-            <div className="cursor-pointer w-1/2 pr-8 sm:pr-10 mb-8 sm:mb-10">
+            <div key={item.id} className="cursor-pointer w-1/2 pr-12 sm:pr-14 mb-12 sm:mb-14">
               <Link href={`projects/${item.id}`}>
                 <div>
                   <h3>{item.name}</h3>
-                  <div className="line-clamp-5 mb-4 sm:mb-6">{item.children}</div>
-                  <ArrowLink href={`project/${item.id}`} text="Read More" />
+                  <div className="line-clamp-4 mb-4 sm:mb-6">{item.children}</div>
+                  <ArrowLink href={`projects/${item.id}`} text="Read More" />
                 </div>
               </Link>
             </div>

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Image from 'next/image';
 
 const Author: React.FC<{
   src?: string;
-}> = ({src = '/assets/dave-maynard.jpg'}) => (
+  alt?: string;
+}> = ({src = '/assets/dave-maynard.jpg', alt = 'Dave Maynard'}) => (
   <div className="rounded-full overflow-hidden">
-    <Image src={src} width="100%" height="auto" layout="responsive" quality="100" priority />
+    <img src={src} alt={alt} />
   </div>
 );
 Author.displayName = 'Author';
