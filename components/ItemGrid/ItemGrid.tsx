@@ -10,13 +10,13 @@ const ItemGrid: React.FC<{
   items: ProjectItemProps[] | BlogItemProps[];
 }> = ({items}) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-2 gap-x-12">
       {items.map((item, i) => {
         if (isProjectItem(item)) {
           if (i === 0) {
             return (
               <Link key={item.id} href={`projects/${item.id}`}>
-                <div className="cursor-pointer min-w-full mb-6 sm:mb-8">
+                <div className="cursor-pointer col-span-2 mb-6 sm:mb-8">
                   <ItemCard
                     id={item.id}
                     name={item.name}
@@ -30,7 +30,7 @@ const ItemGrid: React.FC<{
             );
           }
           return (
-            <div key={item.id} className="cursor-pointer w-1/2 pr-12 sm:pr-14 mb-12 sm:mb-14">
+            <div key={item.id} className="cursor-pointer mb-12 sm:mb-14">
               <Link href={`projects/${item.id}`}>
                 <div>
                   <h3>{item.name}</h3>

@@ -5,9 +5,9 @@ import Profile from '../Profile/Profile';
 import Social from '../Social/Social';
 
 const PageTemplate: React.FC = ({children}) => (
-  <div className="home px-4 max-w-screen-xl mx-auto">
-    <div className="flex flex-row -mx-8">
-      <aside className="w-1/6 px-8 sticky max-h-screen top-0">
+  <div className="home px-8 max-w-screen-xl mx-auto">
+    <div className="grid grid-cols-6 gap-x-8">
+      <aside className="col-span-1 sticky max-h-screen top-0">
         <div className="pt-8 lg:pt-12">
           <Author />
         </div>
@@ -18,10 +18,10 @@ const PageTemplate: React.FC = ({children}) => (
           <Social />
         </div>
       </aside>
-      <main className="w-2/3 px-14">
+      <main className="col-span-4 px-14">
         <div className="py-8 lg:py-12">{children}</div>
       </main>
-      <aside className="w-1/6 px-8 sticky max-h-screen top-0">
+      <aside className="col-span-1 sticky max-h-screen top-0">
         <div className="pt-8 lg:pt-12">
           <Nav />
         </div>
