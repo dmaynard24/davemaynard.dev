@@ -1,8 +1,10 @@
 import * as React from 'react';
+import Image from 'next/image';
 import Feed from '../../components/Feed/Feed';
-import {BlogItemProps} from '../../components/BlogItem/BlogItem';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import TextHero from '../../components/TextHero/TextHero';
+import parameterizedSelectorImg from '../../public/assets/blog/parameterized-selector.png';
+import {BlogItemProps} from '../../types';
 
 const blogItems: BlogItemProps[] = [
   {
@@ -32,9 +34,15 @@ const blogItems: BlogItemProps[] = [
           </a>{' '}
           with some traction:{' '}
         </p>
-        <p>
-          <img src="/assets/blog/parameterized-selector.png" alt="GitHub comment screenshot" />
-        </p>
+        <div className="mb-4 sm:mb-6">
+          <Image
+            layout="intrinsic"
+            src={parameterizedSelectorImg}
+            alt="GitHub comment screenshot"
+            placeholder="blur"
+            quality="100"
+          />
+        </div>
         <p>
           At first, this snippet appears to show a solution to my problem. But after looking more closely, it's not.
           Since "memoization won't work as expected" (and one of the primary reasons for using reselect is to leverage

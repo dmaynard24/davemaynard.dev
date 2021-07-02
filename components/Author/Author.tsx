@@ -1,11 +1,13 @@
+import Image from 'next/image';
 import * as React from 'react';
+import defaultAuthorImg from '../../public/assets/dave-maynard.jpg';
 
 const Author: React.FC<{
-  src?: string;
+  src?: any; // StaticImport
   alt?: string;
-}> = ({src = '/assets/dave-maynard.jpg', alt = 'Dave Maynard'}) => (
+}> = ({src = defaultAuthorImg, alt = 'Dave Maynard'}) => (
   <div className="rounded-full overflow-hidden">
-    <img src={src} alt={alt} />
+    <Image layout="responsive" src={src} alt={alt} placeholder="blur" quality="100" priority />
   </div>
 );
 Author.displayName = 'Author';

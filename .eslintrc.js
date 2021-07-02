@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:prettier/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:prettier/recommended', 'next'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -28,5 +28,6 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'array-bracket-spacing': [2, 'never'],
+    '@next/next/link-passhref': 'off',
   },
 };

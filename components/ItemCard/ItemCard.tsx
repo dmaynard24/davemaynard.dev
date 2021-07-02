@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ProjectItemProps} from '../ProjectItem/ProjectItem';
+import {ProjectItemProps} from '../../types';
 import Timestamp from '../Timestamp/Timestamp';
 
 const ItemCard: React.FC<ProjectItemProps> = ({

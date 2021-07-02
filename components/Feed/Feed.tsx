@@ -1,7 +1,8 @@
 import * as React from 'react';
+import {BlogItemProps, ProjectItemProps} from '../../types';
 import isProjectItem from '../../util/isProjectItem';
-import BlogItem, {BlogItemProps} from '../BlogItem/BlogItem';
-import ProjectItem, {ProjectItemProps} from '../ProjectItem/ProjectItem';
+import BlogItem from '../BlogItem/BlogItem';
+import ProjectItem from '../ProjectItem/ProjectItem';
 
 const Feed: React.FC<{
   items: BlogItemProps[] | ProjectItemProps[];

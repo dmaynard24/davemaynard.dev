@@ -1,15 +1,7 @@
 import * as React from 'react';
+import {ProjectItemProps} from '../../types';
 import ItemCard from '../ItemCard/ItemCard';
 import Tags from '../Tags/Tags';
-
-export type ProjectItemProps = React.PropsWithChildren<{
-  id: string;
-  name: string;
-  backgroundImageUrl: string;
-  timestamp: string;
-  tags: string[];
-  backgroundPosition?: string;
-}>;
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
   id,

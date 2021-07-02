@@ -33,12 +33,7 @@ const Nav: React.FC = () => {
   return (
     <>
       <Head>
-        <title>{navItems.find((navItem) => navItem.isActive)?.text} | Dave Maynard</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
-          rel="stylesheet"
-        />
+        <title>{navItems.find((navItem) => navItem.isActive)?.text} | Dave Maynard | Dev &amp; Design</title>
       </Head>
       <nav>
         {navItems.map((navItem) => (

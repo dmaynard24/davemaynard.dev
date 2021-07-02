@@ -15,7 +15,7 @@ const NavItem: React.FC<NavItemProps> = ({text, href, isActive}) => {
     if (isActive) {
       setClassName(`${className} ${styles.active}`);
     }
-  }, [isActive]);
+  }, [isActive, setClassName, className]);
 
   return (
     <div className={className}>
