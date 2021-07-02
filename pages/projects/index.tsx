@@ -5,14 +5,22 @@ import TextHero from '../../components/TextHero/TextHero';
 import ItemGrid from '../../components/ItemGrid/ItemGrid';
 import {ProjectItemProps} from '../../types';
 
+// TODO: Refactor this approach to make it dynamic (this is used for next/image placeholder="blur" functionality)
+import amazonDetailPageImg from '../../public/assets/projects/amazon-detail-page-hero.jpg';
+import careerChoiceImg from '../../public/assets/projects/collaboration.jpg';
+import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
+import colorSpeaksImg from '../../public/assets/projects/color-speaks-hero.jpg';
+import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
+import sagepathImg from '../../public/assets/projects/sagepath-hero.jpg';
+
 const projectItems: ProjectItemProps[] = [
   {
     id: 'amazon-detail-page',
     name: 'Amazon Detail Page',
-    backgroundImageUrl: '/assets/projects/amazon-detail-page-hero.jpg',
+    imageUrl: amazonDetailPageImg,
     timestamp: 'July 2021',
     tags: ['React', 'Redux', 'Redux-Saga', 'TypeScript', 'JSX', 'HTML', 'Emotion', 'CSS-in-JS', 'Web', 'Responsive'],
-    backgroundPosition: 'bottom center',
+    objectPosition: 'bottom center',
     children: (
       <>
         <p>
@@ -33,10 +41,10 @@ const projectItems: ProjectItemProps[] = [
   {
     id: 'career-choice',
     name: 'Career Choice',
-    backgroundImageUrl: '/assets/projects/collaboration.jpg',
+    imageUrl: careerChoiceImg,
     timestamp: 'June 2020',
     tags: ['HTML', 'JavaScript', 'Sass', 'Salesforce', 'Apex', 'Visualforce', 'Web', 'Responsive'],
-    backgroundPosition: 'bottom center',
+    objectPosition: 'bottom center',
     children: (
       <>
         <p>
@@ -57,10 +65,10 @@ const projectItems: ProjectItemProps[] = [
   {
     id: 'floorigami',
     name: 'Floorigami',
-    backgroundImageUrl: '/assets/projects/floorigami-hero.jpg',
+    imageUrl: floorigamiImg,
     timestamp: 'February 2020',
     tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Kentico', 'C#', 'Web', 'Responsive'],
-    backgroundPosition: 'bottom center',
+    objectPosition: 'bottom center',
     children: (
       <>
         <p>
@@ -82,10 +90,10 @@ const projectItems: ProjectItemProps[] = [
   {
     id: 'color-speaks',
     name: 'Color Speaks',
-    backgroundImageUrl: '/assets/projects/color-speaks-hero.jpg',
+    imageUrl: colorSpeaksImg,
     timestamp: 'August 2019',
     tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Web', 'Responsive'],
-    backgroundPosition: 'center center',
+    objectPosition: 'center center',
     children: (
       <>
         <p>
@@ -107,10 +115,10 @@ const projectItems: ProjectItemProps[] = [
   {
     id: 'shaw-floors',
     name: 'Shaw Floors',
-    backgroundImageUrl: '/assets/projects/shaw-floors-hero.jpg',
+    imageUrl: shawFloorsImg,
     timestamp: 'January 2019',
     tags: ['HTML', 'JavaScript', 'jQuery', 'WebGL', 'Three.js', 'Less', 'Web', 'Responsive'],
-    backgroundPosition: 'center center',
+    objectPosition: 'center center',
     children: (
       <>
         <p>
@@ -132,10 +140,10 @@ const projectItems: ProjectItemProps[] = [
   {
     id: 'sagepath',
     name: 'Sagepath',
-    backgroundImageUrl: '/assets/projects/sagepath-hero.jpg',
+    imageUrl: sagepathImg,
     timestamp: '2018',
     tags: ['HTML', 'JavaScript', 'jQuery', 'Sass', 'Web', 'Responsive'],
-    backgroundPosition: 'center center',
+    objectPosition: 'center center',
     children: (
       <>
         <p>

@@ -6,10 +6,10 @@ import Tags from '../Tags/Tags';
 const ProjectItem: React.FC<ProjectItemProps> = ({
   id,
   name,
-  backgroundImageUrl,
+  imageUrl,
   timestamp,
   tags,
-  backgroundPosition = 'center center',
+  objectPosition = 'center center',
   children,
 }) => {
   return (
@@ -17,10 +17,10 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       <ItemCard
         id={id}
         name={name}
-        backgroundImageUrl={backgroundImageUrl}
+        imageUrl={imageUrl}
         timestamp={timestamp}
         tags={tags}
-        backgroundPosition={backgroundPosition}
+        objectPosition={objectPosition}
       />
       <Tags tags={tags} />
       {children}

@@ -19,10 +19,10 @@ const ItemGrid: React.FC<{
                   <ItemCard
                     id={item.id}
                     name={item.name}
-                    backgroundImageUrl={item.backgroundImageUrl}
+                    imageUrl={item.imageUrl}
                     timestamp={item.timestamp}
                     tags={item.tags}
-                    backgroundPosition={item.backgroundPosition}
+                    objectPosition={item.objectPosition}
                   />
                 </div>
               </Link>

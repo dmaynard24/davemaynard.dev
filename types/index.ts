@@ -3,10 +3,10 @@ import * as React from 'react';
 export type ProjectItemProps = React.PropsWithChildren<{
   id: string;
   name: string;
-  backgroundImageUrl: string;
+  imageUrl: any; // StaticImport
   timestamp: string;
   tags: string[];
-  backgroundPosition?: string;
+  objectPosition?: string;
 }>;
 
 export type BlogItemProps = React.PropsWithChildren<{

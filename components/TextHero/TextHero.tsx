@@ -7,8 +7,8 @@ const TextHero: React.FC<{
   const [className, setClassName] = React.useState(styles['text-hero']);
 
   React.useEffect(() => {
-    setClassName(`${className} ${styles.active}`);
-  }, [setClassName, className]);
+    setClassName(`${styles['text-hero']} ${styles.active}`);
+  }, [setClassName]);
 
   return (
     <div className={className}>

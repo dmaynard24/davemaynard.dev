@@ -1,21 +1,19 @@
 import * as React from 'react';
+import Image from 'next/image';
 import {ProjectItemProps} from '../../types';
 import Timestamp from '../Timestamp/Timestamp';
 
-const ItemCard: React.FC<ProjectItemProps> = ({
-  name,
-  backgroundImageUrl,
-  timestamp,
-  backgroundPosition = 'center center',
-}) => {
+const ItemCard: React.FC<ProjectItemProps> = ({name, imageUrl, timestamp, objectPosition = 'center center'}) => {
   return (
-    <div
-      className="relative -mx-4 sm:-mx-6 mb-4 sm:mb-6 rounded-lg overflow-hidden bg-cover"
-      style={{
-        backgroundImage: `url(${backgroundImageUrl})`,
-        backgroundPosition,
-      }}
-    >
+    <div className="relative -mx-4 sm:-mx-6 mb-4 sm:mb-6 rounded-lg overflow-hidden">
+      <Image
+        layout="fill"
+        objectFit="cover"
+        objectPosition={objectPosition}
+        src={imageUrl}
+        alt={`${name} featured image`}
+        placeholder="blur"
+      />
       <div className="aspect-w-16 aspect-h-9" />
       <div className="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-gray-900" />
       <div className="absolute bottom-0 px-4 sm:px-6 text-white">
