@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import DribbbleLogo from '../icons/DribbbleLogo/DribbbleLogo';
 import GithubLogo from '../icons/GithubLogo/GithubLogo';
 import LinkedinLogo from '../icons/LinkedinLogo/LinkedinLogo';
-import SocialItem, {SocialItemProps} from '../SocialItem/SocialItem';
+import SocialItem from '../SocialItem/SocialItem';
+import {SocialItemProps} from '../../types';
 import TwitterLogo from '../icons/TwitterLogo/TwitterLogo';
 
 const socialItems: SocialItemProps[] = [

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {ProjectItemProps} from '../../types';
+
 import ItemCard from '../ItemCard/ItemCard';
+import {ProjectItemProps} from '../../types';
 import Tags from '../Tags/Tags';
 
 const ProjectItem: React.FC<ProjectItemProps> = ({

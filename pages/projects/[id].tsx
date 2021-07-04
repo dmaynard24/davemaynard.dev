@@ -1,8 +1,9 @@
-import {useRouter} from 'next/router';
 import * as React from 'react';
-import {projectItemsById} from '.';
+import {useRouter} from 'next/router';
+
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';
+import {projectItemsById} from '.';
 
 const ProjectById: React.FC = () => {
   const router = useRouter();

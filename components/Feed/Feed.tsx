@@ -1,7 +1,8 @@
 import * as React from 'react';
+
 import {BlogItemProps, ProjectItemProps} from '../../types';
-import isProjectItem from '../../util/isProjectItem';
 import BlogItem from '../BlogItem/BlogItem';
+import isProjectItem from '../../util/isProjectItem';
 import ProjectItem from '../ProjectItem/ProjectItem';
 
 const Feed: React.FC<{

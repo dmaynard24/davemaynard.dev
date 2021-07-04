@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
+import {NavItemProps} from '../../types';
 import styles from './NavItem.module.css';
-
-export type NavItemProps = {
-  text: string;
-  href: string;
-  isActive?: boolean;
-};
 
 const NavItem: React.FC<NavItemProps> = ({text, href, isActive}) => {
   const [className, setClassName] = React.useState(styles['nav-item']);

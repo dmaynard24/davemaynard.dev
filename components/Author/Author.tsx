@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import * as React from 'react';
+import Image from 'next/image';
+
 import defaultAuthorImg from '../../public/assets/dave-maynard.jpg';
 
 const Author: React.FC<{

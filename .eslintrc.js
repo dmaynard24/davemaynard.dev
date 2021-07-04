@@ -19,6 +19,13 @@ module.exports = {
     },
   },
   rules: {
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        allowSeparatedGroups: true,
+      },
+    ],
     'react/jsx-filename-extension': [1, {extensions: ['.ts', '.tsx']}],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error', {functions: false, classes: false, variables: true}],

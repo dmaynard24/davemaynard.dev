@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Link from 'next/link';
+
+import {BlogItemProps, ProjectItemProps} from '../../types';
+import ArrowLink from '../ArrowLink/ArrowLink';
 import isProjectItem from '../../util/isProjectItem';
 import ItemCard from '../ItemCard/ItemCard';
-import ArrowLink from '../ArrowLink/ArrowLink';
-import {BlogItemProps, ProjectItemProps} from '../../types';
 
 const ItemGrid: React.FC<{
   items: ProjectItemProps[] | BlogItemProps[];

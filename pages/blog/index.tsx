@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Image from 'next/image';
+
+import {BlogItemProps} from '../../types';
 import Feed from '../../components/Feed/Feed';
 import PageTemplate from '../../components/PageTemplate/PageTemplate';
-import TextHero from '../../components/TextHero/TextHero';
 import parameterizedSelectorImg from '../../public/assets/blog/parameterized-selector.png';
-import {BlogItemProps} from '../../types';
+import TextHero from '../../components/TextHero/TextHero';
 
 const blogItems: BlogItemProps[] = [
   {

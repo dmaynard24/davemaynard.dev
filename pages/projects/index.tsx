@@ -1,17 +1,17 @@
-import * as React from 'react';
 import * as R from 'ramda';
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
-import TextHero from '../../components/TextHero/TextHero';
+import * as React from 'react';
 import ItemGrid from '../../components/ItemGrid/ItemGrid';
+import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import {ProjectItemProps} from '../../types';
+import TextHero from '../../components/TextHero/TextHero';
 
 // TODO: Refactor this approach to make it dynamic (this is used for next/image placeholder="blur" functionality)
 import amazonDetailPageImg from '../../public/assets/projects/amazon-detail-page-hero.jpg';
 import careerChoiceImg from '../../public/assets/projects/collaboration.jpg';
-import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
 import colorSpeaksImg from '../../public/assets/projects/color-speaks-hero.jpg';
-import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
+import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
 import sagepathImg from '../../public/assets/projects/sagepath-hero.jpg';
+import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
 
 const projectItems: ProjectItemProps[] = [
   {

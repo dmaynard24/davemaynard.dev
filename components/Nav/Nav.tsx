@@ -1,7 +1,9 @@
 import * as React from 'react';
-import {useRouter} from 'next/router';
 import Head from 'next/head';
-import NavItem, {NavItemProps} from '../NavItem/NavItem';
+import {useRouter} from 'next/router';
+
+import NavItem from '../NavItem/NavItem';
+import {NavItemProps} from '../../types';
 
 const Nav: React.FC = () => {
   const router = useRouter();

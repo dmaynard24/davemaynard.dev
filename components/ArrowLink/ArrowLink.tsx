@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import * as React from 'react';
+import Link from 'next/link';
+
 import ArrowRightNarrow from '../icons/ArrowRightNarrow/ArrowRightNarrow';
 
 const ArrowLink: React.FC<{
