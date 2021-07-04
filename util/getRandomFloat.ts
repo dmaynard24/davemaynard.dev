@@ -1,1 +1,3 @@
-export default (min, max) => Math.random() * (max - min) + min;
+const getRandomFloat = (min: number, max: number) => Math.random() * (max - min) + min;
+
+export default getRandomFloat;

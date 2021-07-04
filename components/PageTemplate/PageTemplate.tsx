@@ -1,12 +1,14 @@
 import * as React from 'react';
 import Author from '../Author/Author';
+import Boxes from '../Boxes/Boxes';
 import Nav from '../Nav/Nav';
 import Profile from '../Profile/Profile';
 import Social from '../Social/Social';
 
 const PageTemplate: React.FC = ({children}) => (
   <div className="home px-8 max-w-screen-xl mx-auto">
-    <div className="grid grid-cols-6 gap-x-8">
+    <Boxes />
+    <div className="grid grid-cols-6 gap-x-8 relative z-10">
       <aside className="col-span-1 sticky max-h-screen top-0">
         <div className="pt-8 lg:pt-12">
           <Author />
