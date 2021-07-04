@@ -171,11 +171,11 @@ const Projects: React.FC = () => {
     <PageTemplate>
       <TextHero headline="A Few of My Projects">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
-          et. Curabitur et orci purus. Etiam nec risus arcu. Proin interdum risus vel quam elementum euismod. Sed ac
-          ante congue, venenatis magna in, volutpat lacus. Donec iaculis neque in nunc interdum facilisis. Etiam massa
-          sem, faucibus at arcu ac, tincidunt interdum nulla. Nulla facilisi. Nunc at laoreet felis.
+          I've been working professionally as a front-end developer since 2012. Since then, it's been quite the journey
+          and I've worked on all sorts of websites and products, ranging from content-driven sites to data-driven
+          applications. This has given me the chance to build solutions with several popular libraries and frameworks.
         </p>
+        <p>Here are just a few of my recent projects that I've contributed to over the last five years.</p>
       </TextHero>
       <ItemGrid items={projectItems} />
     </PageTemplate>
