@@ -29,8 +29,8 @@ const PageTemplate: React.FC = ({children}) => {
           </div>
         </aside>
       </div>
-      <Diamonds position="top right" />
-      <Diamonds position="bottom left" />
+      <Diamonds />
+      <Diamonds />
     </div>
   );
 };
