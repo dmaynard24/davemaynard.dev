@@ -13,7 +13,8 @@ const Diamond: React.FC<{
   mouseCoords?: THREE.Vector2Tuple;
 }> = ({position, color, scale = 1, mouseCoords}) => {
   const meshGroup = React.useRef<THREE.Group>(null);
-  const radialSegments = 7;
+  const axis = new THREE.Vector3(position[0], position[1] + 1, position[2]).normalize();
+  const radialSegments = 5;
   const capBottomRadius = 0.75 * scale;
   const capTopRadius = capBottomRadius / 2;
   const baseHeight = 1.25 * scale;
@@ -26,16 +27,10 @@ const Diamond: React.FC<{
     return [xRadians, yRadians];
   };
 
-  useFrame(() => {
-    if (mouseCoords === undefined) {
-      meshGroup.current.rotation.x += getRandomFloat(0, 0.005 * scale);
-      meshGroup.current.rotation.y += getRandomFloat(0, 0.005 * scale);
-    } else {
-      const radianCoords = getRadianCoordsFromPixelCoords(mouseCoords);
-      [meshGroup.current.rotation.x] = radianCoords;
-      [, meshGroup.current.rotation.y] = radianCoords;
-    }
-  });
+  React.useEffect(() => {
+    const radianCoords = getRadianCoordsFromPixelCoords(mouseCoords);
+    meshGroup.current.setRotationFromAxisAngle(axis, radianCoords[1]);
+  }, [axis, mouseCoords]);
 
   return (
     <>
@@ -58,8 +53,7 @@ const cyanLight = resolveConfig(tailwindConfig).theme.colors.cyan['400'];
 const cyan = resolveConfig(tailwindConfig).theme.colors.cyan['600'];
 const cyanDark = resolveConfig(tailwindConfig).theme.colors.cyan['800'];
 
-const Diamonds: React.FC<{position: 'top right' | 'bottom left'}> = ({position}) => {
-  const className = position === 'top right' ? 'top-0 right-0' : 'bottom-0 left-0';
+const Diamonds: React.FC = () => {
   const [mouseCoords, setMouseCoords] = React.useState<THREE.Vector2Tuple>([0, 0]);
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -71,13 +65,14 @@ const Diamonds: React.FC<{position: 'top right' | 'bottom left'}> = ({position})
   }, []);
 
   return (
-    <div className={`fixed bg-white w-1/6 h-1/4 z-0 ${className}`}>
+    // <div className="fixed bg-white w-1/6 h-1/4 z-0 bottom-0 left-0">
+    <div className="fixed bg-white w-full h-full z-20 bottom-0 left-0">
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Diamond position={[-1.2, 1.2, -1.2]} color={cyanLight} scale={0.75} mouseCoords={mouseCoords} />
+        {/* <Diamond position={[-1.2, 1.2, -1.2]} color={cyanLight} scale={0.75} mouseCoords={mouseCoords} /> */}
         <Diamond position={[0, 0, 0]} color={cyan} mouseCoords={mouseCoords} />
-        <Diamond position={[1.2, 1.2, 1.2]} color={cyanDark} scale={0.75} mouseCoords={mouseCoords} />
+        {/* <Diamond position={[1.2, 1.2, 1.2]} color={cyanDark} scale={0.75} mouseCoords={mouseCoords} /> */}
       </Canvas>
     </div>
   );
