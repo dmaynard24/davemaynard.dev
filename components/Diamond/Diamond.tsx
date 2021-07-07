@@ -11,8 +11,7 @@ const Diamond: React.FC<{
   const [mouseCoords, setMouseCoords] = React.useState<THREE.Vector2Tuple>([0, 0]);
   const meshGroup = React.useRef<THREE.Group>(null);
   const position: THREE.Vector3Tuple = [0, 0, 0];
-  const axis = new THREE.Vector3(position[0], position[1] + 1, position[2]).normalize();
-  const radialSegments = 7;
+  const radialSegments = 5;
   const capBottomRadius = 2 * scale;
   const capTopRadius = capBottomRadius / 2;
   const baseHeight = 3 * scale;
@@ -28,9 +27,9 @@ const Diamond: React.FC<{
   React.useEffect(() => {
     const radianCoords = getRadianCoordsFromPixelCoords(mouseCoords);
     if (meshGroup.current) {
-      meshGroup.current.setRotationFromAxisAngle(axis, radianCoords[1]);
+      [, meshGroup.current.rotation.y] = radianCoords;
     }
-  }, [axis, mouseCoords]);
+  }, [mouseCoords]);
 
   const handleMouseMove = (e: MouseEvent) => {
     setMouseCoords([e.clientX, e.clientY]);
@@ -45,14 +44,14 @@ const Diamond: React.FC<{
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <group ref={meshGroup}>
+        <group ref={meshGroup} rotation={new THREE.Euler(0.45)}>
           <mesh position={capPosition}>
             <cylinderGeometry args={[capTopRadius, capBottomRadius, capHeight, radialSegments]} />
-            <meshStandardMaterial color={new THREE.Color(color)} />
+            <meshStandardMaterial color={new THREE.Color(color)} transparent opacity={0.9} />
           </mesh>
           <mesh position={position}>
             <cylinderGeometry args={[capBottomRadius, 0, baseHeight, radialSegments]} />
-            <meshStandardMaterial color={new THREE.Color(color)} />
+            <meshStandardMaterial color={new THREE.Color(color)} transparent opacity={0.9} />
           </mesh>
         </group>
       </Canvas>
