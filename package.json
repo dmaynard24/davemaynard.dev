@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/three": "^9.2.3",
     "@react-three/fiber": "^7.0.2",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/line-clamp": "^0.2.1",

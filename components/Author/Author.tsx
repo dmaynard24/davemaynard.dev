@@ -16,8 +16,8 @@ const Author: React.FC<{
     <div className="rounded-full overflow-hidden">
       <Image layout="responsive" src={src} alt={alt} placeholder="blur" quality="100" priority />
     </div>
-    <Diamond color={sky} className="-left-1 -rotate-6" scale={0.95} />
-    <Diamond color={sky} className="right-0 rotate-6" scale={0.75} />
+    <Diamond color={sky} className="-left-2 -rotate-6" scale={1} />
+    <Diamond color={sky} className="-right-1 rotate-6" scale={0.75} />
   </div>
 );
 Author.displayName = 'Author';
