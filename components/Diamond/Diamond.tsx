@@ -1,15 +1,16 @@
 import * as React from 'react';
 import * as THREE from 'three';
-import {Canvas} from '@react-three/fiber';
+import {Canvas, useFrame} from '@react-three/fiber';
 import {Color} from 'three';
 
-const Diamond: React.FC<{
+const DiamondGroup: React.FC<{
   color: string | number | Color;
   scale?: number;
-  className?: string;
-}> = ({color, scale = 1, className}) => {
+}> = ({color, scale = 1}) => {
   const [mouseCoords, setMouseCoords] = React.useState<THREE.Vector2Tuple>([0, 0]);
   const meshGroup = React.useRef<THREE.Group>(null);
+  const meshGroupRotation = new THREE.Euler(0.45);
+  const meshColor = new THREE.Color(color);
   const position: THREE.Vector3Tuple = [0, 0, 0];
   const radialSegments = 5;
   const capBottomRadius = 2 * scale;
@@ -19,17 +20,15 @@ const Diamond: React.FC<{
   const capPosition: THREE.Vector3Tuple = [position[0], position[1] + baseHeight - capHeight, position[2]];
 
   const getRadianCoordsFromPixelCoords = (pixelCoords: THREE.Vector2Tuple): THREE.Vector2Tuple => {
-    const xRadians = ((pixelCoords[1] / window.innerHeight) * 360 * Math.PI) / 180;
-    const yRadians = ((pixelCoords[0] / window.innerWidth) * 360 * Math.PI) / 180;
+    const xRadians = ((pixelCoords[1] / window.innerHeight) * 180 * Math.PI) / 180;
+    const yRadians = ((pixelCoords[0] / window.innerWidth) * 180 * Math.PI) / 180;
     return [xRadians, yRadians];
   };
 
-  React.useEffect(() => {
+  useFrame(() => {
     const radianCoords = getRadianCoordsFromPixelCoords(mouseCoords);
-    if (meshGroup.current) {
-      [, meshGroup.current.rotation.y] = radianCoords;
-    }
-  }, [mouseCoords]);
+    [, meshGroup.current.rotation.y] = radianCoords;
+  });
 
   const handleMouseMove = (e: MouseEvent) => {
     setMouseCoords([e.clientX, e.clientY]);
@@ -40,20 +39,30 @@ const Diamond: React.FC<{
   }, []);
 
   return (
+    <group ref={meshGroup} rotation={meshGroupRotation}>
+      <mesh position={capPosition}>
+        <cylinderGeometry args={[capTopRadius, capBottomRadius, capHeight, radialSegments]} />
+        <meshStandardMaterial color={meshColor} transparent opacity={0.9} />
+      </mesh>
+      <mesh position={position}>
+        <cylinderGeometry args={[capBottomRadius, 0, baseHeight, radialSegments]} />
+        <meshStandardMaterial color={meshColor} transparent opacity={0.9} />
+      </mesh>
+    </group>
+  );
+};
+
+const Diamond: React.FC<{
+  color: string | number | Color;
+  scale?: number;
+  className?: string;
+}> = ({color, scale, className}) => {
+  return (
     <div className={`absolute w-12 h-16 z-10 transform -bottom-4 pointer-events-none ${className}`}>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <group ref={meshGroup} rotation={new THREE.Euler(0.45)}>
-          <mesh position={capPosition}>
-            <cylinderGeometry args={[capTopRadius, capBottomRadius, capHeight, radialSegments]} />
-            <meshStandardMaterial color={new THREE.Color(color)} transparent opacity={0.9} />
-          </mesh>
-          <mesh position={position}>
-            <cylinderGeometry args={[capBottomRadius, 0, baseHeight, radialSegments]} />
-            <meshStandardMaterial color={new THREE.Color(color)} transparent opacity={0.9} />
-          </mesh>
-        </group>
+        <DiamondGroup color={color} scale={scale} />
       </Canvas>
     </div>
   );
