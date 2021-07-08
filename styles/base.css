@@ -30,7 +30,8 @@ h3 {
   @apply text-2xl sm:text-3xl lg:text-4xl;
 }
 
-p {
+p,
+ul > li {
   @apply mb-4 sm:mb-6 last:mb-0;
 
   code {
@@ -41,6 +42,14 @@ p {
 a,
 .link {
   @apply cursor-pointer text-cyan-600 hover:text-cyan-800;
+}
+
+ul {
+  @apply list-disc pl-8;
+}
+
+p > ul {
+  @apply mt-4 sm:mt-6;
 }
 
 .social-logo {

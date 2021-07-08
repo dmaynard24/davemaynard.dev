@@ -3,11 +3,9 @@ import * as React from 'react';
 const Profile: React.FC = () => (
   <>
     <p>
-      <strong className="text-gray-900">
-        Dave Maynard
-        <br />
-        Front-End Engineer at Amazon
-      </strong>
+      <strong className="text-gray-900">Dave Maynard</strong>
+      <br />
+      Front-End Engineer at Amazon
     </p>
     <p>
       <a href="mailto:davemaynard24@gmail.com">Send Email</a>
