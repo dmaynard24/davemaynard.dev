@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as THREE from 'three';
 import {animated, config, useSpring} from '@react-spring/three';
-import {Canvas, useFrame} from '@react-three/fiber';
+import {Canvas} from '@react-three/fiber';
 import {Color} from 'three';
 
 const RotatingDiamond: React.FC<{
@@ -11,7 +11,6 @@ const RotatingDiamond: React.FC<{
   const [mounted, setMounted] = React.useState(false);
   const [mouseCoords, setMouseCoords] = React.useState<THREE.Vector2Tuple>([0, 0]);
   const meshGroup = React.useRef<THREE.Group>(null);
-  const meshGroupRotation = new THREE.Euler(0.45);
   const meshColor = new THREE.Color(color);
   const position: THREE.Vector3Tuple = [0, 0, 0];
   const radialSegments = 5;
@@ -27,11 +26,6 @@ const RotatingDiamond: React.FC<{
     return [xRadians, yRadians];
   };
 
-  useFrame(() => {
-    const radianCoords = getRadianCoordsFromPixelCoords(mouseCoords);
-    [, meshGroup.current.rotation.y] = radianCoords;
-  });
-
   const handleMouseMove = (e: MouseEvent) => {
     setMouseCoords([e.clientX, e.clientY]);
   };
@@ -43,6 +37,7 @@ const RotatingDiamond: React.FC<{
   }, []);
 
   const spring = useSpring({
+    rotation: new THREE.Euler(0.45, getRadianCoordsFromPixelCoords(mouseCoords)[1]),
     scale: mounted ? scale : 0,
     config: {
       duration: 300,
@@ -51,7 +46,7 @@ const RotatingDiamond: React.FC<{
   });
 
   return (
-    <animated.group ref={meshGroup} rotation={meshGroupRotation} scale={spring.scale}>
+    <animated.group ref={meshGroup} rotation={spring.rotation} scale={spring.scale}>
       <mesh position={capPosition}>
         <cylinderGeometry args={[capTopRadius, capBottomRadius, capHeight, radialSegments]} />
         <meshStandardMaterial color={meshColor} transparent opacity={0.9} />
