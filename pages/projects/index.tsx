@@ -12,6 +12,7 @@ import colorSpeaksImg from '../../public/assets/projects/color-speaks-hero.jpg';
 import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
 import sagepathImg from '../../public/assets/projects/sagepath-hero.jpg';
 import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
+import ArrowLink from '../../components/ArrowLink/ArrowLink';
 
 const projectItems: ProjectItemProps[] = [
   {
@@ -94,27 +95,27 @@ const projectItems: ProjectItemProps[] = [
         <p>
           I reached for Vue as the framework because I knew several of the components would require somewhat complex
           logic for the user interactions. For example:
-          <ul>
-            <li>
-              Looping over items on the product landing page was a perfect candidate for the <code>v-for</code>{' '}
-              directive, especially since we had a filter that allowed users to change how items are sorted (featured,
-              alphabetically, or by price). I built a search panel that would also list search results and resources
-              with the same directive, only without the need for filtering.
-            </li>
-            <li>
-              There is a calculator for users to input the dimensions or square footage or their room and view the
-              number of boxes they'd need to order to cover the space. This needed to be reactive, meaning it would need
-              to automatically update the count of boxes whenever the input changed, so this was a use case for two-way
-              data binding with <code>v-model</code>.
-            </li>
-            <li>
-              Finally, I built the functionality for <b>Add to Cart</b> and <b>Save for Later</b> with a panel that
-              allowed users to increment or decrement the number of boxes for each item in their cart and display a
-              running subtotal. The subtotal was a computed value that would need to automatically update, I achieved
-              this with the <code>v-bind</code> directive.
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            Looping over items on the product landing page was a perfect candidate for the <code>v-for</code> directive,
+            especially since we had a filter that allowed users to change how items are sorted (featured,
+            alphabetically, or by price). I built a search panel that would also list search results and resources with
+            the same directive, only without the need for filtering.
+          </li>
+          <li>
+            There is a calculator for users to input the dimensions or square footage or their room and view the number
+            of boxes they'd need to order to cover the space. This needed to be reactive, meaning it would need to
+            automatically update the count of boxes whenever the input changed, so this was a use case for two-way data
+            binding with <code>v-model</code>.
+          </li>
+          <li>
+            Finally, I built the functionality for <b>Add to Cart</b> and <b>Save for Later</b> with a panel that
+            allowed users to increment or decrement the number of boxes for each item in their cart and display a
+            running subtotal. The subtotal was a computed value that would need to automatically update, I achieved this
+            with the <code>v-bind</code> directive.
+          </li>
+        </ul>
         <p>
           There are a few other instances of components that benefited from built-in directives, but I won't list every
           single one. If I hadn't implemented Vue or any other front-end framework on this project, I would've had to
@@ -122,6 +123,7 @@ const projectItems: ProjectItemProps[] = [
           I was able to write fewer lines of custom code, prevent potential bugs for edge cases, and deliver a working
           product within a reasonable timeline.
         </p>
+        <ArrowLink href="https://floorigami.com/" text="Visit the Site" external />
       </>
     ),
   },

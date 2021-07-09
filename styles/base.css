@@ -45,11 +45,7 @@ a,
 }
 
 ul {
-  @apply list-disc pl-8;
-}
-
-p > ul {
-  @apply mt-4 sm:mt-6;
+  @apply list-disc pl-8 mb-4 sm:mb-6;
 }
 
 .social-logo {
