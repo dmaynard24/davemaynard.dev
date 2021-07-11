@@ -8,32 +8,25 @@ const ArrowLink: React.FC<{
   text: string;
   external?: boolean;
 }> = ({href, text, external = false}) => {
+  const arrowLinkChild = (
+    <div className="link inline-block font-bold group">
+      <div className="flex">
+        <span>{text} </span>
+        <span className="pl-2 transform transition-transform duration-200 group-hover:translate-x-2">
+          <ArrowRightNarrow />
+        </span>
+      </div>
+    </div>
+  );
+
   if (external) {
     return (
       <a href={href} target="_blank" rel="noreferrer">
-        <div className="link inline-block font-bold group">
-          <div className="flex">
-            <span>{text} </span>
-            <span className="pl-2 transform transition-transform duration-200 group-hover:translate-x-2">
-              <ArrowRightNarrow />
-            </span>
-          </div>
-        </div>
+        {arrowLinkChild}
       </a>
     );
   }
-  return (
-    <Link href={href}>
-      <div className="link inline-block font-bold group">
-        <div className="flex">
-          <span>{text} </span>
-          <span className="pl-2 transform transition-transform duration-200 group-hover:translate-x-2">
-            <ArrowRightNarrow />
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
+  return <Link href={href}>{arrowLinkChild}</Link>;
 };
 ArrowLink.displayName = 'ArrowLink';
 
