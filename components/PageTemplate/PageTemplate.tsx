@@ -74,12 +74,20 @@ const PageTemplate: React.FC = ({children}) => {
 
   return (
     <div className="max-w-screen-xl mx-auto">
-      <div className="py-6 px-10 lg:hidden sticky top-0 z-10 bg-white bg-opacity-80 backdrop-filter backdrop-blur-md flex justify-end">
-        <button type="button" onClick={openProfile} className="w-5 h-5 cursor-pointer mr-auto md:hidden">
-          <User />
+      <div className="py-4 px-8 lg:hidden sticky top-0 z-10 bg-white bg-opacity-80 backdrop-filter backdrop-blur-md flex justify-end">
+        <button
+          type="button"
+          onClick={openProfile}
+          className="w-8 h-8 flex items-center justify-center cursor-pointer mr-auto md:hidden"
+        >
+          <div className="w-5 h-5">
+            <User />
+          </div>
         </button>
-        <button type="button" onClick={openMenu} className="w-5 h-5 cursor-pointer">
-          <Menu />
+        <button type="button" onClick={openMenu} className="w-8 h-8 flex items-center justify-center cursor-pointer">
+          <div className="w-5 h-5">
+            <Menu />
+          </div>
         </button>
       </div>
       <div className="px-8">
@@ -89,9 +97,15 @@ const PageTemplate: React.FC = ({children}) => {
               isProfileActive ? 'translate-x-0' : '-translate-x-full'
             } ${isProfileBlurry && 'filter blur-md'} ${isMotionEnabled && 'transition-transform'}`}
           >
-            <div className="pt-24 pb-8 md:py-12">
-              <button type="button" onClick={closeProfile} className="w-5 h-5 absolute top-6 right-10 z-10 md:hidden">
-                <Close />
+            <div className="pt-24 pb-8 md:py-8 lg:py-14">
+              <button
+                type="button"
+                onClick={closeProfile}
+                className="w-8 h-8 flex items-center justify-center absolute top-4 right-8 z-10 md:hidden"
+              >
+                <div className="w-5 h-5">
+                  <Close />
+                </div>
               </button>
               <Profile />
             </div>
@@ -99,16 +113,22 @@ const PageTemplate: React.FC = ({children}) => {
           <main
             className={`col-span-6 md:col-span-3 lg:col-span-4 md:px-8 lg:px-14 ${isMainBlurry && 'filter blur-md'}`}
           >
-            <div className="py-8 lg:py-12">{children}</div>
+            <div className="py-8 lg:py-14">{children}</div>
           </main>
           <aside
             className={`col-span-6 lg:col-span-1 fixed lg:sticky max-h-screen top-0 right-0 w-full sm:w-1/3 lg:w-auto h-full bg-white z-20 transform lg:transform-none lg:transition-none ${
               isMenuActive ? 'translate-x-0' : 'translate-x-full'
             } ${isMotionEnabled && 'transition-transform'}`}
           >
-            <div className="pt-24 pb-8 lg:py-12">
-              <button type="button" onClick={closeMenu} className="w-5 h-5 absolute top-6 right-10 z-10 lg:hidden">
-                <Close />
+            <div className="pt-24 pb-8 lg:py-14">
+              <button
+                type="button"
+                onClick={closeMenu}
+                className="w-8 h-8 flex items-center justify-center absolute top-4 right-8 z-10 lg:hidden"
+              >
+                <div className="w-5 h-5">
+                  <Close />
+                </div>
               </button>
               <Nav />
             </div>
