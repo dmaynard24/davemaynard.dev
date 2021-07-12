@@ -10,13 +10,13 @@ const ItemGrid: React.FC<{
   items: ProjectItemProps[] | BlogItemProps[];
 }> = ({items}) => {
   return (
-    <div className="grid grid-cols-2 gap-x-12">
+    <div className="sm:grid sm:grid-cols-2 gap-x-12">
       {items.map((item, i) => {
         if (isProjectItem(item)) {
           if (i === 0) {
             return (
               <Link key={item.id} href={`projects/${item.id}`}>
-                <div className="cursor-pointer col-span-2 mb-6 sm:mb-8">
+                <div className="cursor-pointer col-span-2 mb-12 sm:mb-8">
                   <ItemCard
                     id={item.id}
                     name={item.name}

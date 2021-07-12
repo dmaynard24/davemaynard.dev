@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const GithubLogo: React.FC = () => {
   return (
-    <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%" className="social-logo">
+    <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%" className="icon">
       <title>Github Logo</title>
       <g>
         <g>
@@ -16,6 +16,7 @@ const GithubLogo: React.FC = () => {
 			c48.864-33.248,70.336-26.336,70.336-26.336c13.952,35.392,5.184,61.504,2.56,68c16.416,17.984,26.304,40.928,26.304,68.992
 			c0,98.72-59.84,120.448-116.864,126.816c9.184,7.936,17.376,23.616,17.376,47.584c0,34.368-0.32,62.08-0.32,70.496
 			c0,6.88,4.608,14.88,17.6,12.352C438.72,472.145,512,375.857,512,262.353C512,120.401,397.376,5.329,255.968,5.329z"
+            fill="currentColor"
           />
         </g>
       </g>

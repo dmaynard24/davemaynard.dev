@@ -5,7 +5,7 @@ import Timestamp from '../Timestamp/Timestamp';
 
 const ItemCard: React.FC<ProjectItemProps> = ({name, imageUrl, timestamp, objectPosition = 'center center'}) => {
   return (
-    <div className="relative -mx-4 sm:-mx-6 mb-4 sm:mb-6 rounded-lg overflow-hidden">
+    <div className="relative -mx-4 md:-mx-6 mb-4 md:mb-6 rounded-lg overflow-hidden">
       <Image
         layout="fill"
         objectFit="cover"
@@ -16,7 +16,7 @@ const ItemCard: React.FC<ProjectItemProps> = ({name, imageUrl, timestamp, object
       />
       <div className="aspect-w-16 aspect-h-9" />
       <div className="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-gray-900" />
-      <div className="absolute bottom-0 px-4 sm:px-6 text-white">
+      <div className="absolute bottom-0 px-4 md:px-6 text-white">
         <Timestamp text={timestamp} />
         <h2 className="text-white">{name}</h2>
       </div>

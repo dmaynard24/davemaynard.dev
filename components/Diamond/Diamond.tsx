@@ -32,8 +32,12 @@ const RotatingDiamond: React.FC<{
 
   React.useEffect(() => {
     setMounted(true);
-
     window.addEventListener('mousemove', handleMouseMove, false);
+
+    return () => {
+      setMounted(false);
+      window.removeEventListener('mousemove', handleMouseMove, false);
+    };
   }, []);
 
   const spring = useSpring({

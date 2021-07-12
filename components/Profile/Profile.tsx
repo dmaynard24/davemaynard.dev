@@ -1,21 +1,23 @@
 import * as React from 'react';
 
-const Profile: React.FC = () => (
-  <>
-    <p>
-      <strong className="text-gray-900">Dave Maynard</strong>
-      <br />
-      Front-End Engineer at Amazon
-    </p>
-    <p>
-      <a href="mailto:davemaynard24@gmail.com">Send Email</a>
-      <br />
-      <a href="/assets/Dave_Maynard_Resume_2020.pdf" download>
-        View Resume
-      </a>
-    </p>
-  </>
-);
+import Author from '../Author/Author';
+import Contact from '../Contact/Contact';
+import Social from '../Social/Social';
+import styles from './Profile.module.css';
+
+const Profile: React.FC = () => {
+  return (
+    <div className={styles.profile}>
+      <Author />
+      <div className="pt-6 lg:pt-8">
+        <Contact />
+      </div>
+      <div className="pt-6 lg:pt-8">
+        <Social />
+      </div>
+    </div>
+  );
+};
 Profile.displayName = 'Profile';
 
 export default Profile;
