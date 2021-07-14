@@ -5,7 +5,7 @@ import Timestamp from '../Timestamp/Timestamp';
 
 const ItemCard: React.FC<ProjectItemProps> = ({name, imageUrl, timestamp, objectPosition = 'center center'}) => {
   return (
-    <div className="relative -mx-4 md:-mx-6 mb-10 sm:mb-12 rounded-lg overflow-hidden">
+    <div className="relative -mx-4 md:-mx-6 mb-10 sm:mb-12 lg:mb-14 rounded-lg overflow-hidden">
       <Image
         layout="fill"
         objectFit="cover"

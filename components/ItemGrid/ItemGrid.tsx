@@ -30,7 +30,7 @@ const ItemGrid: React.FC<{
             );
           }
           return (
-            <div key={item.id} className="cursor-pointer mb-10 sm:mb-12">
+            <div key={item.id} className="cursor-pointer mb-10 sm:mb-12 lg:mb-14">
               <Link href={`projects/${item.id}`}>
                 <div>
                   <h3>{item.name}</h3>

@@ -4,7 +4,7 @@ import Tag from '../Tag/Tag';
 const Tags: React.FC<{
   tags: string[];
 }> = ({tags}) => (
-  <div className="flex flex-wrap mb-8 sm:mb-10">
+  <div className="flex flex-wrap mb-8 sm:mb-10 lg:mb-12">
     {tags.map((tag) => (
       <Tag key={tag} text={tag} />
     ))}
