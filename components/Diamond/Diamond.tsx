@@ -21,8 +21,8 @@ const RotatingDiamond: React.FC<{
   const capPosition: THREE.Vector3Tuple = [position[0], position[1] + baseHeight - capHeight, position[2]];
 
   const getRadianCoordsFromPixelCoords = (pixelCoords: THREE.Vector2Tuple): THREE.Vector2Tuple => {
-    const xRadians = ((pixelCoords[1] / window.innerHeight) * 180 * Math.PI) / 180;
-    const yRadians = ((pixelCoords[0] / window.innerWidth) * 180 * Math.PI) / 180;
+    const xRadians = ((pixelCoords[1] / window.innerHeight) * 360 * Math.PI) / 180;
+    const yRadians = ((pixelCoords[0] / window.innerWidth) * 360 * Math.PI) / 180;
     return [xRadians, yRadians];
   };
 
@@ -41,7 +41,10 @@ const RotatingDiamond: React.FC<{
   }, []);
 
   const spring = useSpring({
-    rotation: new THREE.Euler(0.45, getRadianCoordsFromPixelCoords(mouseCoords)[1]),
+    rotation: new THREE.Euler(
+      getRadianCoordsFromPixelCoords(mouseCoords)[0] / 18 + 0.2,
+      getRadianCoordsFromPixelCoords(mouseCoords)[1] / 2,
+    ),
     scale: mounted ? scale : 0,
     config: {
       duration: 300,
