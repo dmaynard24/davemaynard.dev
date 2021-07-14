@@ -123,7 +123,7 @@ const projectItems: ProjectItemProps[] = [
           I was able to write fewer lines of custom code, prevent potential bugs for edge cases, and deliver a working
           product within a reasonable timeline.
         </p>
-        <ArrowLink href="https://floorigami.com/" text="Visit the Site" external />
+        <ArrowLink href="https://floorigami.com/" text="Visit the Site" external className="mt-8 sm:mt-10" />
       </>
     ),
   },

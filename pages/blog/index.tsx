@@ -35,7 +35,7 @@ const blogItems: BlogItemProps[] = [
           </a>{' '}
           with some traction:{' '}
         </p>
-        <div className="mb-4 sm:mb-6">
+        <div className="mb-5 sm:mb-6">
           <Image
             layout="intrinsic"
             src={parameterizedSelectorImg}
