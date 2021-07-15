@@ -1,0 +1,15 @@
+.stats {
+  @apply relative my-10 sm:mt-12 lg:mt-14 sm:mb-6 lg:mb-8 pt-7 sm:pt-9;
+
+  &:after {
+    @apply absolute top-0 left-0 w-6 h-1 bg-cyan-400 transform origin-left scale-x-0 transition-transform ease-in;
+    content: '';
+  }
+
+  &.active {
+    &:after {
+      @apply absolute top-0 left-0 w-6 h-1 bg-cyan-400 transform scale-x-100 transition-transform ease-out duration-300 delay-100;
+      content: '';
+    }
+  }
+}

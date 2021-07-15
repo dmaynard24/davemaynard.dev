@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {StatProps} from '../../types';
+import styles from './Stats.module.css';
+import useElementVisible from '../../hooks/useElementVisible';
 
 const Stat: React.FC<StatProps> = ({value, stat}) => {
   return (
@@ -12,8 +14,18 @@ const Stat: React.FC<StatProps> = ({value, stat}) => {
 Stat.displayName = 'Stat';
 
 const Stats: React.FC<{stats: StatProps[]}> = ({stats}) => {
+  const [className, setClassName] = React.useState(styles.stats);
+  const componentRef = React.useRef<HTMLDivElement>(null);
+  const isElementVisible = useElementVisible(componentRef);
+
+  React.useEffect(() => {
+    if (isElementVisible) {
+      setClassName(`${styles.stats} ${styles.active}`);
+    }
+  }, [isElementVisible, setClassName]);
+
   return (
-    <div className="my-10 sm:mt-12 lg:mt-14 sm:mb-6 lg:mb-8">
+    <div ref={componentRef} className={className}>
       <h2>Stats</h2>
       <div className="sm:grid sm:grid-cols-3 gap-x-12">
         {stats.map((s) => {

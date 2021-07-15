@@ -26,6 +26,7 @@ const PageTemplate: React.FC = ({children}) => {
   React.useEffect(() => {
     setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize, false);
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize, false);
