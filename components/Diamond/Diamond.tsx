@@ -43,7 +43,7 @@ const RotatingDiamond: React.FC<{
   const spring = useSpring({
     rotation: new THREE.Euler(
       getRadianCoordsFromPixelCoords(mouseCoords)[0] / 18 + 0.2,
-      getRadianCoordsFromPixelCoords(mouseCoords)[1] / 2,
+      getRadianCoordsFromPixelCoords(mouseCoords)[1] / 6,
     ),
     scale: mounted ? scale : 0,
     config: {

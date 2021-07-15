@@ -19,8 +19,15 @@ export type ProjectItemProps = React.PropsWithChildren<{
   timestamp: string;
   tags: string[];
   objectPosition?: string;
+  stats?: StatProps[];
+  liveSiteHref?: string;
 }>;
 
 export type SocialItemProps = React.PropsWithChildren<{
   href: string;
 }>;
+
+export type StatProps = {
+  value: string;
+  stat: string;
+};

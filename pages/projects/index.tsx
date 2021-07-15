@@ -12,7 +12,6 @@ import colorSpeaksImg from '../../public/assets/projects/color-speaks-hero.jpg';
 import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
 import sagepathImg from '../../public/assets/projects/sagepath-hero.jpg';
 import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
-import ArrowLink from '../../components/ArrowLink/ArrowLink';
 
 const projectItems: ProjectItemProps[] = [
   {
@@ -21,6 +20,20 @@ const projectItems: ProjectItemProps[] = [
     imageUrl: amazonDetailPageImg,
     timestamp: 'July 2021',
     tags: ['React JS', 'Redux', 'Redux-Saga', 'TypeScript', 'JSX', 'HTML', 'Emotion', 'CSS-in-JS', 'Web', 'Responsive'],
+    stats: [
+      {
+        value: '15,000',
+        stat: 'Daily active users',
+      },
+      {
+        value: '20 million',
+        stat: 'Monthly products published',
+      },
+      {
+        value: '21+',
+        stat: 'Supported marketplaces',
+      },
+    ],
     objectPosition: 'bottom center',
     children: (
       <>
@@ -29,7 +42,7 @@ const projectItems: ProjectItemProps[] = [
           <strong>A+ Content Manager</strong>. The tool allows sellers and vendors to create rich content that best
           tells their product story and add personalized branding to their product detail pages on Amazon. The
           application has over <strong>15,000 daily active users</strong> who publish content to{' '}
-          <strong>20,000,000 products</strong> on{' '}
+          <strong>20 million products</strong> on{' '}
           <a href="https://www.amazon.com/" target="_blank" rel="noreferrer">
             Amazon.com
           </a>{' '}
@@ -80,7 +93,22 @@ const projectItems: ProjectItemProps[] = [
     imageUrl: floorigamiImg,
     timestamp: 'February 2020',
     tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Kentico', 'C#', 'Web', 'Responsive'],
+    stats: [
+      {
+        value: '200+',
+        stat: 'Daily sessions',
+      },
+      {
+        value: '4+',
+        stat: 'Daily samples ordered',
+      },
+      {
+        value: '2:03',
+        stat: 'Average session time',
+      },
+    ],
     objectPosition: 'bottom center',
+    liveSiteHref: 'https://floorigami.com/',
     children: (
       <>
         <p>
@@ -123,7 +151,6 @@ const projectItems: ProjectItemProps[] = [
           I was able to write fewer lines of custom code, prevent potential bugs for edge cases, and deliver a working
           product within a reasonable timeline.
         </p>
-        <ArrowLink href="https://floorigami.com/" text="Visit the Site" external className="mt-8 sm:mt-10" />
       </>
     ),
   },
