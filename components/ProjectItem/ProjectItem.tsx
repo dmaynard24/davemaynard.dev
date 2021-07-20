@@ -31,7 +31,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       <Tags tags={tags} />
       {children}
       {stats && <Stats stats={stats} />}
-      {liveSiteHref && <ArrowLink href={liveSiteHref} text="Visit the Site" external />}
+      {liveSiteHref && (
+        <ArrowLink href={liveSiteHref} text="Visit the Site" external className="mt-5 sm:mt-6 lg:mt-8" />
+      )}
     </div>
   );
 };

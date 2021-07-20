@@ -9,6 +9,7 @@ import TextHero from '../../components/TextHero/TextHero';
 import amazonDetailPageImg from '../../public/assets/projects/amazon-detail-page-hero.jpg';
 import careerChoiceImg from '../../public/assets/projects/collaboration.jpg';
 import colorSpeaksImg from '../../public/assets/projects/color-speaks-hero.jpg';
+import floorFitImg from '../../public/assets/projects/floorfit-hero.jpg';
 import floorigamiImg from '../../public/assets/projects/floorigami-hero.jpg';
 import sagepathImg from '../../public/assets/projects/sagepath-hero.jpg';
 import shawFloorsImg from '../../public/assets/projects/shaw-floors-hero.jpg';
@@ -68,7 +69,7 @@ const projectItems: ProjectItemProps[] = [
     name: 'Career Choice',
     imageUrl: careerChoiceImg,
     timestamp: 'June 2020',
-    tags: ['HTML', 'JavaScript', 'Sass', 'Salesforce', 'Apex', 'Visualforce', 'Web', 'Responsive'],
+    tags: ['HTML', 'JavaScript', 'Sass', 'Webpack', 'Salesforce', 'Apex', 'Visualforce', 'Web', 'Responsive'],
     objectPosition: 'bottom center',
     children: (
       <>
@@ -92,7 +93,7 @@ const projectItems: ProjectItemProps[] = [
     name: 'Floorigami',
     imageUrl: floorigamiImg,
     timestamp: 'February 2020',
-    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Kentico', 'C#', 'Web', 'Responsive'],
+    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Gulp.js', 'Kentico', 'C#', 'Web', 'Responsive'],
     stats: [
       {
         value: '200+',
@@ -118,7 +119,7 @@ const projectItems: ProjectItemProps[] = [
         </p>
         <p>
           The site was content-driven, and I worked with a team of back-end developers who decided to implement the
-          back-end with Kentico. I lead the front-end effort and implemented the front-end with Vue.js, HTML, and Less.
+          back-end with Kentico. I led the front-end effort and implemented the front-end with Vue.js, HTML, and Less.
         </p>
         <p>
           I reached for Vue as the framework because I knew several of the components would require somewhat complex
@@ -159,8 +160,58 @@ const projectItems: ProjectItemProps[] = [
     name: 'Color Speaks',
     imageUrl: colorSpeaksImg,
     timestamp: 'August 2019',
-    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Web', 'Responsive'],
+    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Gulp.js', 'Web', 'Responsive'],
+    stats: [
+      {
+        value: '100+',
+        stat: 'Daily page views',
+      },
+      {
+        value: '2:28',
+        stat: 'Average session time',
+      },
+    ],
     objectPosition: 'center center',
+    liveSiteHref: 'http://colorspeaks.sagepath.com/',
+    children: (
+      <>
+        <p>
+          In mid-2019, I built the front-end of a web application for Shaw Floors called <strong>Color Speaks</strong>.
+          Shaw Floors showcases a physical "color wall" where customers can browse a wall of about 80 flooring swatches
+          by walking up to it and browsing each swatch by look and touch.
+        </p>
+        <p>
+          So, the app was meant to be a digital representation of this physical wall but with a twist: each color has an
+          object from the real world associated with it. When you browse the site, you can hover your cursor over each
+          swatch and get a glimpse into this object, and then get the bigger picture by clicking the swatch and entering
+          the detail page.
+        </p>
+        <p>
+          Basically, our objective was to take something as typically boring as the process of shopping for flooring and
+          make it more interesting.
+        </p>
+        <p>I led the front-end development of this application and built it with Vue.js, HTML, and Less.</p>
+      </>
+    ),
+  },
+  {
+    id: 'shaw-floors',
+    name: 'Shaw Floors',
+    imageUrl: shawFloorsImg,
+    timestamp: 'January 2019',
+    tags: ['HTML', 'JavaScript', 'jQuery', 'WebGL', 'Three.js', 'Less', 'Gulp.js', 'Web', 'Responsive'],
+    stats: [
+      {
+        value: '3,900+',
+        stat: 'Daily page views',
+      },
+      {
+        value: '16%',
+        stat: 'Bounce rate',
+      },
+    ],
+    objectPosition: 'center center',
+    liveSiteHref: 'https://shawfloors.com/',
     children: (
       <>
         <p>
@@ -180,11 +231,11 @@ const projectItems: ProjectItemProps[] = [
     ),
   },
   {
-    id: 'shaw-floors',
-    name: 'Shaw Floors',
-    imageUrl: shawFloorsImg,
-    timestamp: 'January 2019',
-    tags: ['HTML', 'JavaScript', 'jQuery', 'WebGL', 'Three.js', 'Less', 'Web', 'Responsive'],
+    id: 'floorfit',
+    name: 'FloorFit',
+    imageUrl: floorFitImg,
+    timestamp: '2018',
+    tags: ['HTML', 'JavaScript', 'Vue.js', 'Less', 'Anime.js', 'Gulp.js', 'Web', 'Responsive'],
     objectPosition: 'center center',
     children: (
       <>
@@ -209,7 +260,7 @@ const projectItems: ProjectItemProps[] = [
     name: 'Sagepath',
     imageUrl: sagepathImg,
     timestamp: '2018',
-    tags: ['HTML', 'JavaScript', 'jQuery', 'Sass', 'Web', 'Responsive'],
+    tags: ['HTML', 'JavaScript', 'jQuery', 'Sass', 'Gulp.js', 'Web', 'Responsive'],
     objectPosition: 'center center',
     children: (
       <>
