@@ -1,12 +1,7 @@
 import * as React from 'react';
 
-const Profile: React.FC = () => (
+const Contact: React.FC = () => (
   <>
-    <p>
-      <strong className="text-gray-900">Dave Maynard</strong>
-      <br />
-      Front-End Engineer at Amazon
-    </p>
     <p>
       <a href="mailto:davemaynard24@gmail.com">Send Email</a>
       <br />
@@ -16,6 +11,6 @@ const Profile: React.FC = () => (
     </p>
   </>
 );
-Profile.displayName = 'Profile';
+Contact.displayName = 'Contact';
 
-export default Profile;
+export default Contact;

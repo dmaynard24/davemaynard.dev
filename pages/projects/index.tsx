@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 import * as React from 'react';
 import ItemGrid from '../../components/ItemGrid/ItemGrid';
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import {ProjectItemProps} from '../../types';
 import TextHero from '../../components/TextHero/TextHero';
+import ThreeColumnTemplate from '../../components/ThreeColumnTemplate/ThreeColumnTemplate';
 
 // TODO: Refactor this approach to make it dynamic (this is used for next/image placeholder="blur" functionality)
 import amazonDetailPageImg from '../../public/assets/projects/amazon-detail-page-hero.jpg';
@@ -286,7 +286,7 @@ export const projectItemsById = R.indexBy(R.prop('id'), projectItems);
 
 const Projects: React.FC = () => {
   return (
-    <PageTemplate>
+    <ThreeColumnTemplate>
       <TextHero headline="A Few of My Projects">
         <p>
           I've been working professionally as a front-end developer since 2012. Since then, it's been quite the journey
@@ -296,7 +296,7 @@ const Projects: React.FC = () => {
         <p>Here are just a few of my recent projects that I've contributed to over the last five years.</p>
       </TextHero>
       <ItemGrid items={projectItems} />
-    </PageTemplate>
+    </ThreeColumnTemplate>
   );
 };
 Projects.displayName = 'Projects';

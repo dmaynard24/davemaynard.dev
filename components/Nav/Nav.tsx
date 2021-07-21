@@ -11,9 +11,14 @@ const Nav: React.FC = () => {
 
   const navItems: NavItemProps[] = [
     {
+      text: 'Home',
+      href: '/',
+      isActive: currentRoute === '',
+    },
+    {
       text: 'Projects',
       href: '/projects',
-      isActive: currentRoute === 'projects' || currentRoute === '',
+      isActive: currentRoute === 'projects',
     },
     {
       text: 'Side Projects',

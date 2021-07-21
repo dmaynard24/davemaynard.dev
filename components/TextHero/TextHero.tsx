@@ -4,16 +4,17 @@ import useElementVisible from '../../hooks/useElementVisible';
 
 const TextHero: React.FC<{
   headline: string;
-}> = ({headline, children}) => {
-  const [className, setClassName] = React.useState(styles['text-hero']);
+  markPosition?: 'above' | 'below';
+}> = ({headline, children, markPosition = 'below'}) => {
+  const [className, setClassName] = React.useState(`${styles['text-hero']} ${styles[`mark-${markPosition}`]}`);
   const componentRef = React.useRef<HTMLDivElement>(null);
   const isElementVisible = useElementVisible(componentRef);
 
   React.useEffect(() => {
     if (isElementVisible) {
-      setClassName(`${styles['text-hero']} ${styles.active}`);
+      setClassName(`${styles['text-hero']} ${styles[`mark-${markPosition}`]} ${styles.active}`);
     }
-  }, [isElementVisible, setClassName]);
+  }, [isElementVisible, setClassName, markPosition]);
 
   return (
     <div ref={componentRef} className={className}>

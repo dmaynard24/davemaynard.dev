@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 import {BlogItemProps} from '../../types';
 import Feed from '../../components/Feed/Feed';
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import parameterizedSelectorImg from '../../public/assets/blog/parameterized-selector.png';
 import TextHero from '../../components/TextHero/TextHero';
+import ThreeColumnTemplate from '../../components/ThreeColumnTemplate/ThreeColumnTemplate';
 
 const blogItems: BlogItemProps[] = [
   {
@@ -35,7 +35,7 @@ const blogItems: BlogItemProps[] = [
           </a>{' '}
           with some traction:{' '}
         </p>
-        <div className="mb-5 sm:mb-6">
+        <div className="mb-5 sm:mb-6 lg:mb-7">
           <Image
             layout="intrinsic"
             src={parameterizedSelectorImg}
@@ -61,7 +61,7 @@ const blogItems: BlogItemProps[] = [
 
 const Blog: React.FC = () => {
   return (
-    <PageTemplate>
+    <ThreeColumnTemplate>
       <TextHero headline="What's Been on my Mind Lately?">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum semper ipsum, at finibus eros volutpat
@@ -71,7 +71,7 @@ const Blog: React.FC = () => {
         </p>
       </TextHero>
       <Feed items={blogItems} />
-    </PageTemplate>
+    </ThreeColumnTemplate>
   );
 };
 Blog.displayName = 'Blog';

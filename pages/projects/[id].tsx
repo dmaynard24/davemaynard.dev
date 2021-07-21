@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {useRouter} from 'next/router';
 
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';
 import {projectItemsById} from '.';
+import ThreeColumnTemplate from '../../components/ThreeColumnTemplate/ThreeColumnTemplate';
 
 const ProjectById: React.FC = () => {
   const router = useRouter();
@@ -12,9 +12,9 @@ const ProjectById: React.FC = () => {
 
   if (!projectItem) return null;
   return (
-    <PageTemplate>
+    <ThreeColumnTemplate>
       <ProjectItem {...projectItem} />
-    </PageTemplate>
+    </ThreeColumnTemplate>
   );
 };
 ProjectById.displayName = 'ProjectById';

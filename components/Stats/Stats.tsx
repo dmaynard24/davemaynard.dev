@@ -5,7 +5,7 @@ import useElementVisible from '../../hooks/useElementVisible';
 
 const Stat: React.FC<StatProps> = ({value, stat}) => {
   return (
-    <div className="mb-5 sm:mb-6">
+    <div className="mb-5 sm:mb-6 lg:mb-7">
       <h3 className="mb-0">{value}</h3>
       <p>{stat}</p>
     </div>
@@ -27,7 +27,7 @@ const Stats: React.FC<{stats: StatProps[]}> = ({stats}) => {
   return (
     <div ref={componentRef} className={className}>
       <h2>Stats</h2>
-      <div className="sm:grid sm:grid-cols-3 gap-x-12">
+      <div className="sm:grid sm:grid-cols-3 gap-x-12 xl:gap-x-14">
         {stats.map((s) => {
           return <Stat key={s.stat.split(' ').join('_')} {...s} />;
         })}

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
+import TextHero from '../../components/TextHero/TextHero';
+import ThreeColumnTemplate from '../../components/ThreeColumnTemplate/ThreeColumnTemplate';
 
 const SideProjects: React.FC = () => {
   return (
-    <PageTemplate>
-      <h1>Side Projects</h1>
-    </PageTemplate>
+    <ThreeColumnTemplate>
+      <TextHero headline="Side Projects" />
+    </ThreeColumnTemplate>
   );
 };
 SideProjects.displayName = 'SideProjects';

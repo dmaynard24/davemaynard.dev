@@ -8,7 +8,7 @@ Tag.displayName = 'Tag';
 const Tags: React.FC<{
   tags: string[];
 }> = ({tags}) => (
-  <div className="flex flex-wrap mb-8 sm:mb-10 lg:mb-12">
+  <div className="flex flex-wrap mb-10 sm:mb-12 lg:mb-14">
     {tags.map((tag) => (
       <Tag key={tag} text={tag} />
     ))}

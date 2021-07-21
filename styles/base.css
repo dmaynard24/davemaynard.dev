@@ -6,6 +6,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: auto;
+  height: auto;
+  min-height: 101vh;
   overscroll-behavior: none;
 }
 
@@ -14,7 +16,7 @@ h2,
 h3,
 h4,
 h5 {
-  @apply mb-5 sm:mb-6 text-gray-900 leading-none font-extrabold tracking-tight;
+  @apply mb-5 sm:mb-6 lg:mb-7 text-gray-900 leading-none font-extrabold tracking-tight;
 }
 
 h1 {
@@ -31,7 +33,7 @@ h3 {
 
 p,
 ul > li {
-  @apply mb-5 sm:mb-6 last:mb-0;
+  @apply mb-5 sm:mb-6 lg:mb-7 last:mb-0;
 
   code {
     @apply bg-gray-100 px-1 rounded-sm;
@@ -44,7 +46,7 @@ a,
 }
 
 ul {
-  @apply list-disc pl-8 mb-5 sm:mb-6;
+  @apply list-disc pl-8 mb-5 sm:mb-6 lg:mb-7;
 }
 
 .icon {

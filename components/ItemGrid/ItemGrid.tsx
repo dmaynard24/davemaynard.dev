@@ -10,7 +10,7 @@ const ItemGrid: React.FC<{
   items: ProjectItemProps[] | BlogItemProps[];
 }> = ({items}) => {
   return (
-    <div className="sm:grid sm:grid-cols-2 gap-x-12">
+    <div className="sm:grid sm:grid-cols-2 gap-x-12 xl:gap-x-14">
       {items.map((item, i) => {
         if (isProjectItem(item)) {
           if (i === 0) {
@@ -30,11 +30,11 @@ const ItemGrid: React.FC<{
             );
           }
           return (
-            <div key={item.id} className="cursor-pointer mb-10 sm:mb-12 lg:mb-14">
+            <div key={item.id} className="cursor-pointer mb-12 sm:mb-14 lg:mb-16">
               <Link href={`projects/${item.id}`}>
                 <div>
                   <h3>{item.name}</h3>
-                  <div className="line-clamp-4 mb-5 sm:mb-6">{item.children}</div>
+                  <div className="line-clamp-4 mb-5 sm:mb-6 lg:mb-7">{item.children}</div>
                   <ArrowLink href={`projects/${item.id}`} text="Read More" />
                 </div>
               </Link>

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import PageTemplate from '../../components/PageTemplate/PageTemplate';
+import TextHero from '../../components/TextHero/TextHero';
+import ThreeColumnTemplate from '../../components/ThreeColumnTemplate/ThreeColumnTemplate';
 
 const Talks: React.FC = () => {
   return (
-    <PageTemplate>
-      <h1>Talks</h1>
-    </PageTemplate>
+    <ThreeColumnTemplate>
+      <TextHero headline="Talks" />
+    </ThreeColumnTemplate>
   );
 };
 Talks.displayName = 'Talks';

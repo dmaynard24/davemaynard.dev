@@ -1,0 +1,18 @@
+.inline-img {
+  @apply w-48;
+
+  @screen md {
+    width: calc(25vw - 1rem);
+    flex: 0 1 auto;
+  }
+
+  @screen lg {
+    width: calc(16.666vw - 1rem);
+    flex: 0 1 auto;
+  }
+
+  @screen xl {
+    width: 176px;
+    flex: 1 0 auto;
+  }
+}

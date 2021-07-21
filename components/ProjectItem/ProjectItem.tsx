@@ -18,7 +18,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   children,
 }) => {
   return (
-    <div className="mb-10 sm:mb-12 lg:mb-14 last-mb-0">
+    <div className="mb-12 sm:mb-14 lg:mb-16 last-mb-0">
       <ItemCard
         id={id}
         name={name}
